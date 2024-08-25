@@ -19,25 +19,22 @@ const PrincipalHome = () => {
     <div
     className="hero min-h-screen"
     style={{
-      backgroundImage: "url(https://www.ei-ie.org/image/9xiOVTyrgE1eMpetvjUJefS23CM4YomurbzWqGiS.jpg/lead.jpg)",
+      backgroundImage: "url(https://capacitacionespracticas.com/images/2019/09/02/capacitate.jpg)",
     }}>
-    <div className="hero-overlay bg-opacity-60">
-
-    
-    <div className="hero-content text-neutral-300 text-center">
+    <div className="hero-overlay bg-opacity-60"></div>
+    <div className="hero-content text-neutral-content text-center">
       <div className="max-w-md">
-        <h1 className="mb-5 text-5xl font-bold">¡Bienvenidos a Inalta!
-        </h1>
-        <p class="font-serif ...">
+        <h1 className="mb-5 text-5xl font-bold">¡Bienvenidos a Inalta!</h1>
+        <p className="mb-5">
         En Inalta, estamos dedicados a ayudarte a alcanzar el éxito en el mundo de la construcción y las soluciones industriales. 
         Te invitamos a unirte a nuestras clases especializadas, diseñadas para proporcionarte el conocimiento y las herramientas 
         necesarias para sobresalir en tu carrera. Ya sea que estés buscando mejorar tus habilidades en la impermeabilización, 
         reparación de concreto, o aprender sobre los sistemas más avanzados en infraestructura, nuestras clases están aquí para apoyarte en cada paso del camino. 
-        <p>¡No pierdas la oportunidad de aprender con los mejores y llevar tus habilidades al siguiente nivel!</p>
+        ¡No pierdas la oportunidad de aprender con los mejores y llevar tus habilidades al siguiente nivel!
         </p>
+        <button className="btn btn-primary">Get Started</button>
       </div>
     </div>
-  </div>
   </div>
   );
 };

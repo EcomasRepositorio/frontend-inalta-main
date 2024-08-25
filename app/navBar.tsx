@@ -57,8 +57,8 @@ const Header = () => {
         onMenuOpenChange={setIsMenuOpen}
         maxWidth={"full"}
         position="sticky"
-        className="z-0 hidden md:block  bg-white dark:bg-blackblue"
-      >
+        className="z-0 hidden md:block bg-[#5564aa] dark:bg-[#d3b9ff]"// para cambiar el color 
+        >
         <Link href="/">
           <Image
             src={imageSrc}
@@ -92,7 +92,7 @@ const Header = () => {
       <Navbar
         isMenuOpen={isMenuOpen}
         onMenuOpenChange={setIsMenuOpen}
-        className="z-20 bg-blue-100 dark:bg-blackblue2 "
+        className="z-20 bg-[#39496d] dark:bg-[#d3b9ff]"// para cambiar el color
         position="sticky"
       >
         <NavbarContent className="sm:hidden w-full" justify="center">
