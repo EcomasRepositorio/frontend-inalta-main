@@ -21,13 +21,13 @@ module.exports = {
         'roboto': ['Roboto', 'system-ui'],
       },
       colors: {
-        'blackblue': '#1e293b',
-        'blackblue2': '#0f172a',
-        'primaryblue': '#0e7ac2',
-        'primaryblack': '#262626'
+        'blackblue': '#27272a',
+        'gray-light': '#f5f5f5', // Añadir color gris claro
+        'primaryblue': '#3f3f46',
+        'primaryblack': '#3f3f46'
       },
       textColor: {
-        'textrosa': '#ff00d4', // Cambia esto al color rosado que prefieras
+        'textrosa': '#ff00d4', 
         'textblue': '#0060ff',
 
       },

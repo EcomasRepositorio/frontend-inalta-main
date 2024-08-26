@@ -36,6 +36,7 @@ const links = [
   },
 ];
 
+
 export default function NavLinks() {
 
   const pathname = usePathname();
@@ -50,11 +51,12 @@ export default function NavLinks() {
             key={link.name}
             href={link.href}
             className={`text-lg text-blackblue  hover:underline hover:text-primaryblue dark:hover:text-blue-100 ${
-              isActive ? "underline text-primaryblue dark:text-blue-100 " : "dark:text-white"
+              isActive ? "underline text-primaryblue dark:text-blue-100 " : "dark:text-white"// cambiar color del inicio  nuestr etc
             }`}
           >
             <p className="hidden md:block">{link.name}</p>
           </Link>
+          
         );
       })}
     </>
