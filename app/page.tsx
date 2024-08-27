@@ -50,7 +50,7 @@ export default function Main() {
       <div className=" mx-auto max-w-screen-xl ">
         <CarouselCursosDestacados />
       </div>
-      <div className=" mx-auto max-w-screen-xl mt-6 ">
+      <div className=" w-full ">
         <TestimoniosFb />
       </div>
 

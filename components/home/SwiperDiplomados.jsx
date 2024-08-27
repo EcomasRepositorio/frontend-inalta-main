@@ -30,14 +30,7 @@ const NuestrosDiplomados = () => {
       imageUrl: "/image/vialdiplo.jpg",
       title: "Ingeniería Vial",
     },
-    {
-      imageUrl: "/image/tecobras.jpg",
-      title: "Asistente Técnico en Obras",
-    },
-    {// esto es para aumentar la captidad de tarjetas 
-      imageUrl: "/image/nueva_imagen.jpg", // para la imagen en la tarjetas
-      title: "Nuevo Diplomado", // titulo de la tarjeta 
-    },
+    
   ];
 
   return (
@@ -45,7 +38,7 @@ const NuestrosDiplomados = () => {
       <div className="bg-[#F5F5F5] dark:bg-[#979595]">
         <div className="px-2 p-3 md:p-8 transform rounded-lg mx-auto max-w-screen-xl">
         
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {cursosDestacados.map((curso, index) => (
               <div
                 key={index}

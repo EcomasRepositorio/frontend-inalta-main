@@ -1,97 +1,85 @@
 import React from "react";
-import Image from "next/image";
 import ScrollAnimation from "./scrollAnimation";
+import Image from "next/image";
+import Link from "next/link";
+import { GrFormNextLink } from "react-icons/gr";
+import { motion, useAnimation } from "framer-motion";
 
-const cursosDestacados = [
-  {
-    id: 1,
-    imageUrl: "/image/solidos.jpg",
-    title: "Gestion y manejo de residuos sólidos municipales",
-    description:
-      "Este curso aborda estrategias y técnicas para gestionar eficazmente los residuos sólidos en entornos urbanos, incluyendo temas como reciclaje, tratamiento de residuos y participación comunitaria.",
-  },
-  {
-    id: 2,
-    imageUrl: "/image/aspersor.jpg",
-    title: "Sistemas de riego por aspersión",
-    description:
-      "Curso sobre el diseño y uso eficiente de sistemas de riego por aspersión.",
-  },
-  {
-    id: 3,
-    imageUrl: "/image/goteo.jpg",
-    title: "Sistemas de riego por goteo",
-    description:
-      "Curso que explora el diseño y aplicación de sistemas eficientes de riego por goteo en agricultura y jardinería.",
-  },
-  {
-    id: 4,
-    imageUrl: "/image/viales.jpg",
-    title: "Arqueología en proyectos viales",
-    description:
-      "Curso sobre la integración de la arqueología en el diseño y desarrollo de proyectos viales.",
-  },
-  {
-    id: 5,
-    imageUrl: "/image/obras.jpg",
-    title: "Ampliaciones de plazo, adicionales de obra y penalidades en obra",
-    description:
-      "Curso que aborda la gestión de ampliaciones de plazo, cambios en obra y las penalizaciones asociadas en proyectos de construcción.",
-  },
-  {
-    id: 6,
-    imageUrl: "/image/aguaca.jpg",
-    title: "Monitoreo de la calidad de agua",
-    description:
-      "Curso sobre técnicas y métodos para monitorear la calidad del agua en diferentes contextos ambientales y aplicaciones.",
-  },
-  {
-    id: 7,
-    imageUrl: "/image/ssoma.jpg",
-    title: "Supervisor SSOMA",
-    description:
-      "Curso que prepara a los supervisores en seguridad, salud ocupacional y medio ambiente (SSOMA) para la gestión efectiva en entornos laborales.",
-  },
-];
 
-const CursosDestacados = () => {
+const NuestrosDiplomados = () => {
+  const cursosDestacados = [
+    {
+      imageUrl: "/image/diplo_tecnifi.jpg",
+      title: "Sistemas de Riego Tecnificado",
+    },
+    {
+      imageUrl: "/image/diplo_municipal.jpg",
+      title: "Gestión Ambiental Municipal y Regional",
+    },
+    {
+      imageUrl: "/image/diplo_ssoma.jpg",
+      title: "SSOMA",
+    },
+    {
+      imageUrl: "/image/diplo_alim.jpg",
+      title: "Gestión de la calidad e inocuidad alimentaria",
+    },
+    {
+      imageUrl: "/image/bim_model.jpg",
+      title: "Modelamiento BIM",
+    },
+    {
+      imageUrl: "/image/vialdiplo.jpg",
+      title: "Ingeniería Vial",
+    },
+  ];
+
   return (
     <ScrollAnimation>
-      <div className="rounded-lg p-8 md:p-5 flex flex-col items-center">
-        <h2 className="text-primaryblue dark:text-f5f5f5 text-4xl font-extrabold mb-1">
-          Nuestros Cursos Destacados
-        </h2>
-      </div>
-      <div className="py-5 flex flex-wrap justify-center gap-4">
-        {cursosDestacados.map((curso) => (
-          <div
-            key={curso.id}
-            className="dark:bg-blackblue2 dark:ring-0 py-4 rounded-2xl relative p-2 bg-gray-50/60 backdrop-blur-md transition-all ring-1 ring-gray-200/50 shadow hover:shadow-lg w-96 max-w-md flex flex-col justify-between"
-          >
-            <div className="object-cover">
-              <div className="p-2 rounded-lg">
+      <div className="bg-transparent dark:bg-transparent">
+        <div className="px-2 p-3 md:p-8 transform rounded-lg mx-auto max-w-screen-xl">
+          <h2 className="text-primarywhite dark:text-f6f6f6 text-4xl font-extrabold mb-6 text-center">
+            Cursos Destacados
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {cursosDestacados.map((curso, index) => (
+              <div
+                key={index}
+                className="w-full max-w-sm shadow-lg pt-4 hover:opacity-100 rounded-lg bg-[#F5F5F5] dark:bg-[#7a7777]"
+              >
+                <div className="p-2 rounded-lg">
                 <Image
-                  src={curso.imageUrl}
-                  alt="Imagen curso"
-                  width={400}
-                  height={300}
-                  className="object-cover h-48 rounded-lg w-full"
-                />
+                     src={curso.imageUrl}
+                     alt="Imagen banner"
+                     width={450}
+                     height={300}
+                     className="object-cover h-96 rounded-lg w-full"
+                  />
+                </div>
+                <div className="px-4 py-4">
+                  <a
+                    href="/"
+                    className="block font-semibold text-md text-whiteBlue dark:text-f5f5f5 mb-2 hover:text-primaryblue dark:hover:text-primaryblue transition-colors duration-300"
+                  >
+                    {curso.title}
+                  </a>
+                  <Link href="/diplomados" passHref>
+                    <div className="flex items-center justify-between bg-transparent dark:bg-transparent text-blackblue dark:text-white border-t border-gray-200 
+                    dark:border-gray-600 p-2 rounded-b-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300 cursor-pointer">
+                      <span>Más información</span>
+                      <span>
+                        <GrFormNextLink className="w-6 h-6" />
+                      </span>
+                    </div>
+                  </Link>
+                </div>
               </div>
-              <div className="px-8 md:px-4 pt-1 mb-4 pb-2">
-                <a className="text-justify font-semibold text-md text-blackblue dark:text-f5f5f5">
-                  {curso.title}
-                </a>
-                <p className="text-justify font-light text-sm">
-                  {curso.description}
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </ScrollAnimation>
   );
 };
 
-export default CursosDestacados;
+export default NuestrosDiplomados;
