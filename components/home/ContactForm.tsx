@@ -14,12 +14,12 @@ const ContactForm = () => {
   const onSubmit = () => {
     setSending(true);
 
-    const serviceID = 'service_94bs7oi';
-    const templateID = 'template_sryp9ce';
+    const default_service = 'service_83j66zr';
+    const templateID = 'template_q3775rh';
 
     const form = formRef.current;
     if (form) {
-      emailjs.sendForm(serviceID, templateID, form)
+      emailjs.sendForm(default_service, templateID, form)
         .then(() => {
           setSending(false);
           setShowAlert(true);
@@ -35,6 +35,7 @@ const ContactForm = () => {
         });
     }
   };
+  
 
 
   return (

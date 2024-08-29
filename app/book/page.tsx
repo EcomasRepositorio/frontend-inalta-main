@@ -32,9 +32,12 @@ const Book = () => {
         event?.preventDefault();
         console.log(data);
         setSending(true);
-        const serviceID = "service_94bs7oi";
-        const templateID = "template_483oq6u";
-        const apiKey = "UgIciLgmKy6Akg6-Z";
+
+
+        const serviceID = "service_83j66zr"; 
+        const templateID = "template_q3775rh";
+        const apiKey = "rZk1LZs7XAhtwYal3";
+
         if (refForm.current) {
             try {
                 await emailjs.sendForm(serviceID, templateID, refForm.current, apiKey);
