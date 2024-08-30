@@ -97,7 +97,8 @@ export default function Main() {
     </div>
   );
 }
-/*<div class="realtive pt-20 lg:pt-40 pb-20 lg:pb-40">
+/*
+<div class="realtive pt-20 lg:pt-40 pb-20 lg:pb-40">
   <div class="absolute top-0 w-full object-cover">
     <video class="w-full h-full object-cover" autoPlay 1oop>
     <source src="/video_ambiental.webm" type="video/webm">
@@ -110,4 +111,9 @@ export default function Main() {
     <button class="border px-4 py-1 mt-4 rounded-xl font-semibold">Contacto</button>
   </div>
 </div>
-$ git commit -m "/diplomadosAccordion-diplomadosNav-Footer-ContactForm-Index-package"*/
+*/
+
+
+/*
+git commit -m "/diplomadosAccordion-diplomadosNav-Footer-ContactForm-Index-package-page"
+*/

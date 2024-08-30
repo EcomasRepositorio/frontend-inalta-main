@@ -43,7 +43,7 @@ export default function App() {
               "group-data-[selected=true]:text-white dark:text-dark ",
           }}
         >
-          <Tab key="civil" title="Ing. Civil" className="text-">
+          <Tab key="civil" title="Ing. Civil" className="text-primaryblue">
             <Card>
               <CardBody className="dark:bg-blackblue2 bg-gray-300">
                 <DiploCivil />
