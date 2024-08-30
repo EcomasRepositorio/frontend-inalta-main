@@ -5,10 +5,10 @@ import styles from './Style.module.css'
 const Whatsapp = () => {
   return (
     <div className={styles.container}>
-      <Link href='https://wa.link/tzsz9c' target='_blank'>
+      <Link href='https://wa.link/tzsz9c' target='_dark'>
       <svg
-      width={50}
-      height={50}
+      width={40}
+      height={40}
       xmlns="http://www.w3.org/2000/svg"
       x="0"
       y="0"
@@ -28,6 +28,7 @@ const Whatsapp = () => {
     </svg>
       </Link>
     </div>
+    
   )
 };
 

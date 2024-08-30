@@ -36,51 +36,51 @@ export default function App() {
           className="w-full md:max-w-max "
           placement={isMobile ? "top" : "start"}
           classNames={{
-            tabList: " w-full dark:bg-blackblue2 bg-blue-50",
+            tabList: " w-full dark:bg-blackblue2 bg-gray-300",
             cursor: "bg-primaryblue",
             tab: "",
             tabContent:
-              "group-data-[selected=true]:text-white dark:text-white ",
+              "group-data-[selected=true]:text-white dark:text-dark ",
           }}
         >
-          <Tab key="civil" title="Ing. Civil" className="text-primaryblue">
+          <Tab key="civil" title="Ing. Civil" className="text-">
             <Card>
-              <CardBody className="dark:bg-blackblue2 bg-blue-50">
+              <CardBody className="dark:bg-blackblue2 bg-gray-300">
                 <DiploCivil />
               </CardBody>
             </Card>
           </Tab>
           <Tab key="ambient" title="Ing. Ambiental">
             <Card>
-              <CardBody className="dark:bg-blackblue2 bg-blue-50">
+              <CardBody className="dark:bg-blackblue2 bg-gray-300">
                 <DiploAmbiental />
               </CardBody>
             </Card>
           </Tab>
           <Tab key="agrono" title="Ing. Agrónoma">
             <Card>
-              <CardBody className="dark:bg-blackblue2 bg-blue-50">
+              <CardBody className="dark:bg-blackblue2 bg-gray-300">
                 <DiploAgronoma />
               </CardBody>
             </Card>
           </Tab>
           <Tab key="alimentaria" title="Ingeniería en alimentos">
             <Card>
-              <CardBody className="dark:bg-blackblue2 bg-blue-50">
+              <CardBody className="dark:bg-blackblue2 bg-gray-300">
                 <DiploAlimentarias />
               </CardBody>
             </Card>
           </Tab>
           <Tab key="derecho" title="Derecho">
             <Card>
-              <CardBody className="dark:bg-blackblue2 bg-blue-50">
+              <CardBody className="dark:bg-blackblue2 bg-gray-300">
                 <DiploDerecho />
               </CardBody>
             </Card>
           </Tab>
           <Tab key="anothers" title="Otras Profesiones">
             <Card>
-              <CardBody className="dark:bg-blackblue2 bg-blue-50"></CardBody>
+              <CardBody className="dark:bg-blackblue2 bg-gray-300"></CardBody>
             </Card>
           </Tab>
         </Tabs>
