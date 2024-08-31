@@ -37,7 +37,7 @@ const ContactForm = () => {
         {/* Left Side - Contact Information */}
         <div className="w-full md:w-1/2 p-6 bg-black text-white rounded-lg">
           <div className="flex flex-col items-center">
-            <img src="/your-image-path.png" alt="Corporación Promás" className="mb-4" />
+            <img src="/your-image-path.png" alt="" className="mb-4" />
             <h2 className="text-3xl font-bold">INALTA</h2>
             <p className="mt-2 text-center">
             En Inalta, nos especializamos en potenciar las habilidades profesionales de nuestros estudiantes a 

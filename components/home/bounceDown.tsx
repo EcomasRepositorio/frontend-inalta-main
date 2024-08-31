@@ -24,9 +24,13 @@ function ScrollToTopButton() {
 
     return (
         <div
-            className={`animate-bounce fixed bottom-0 left-1/2 right-0 text-primaryblue rounded-full pb-4 z-50 items-center transition-opacity duration-500 ${
+            className={`animate-bounce fixed text-primaryblue rounded-full pb-4 z-50 items-center transition-opacity duration-500 ${
                 isVisible ? 'opacity-100' : 'opacity-0'
             }`}
+            style={{
+                bottom: '20px',
+                right: '20px',  
+            }}
         >
             <IoIosArrowDown className="h-10 w-10" />
         </div>

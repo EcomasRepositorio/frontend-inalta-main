@@ -12,6 +12,8 @@ const CarouselCursosDestacados = dynamic(
   () => import("@/components/home/SwiperCursosDestacados")
 );
 const TestimoniosFb = dynamic(() => import("@/components/home/TestimoniosFb"));
+const QuienesSomos = dynamic(() => import("@/components/home/QuienesSomos"));
+
 const NuestrosDiplomados = dynamic(
   () => import("@/components/home/NuestrosDiplomados")
 );
@@ -30,7 +32,6 @@ export default function Main() {
        <div className="">
         <PrincipalHome />
       </div>
-
       <div className="mx-auto max-w-screen-xl">
         <NuestrosDiplomados />
       </div>

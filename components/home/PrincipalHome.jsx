@@ -19,7 +19,7 @@ const PrincipalHome = () => {
     <div
       className="hero min-h-screen"
       style={{
-        backgroundImage: "url(https://capacitacionespracticas.com/images/2019/09/02/capacitate.jpg)",
+        backgroundImage: "url(https://static.vecteezy.com/system/resources/thumbnails/009/831/146/small/banner-web-template-abstract-blue-and-golden-wave-curved-lines-overlapping-layer-design-on-dark-blue-background-luxury-style-vector.jpg)",
       }}
     >
       <div className="hero-overlay bg-opacity-60"></div>
@@ -33,7 +33,6 @@ const PrincipalHome = () => {
             reparación de concreto, o aprender sobre los sistemas más avanzados en infraestructura, nuestras clases están aquí para apoyarte en cada paso del camino. 
             ¡No pierdas la oportunidad de aprender con los mejores y llevar tus habilidades al siguiente nivel!
           </p>
-          <button className="btn btn-primary">Get Started</button>
           {/* Agregar el botón de cambio de tema aquí */}
           
         </div>

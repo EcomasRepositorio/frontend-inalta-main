@@ -13,7 +13,7 @@ const NuestrasRedes = () => {
                         Conecta con Nuestra Comunidad
                     </h3>
                     <p className="text-gray-800 dark:text-white mt-3">
-                        Únete a ECOMÁS en nuestras Redes Sociales:
+                        Únete a ECOMÁS en  Sociales:
                     </p>
                 </div>
                 <div className="mt-12 flex justify-center">

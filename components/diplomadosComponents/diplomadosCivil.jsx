@@ -1,4 +1,4 @@
-"use client";
+"use client"; // Si estás utilizando Next.js, esta línea se asegura de que este componente se renderice en el cliente.
 import Curso from "./diplomadosAccordion";
 
 const DiploCivil = () => {
@@ -11,7 +11,7 @@ const DiploCivil = () => {
       fechaInicio: "11/08/2024",
       modalidad: "Virtual",
       duracion: "4 meses",
-      horas: "420 horas academicas (26 creditos)",
+      horas: "420 horas académicas (26 créditos)",
       descripcion:
         "Bachilleres, Gerentes y administradores de proyectos y jefes de área. Ingenieros civiles, ingenieros estructurales, arquitectos residentes y supervisores de obras. Profesionales del sector público y privado relacionados con proyectos viales.",
       modulos: [
@@ -26,27 +26,6 @@ const DiploCivil = () => {
         "Inspección, evaluación de puentes bajo la metodología SCAP",
       ],
     },
-    /*  {
-      area: 'INGENIERÍA CIVIL',
-      titulo: 'Modelamiento BIM',
-      imagen: '/image/bim_model.jpg',
-      fechaInicio: '22/06/2024',
-      modalidad: 'Virtual',
-      duracion: '4 meses',
-      horas: '420 horas academicas (26 creditos)',
-      descripcion: 'Este diplomado está dirigido a Ingenieros y arquitectos que se encuentran trabajando en diseño y construcción de estructuras de edificaciones, gerentes de proyectos, ingenieros revisores de proyectos estructurales y profesores de universidades que deseen desarrollar o renovar las técnicas y herramientas involucradas en el diseño estructural.',
-      modulos: [
-        'Modelado de arquitectura',
-        'Modelamiento de instalaciones sanitarias',
-        'Modelamiento de instalaciones eléctricas',
-    'Creación de planos y documentación BIM',
-        'Lean construcción y BIM',
-    'Gestión de proyectos con Metodología BIM',
-        'Modelado de estructuras BIM',
-        'Modelamiento de estructuras metálicas BIM',
-
-      ]
-    },*/
     {
       area: "INGENIERÍA CIVIL",
       titulo: "Asistente Técnico en Obras",
@@ -79,14 +58,14 @@ const DiploCivil = () => {
       fechaInicio: "18/08/2024",
       modalidad: "Virtual",
       duracion: "4 meses",
-      horas: "420 horas academicas (26 creditos)",
+      horas: "420 horas académicas (26 créditos)",
       descripcion:
-        "Bachilleres, Gerentes y administradores de proyectos de la construcción y jefes de área. Ingenieros civiles, topógrafos, arquitectos residentes y supervisores de obras. Profesionales del sector público y privado relacionados con proyectos viales. ",
+        "Bachilleres, Gerentes y administradores de proyectos de la construcción y jefes de área. Ingenieros civiles, topógrafos, arquitectos residentes y supervisores de obras. Profesionales del sector público y privado relacionados con proyectos viales.",
       modulos: [
         "Estructuras en carreteras - puentes",
         "Metrados, costos y presupuesto - cronograma en obras viales",
         "Arqueología en proyectos viales",
-        "Estudio ambientales en proyectos viales",
+        "Estudios ambientales en proyectos viales",
         "Diseño, construcción y mantenimiento de túneles",
         "Tráfico y carga en proyectos viales.",
         "Topografía, diseño geométrico, señalización y seguridad vial",
@@ -99,14 +78,14 @@ const DiploCivil = () => {
     },
     {
       area: "INGENIERÍA CIVIL",
-      titulo: "Residencia y supervisón de obras",
+      titulo: "Residencia y supervisión de obras",
       imagen: "/image/residencia.jpg",
       fechaInicio: "18/08/2024",
       modalidad: "Virtual",
       duracion: "4 meses",
-      horas: "420 horas academicas (26 creditos)",
+      horas: "420 horas académicas (26 créditos)",
       descripcion:
-        "Gerente de proyectos relacionados a construcción, supervisor de obras, consultores en servicios de ingeniería, ingenieros, arquitectos, topógrafos, bachilleres de la especialidad de ingeniería civil, y/o especialistas afines. Profesionales del sector público y privado relacionados con proyectos de obras civiles.  ",
+        "Gerente de proyectos relacionados a construcción, supervisor de obras, consultores en servicios de ingeniería, ingenieros, arquitectos, topógrafos, bachilleres de la especialidad de ingeniería civil, y/o especialistas afines. Profesionales del sector público y privado relacionados con proyectos de obras civiles.",
       modulos: [
         "Ampliaciones de plazo, adicionales de obra y penalidades en obra",
         "Recepción - liquidación de obras y medios de solución de controversia",
@@ -133,6 +112,7 @@ const DiploCivil = () => {
 };
 
 export default DiploCivil;
+
 
 /*
 <div class="p-5 flex flex-col bg-white">
