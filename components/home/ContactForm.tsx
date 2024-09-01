@@ -32,18 +32,23 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contacto" className="bg-gray-500 p-8 rounded-xl">
+    <section id="contacto" className="bg-gradient-to-t from-purple-900 p-8 rounded-xl">
       <div className="flex flex-col md:flex-row items-center">
         {/* Left Side - Contact Information */}
-        <div className="w-full md:w-1/2 p-6 bg-black text-white rounded-lg">
-          <div className="flex flex-col items-center">
-            <img src="/your-image-path.png" alt="" className="mb-4" />
-            <h2 className="text-3xl font-bold">INALTA</h2>
+        <div className="w-full md:w-1/2 p-6 bg-transparent text-white rounded-lg">
+F        <div className="flex flex-col items-center">
+            <img
+              src="/image/inaltaLogGpt.png"
+              alt="Logo de Inalta"
+              className="mb-4"
+              style={{ width: '500px', height: 'auto' }} // Establece un ancho fijo y altura automática para mantener la proporción
+            />
+            <h2 className="text-3xl font-bold"></h2>
             <p className="mt-2 text-center">
-            En Inalta, nos especializamos en potenciar las habilidades profesionales de nuestros estudiantes a 
-            través de una oferta educativa diversificada. Con programas enfocados en áreas como la tecnología, 
-            el liderazgo y la gestión, te brindamos las herramientas necesarias para avanzar en tu carrera y 
-            alcanzar tus metas.            </p>
+              En Inalta, nos especializamos en potenciar las habilidades profesionales de nuestros estudiantes a
+              través de una oferta educativa diversificada. Con programas enfocados en áreas como la tecnología,
+              el liderazgo y la gestión, te brindamos las herramientas necesarias para avanzar en tu carrera y
+              alcanzar tus metas.            </p>
             <div className="mt-4">
               <h3 className="text-xl font-semibold"></h3>
               <div className="flex justify-around mt-2">

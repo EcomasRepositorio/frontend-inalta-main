@@ -30,6 +30,12 @@ const Curso = ({ curso }) => {
   }
 
   return (
+    /*  <div className="bg-gradient-purple-to-gray min-h-screen">
+  <h1 className="text-4xl font-bold text-center text-black">
+    Degradado de Morado a Gris
+  </h1>
+</div>*/
+
     <div className="bg-white dark:bg-gray-900 shadow-md rounded-lg overflow-hidden mb-8">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="relative">

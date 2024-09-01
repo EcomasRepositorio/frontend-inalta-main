@@ -9,7 +9,7 @@ import Whatsapp from '@/components/whatsapp/Index';
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="font-roboto dark:bg-blackblue">
+    <div className="font-roboto bg-white dark:bg-blackblue">
       <ThemeProvider
         attribute="class"
         defaultTheme="light"
@@ -19,7 +19,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
         <link rel="icon" href="/image/ICONO-COLOR.png" />  {/* Asegúrate de que la ruta sea correcta */}
         
         <Header />
-        {children}
+        <main>{children}</main>
         <Whatsapp />
         <Footer />
         <ScrollToTopButton />

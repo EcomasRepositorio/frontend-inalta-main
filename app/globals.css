@@ -8,7 +8,7 @@ html {
 
 .carousel {
   overflow: hidden;
-  width: 100%; /* Cambiar el ancho a 100% para ocupar todo el ancho disponible */
+  width: 90%; /* Cambiar el ancho a 100% para ocupar todo el ancho disponible */
   margin: auto;
 }
 

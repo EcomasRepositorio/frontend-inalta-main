@@ -19,7 +19,7 @@ const PrincipalHome = () => {
     <div
       className="hero min-h-screen"
       style={{
-        backgroundImage: "url(https://static.vecteezy.com/system/resources/thumbnails/009/831/146/small/banner-web-template-abstract-blue-and-golden-wave-curved-lines-overlapping-layer-design-on-dark-blue-background-luxury-style-vector.jpg)",
+        backgroundImage: "url(/image/fondoGpt.jpg)",
       }}
     >
       <div className="hero-overlay bg-opacity-60"></div>

@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp, FaYoutube } from 'react-icons/fa';
 import { HiOutlineMail, HiOutlinePhone } from 'react-icons/hi';
+import Link from "next/link";
+
+
 
 export default function Footer() {
   return (
@@ -32,9 +35,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logotipo y Descripción */}
           <div className="md:col-span-1 flex flex-col items-center md:items-start">
-            <Image src="" alt="Binex" width={150} height={75} />
-            <p className="mt-4 text-sm text-center md:text-left">Proporcionamos cursos y diplomados con aval de la EPG-UNP</p>
-            <a href="#" className="mt-2 text-sm text-white hover:underline flex items-center">
+            <Image src="/image/inaltafoter.png" alt="Binex" width={250} height={200}  className="mt-[-20px]" />
+            <p className="mt-0 text-sm text-center md:text-left">Proporcionamos cursos y diplomados con aval de la EPG-UNP</p>
+            <a href="/book" className="mt-2 text-sm text-white hover:underline flex items-center">
               <span role="img" aria-label="Libro de Reclamaciones" className="mr-2">📋</span> 
               Libro de Reclamaciones
             </a>
@@ -44,10 +47,41 @@ export default function Footer() {
           <div className="md:col-span-1">
             <h3 className="text-lg font-bold mb-4">NUESTRA EMPRESA:</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:underline">Inicio</a></li>
-              <li><a href="#" className="hover:underline">Certificado</a></li>
-              <li><a href="#" className="hover:underline">Diplomados</a></li>
-              <li><a href="#" className="hover:underline">Nosotros</a></li>
+            <div>
+                  <Link
+                    href="/"
+                    className="text-darkblue dark:text-white dark:hover:text-blue-100 transition duration-100 hover:text-primaryblue active:text-primaryblue"
+                  >
+                    Inicio
+                  </Link>
+                </div>
+
+                <div>
+                  <Link
+                    href="/diplomados"
+                    className="text-darkblue dark:text-white dark:hover:text-blue-100 transition duration-100 hover:text-primaryblue active:text-primaryblue"
+                  >
+                    Diplomados
+                  </Link>
+                </div>
+                <div>
+                  <Link
+                    href="/certs"
+                    className="text-darkblue dark:text-white dark:hover:text-blue-100 transition duration-100 hover:text-primaryblue active:text-primaryblue"
+                  >
+                    Certificados
+                  </Link>
+                </div>
+                <div>
+                  <Link
+                    href="/????"
+                    className="text-darkblue dark:text-white dark:hover:text-blue-100 transition duration-100 hover:text-primaryblue active:text-primaryblue"
+                  >
+                    Aula Virtual
+                  </Link>
+                </div>
+
+
               <li><a href="#" className="hover:underline">¡Inscríbete!</a></li>
             </ul>
           </div>
@@ -56,11 +90,44 @@ export default function Footer() {
           <div className="md:col-span-1">
             <h3 className="text-lg font-bold mb-4">NUESTROS DIPLOMADOS EN:</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:underline">Ingeniería Vial</a></li>
-              <li><a href="#" className="hover:underline">Ingeniería Agronoma</a></li>
-              <li><a href="#" className="hover:underline">Ingeniería Civil</a></li>
-              <li><a href="#" className="hover:underline">Ingeniería Ambiental</a></li>
-              <li><a href="#" className="hover:underline">Ingeniería de Industrias Alimentarias</a></li>
+            <div>
+                  <Link
+                    href="/diplomados"
+                    className="text-darkblue dark:text-white dark:hover:text-blue-100 transition duration-100 hover:text-primaryblue active:text-primaryblue"
+                  >
+                    Ingeniería Agronoma
+                  </Link>
+                </div>
+                <div>
+                  <Link
+                    href="/diplomados"
+                    className="text-darkblue dark:text-white dark:hover:text-blue-100 transition duration-100 hover:text-primaryblue active:text-primaryblue"
+                  >
+                    Ingeniería Civi
+                  </Link>
+                </div> <div>
+                  <Link
+                    href="/diplomados"
+                    className="text-darkblue dark:text-white dark:hover:text-blue-100 transition duration-100 hover:text-primaryblue active:text-primaryblue"
+                  >
+                    Ingeniería Ambiental
+                  </Link>
+                </div> <div>
+                  <Link
+                    href="/diplomados"
+                    className="text-darkblue dark:text-white dark:hover:text-blue-100 transition duration-100 hover:text-primaryblue active:text-primaryblue"
+                  >
+                    Ingeniería de Industrias Alimentarias
+                  </Link>
+                </div> <div>
+                  <Link
+                    href="/diplomados"
+                    className="text-darkblue dark:text-white dark:hover:text-blue-100 transition duration-100 hover:text-primaryblue active:text-primaryblue"
+                  >
+                   Derecho
+                  </Link>
+                </div>
+
             </ul>
           </div>
   
