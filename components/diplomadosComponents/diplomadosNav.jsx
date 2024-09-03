@@ -74,13 +74,7 @@ export default function App() {
               </CardBody>
             </Card>
           </Tab>
-          <Tab key="anothers" title="Otras Profesiones">
-            <Card className="shadow-lg border border-gray-200">
-              <CardBody className="dark:bg-darkblue bg-lightblue">
-                {/* Contenido para otras profesiones */}
-              </CardBody>
-            </Card>
-          </Tab>
+          
         </Tabs>
       </div>
     </div>

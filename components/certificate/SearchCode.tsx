@@ -117,7 +117,7 @@ const SearchName: React.FC<SearchCodeProps> = ({ onSearchCode }) => {
         <Modal open={open} onClose={() => setOpen(false)}>
           <div className=" flex justify-center mb-4 gap-2">
             <Image
-              src={"/certificate/UNP.png"}
+              src={"/certificate/"}
               alt="ecomas"
               className="md:w-20 w-16  object-contain mt-2"
               width={200}
@@ -125,7 +125,7 @@ const SearchName: React.FC<SearchCodeProps> = ({ onSearchCode }) => {
               priority={true}
             />
             <Image
-              src={"/certificate/LOGO-VERTICAL-COLOR.png"}
+              src={"/certificate/"}
               alt="ecomas"
               className="block dark:hidden md:w-20  w-16 h-[125px] md:mt-[13px] mt-[11px] object-contain"
               width={200}
@@ -133,7 +133,7 @@ const SearchName: React.FC<SearchCodeProps> = ({ onSearchCode }) => {
               priority={true}
             />
             <Image
-              src={"/image/EcomasVert_dark.png"}
+              src={"/image/"}
               alt="ecomas"
               className="hidden dark:block md:w-20  w-16 h-[125px] md:mt-[13px] mt-[11px] object-contain"
               width={200}
@@ -141,7 +141,7 @@ const SearchName: React.FC<SearchCodeProps> = ({ onSearchCode }) => {
               priority={true}
             />
             <Image
-              src={"/certificate/CAL.png"}
+              src={"/certificate/"}
               alt="ecomas"
               className="md:w-20  w-16 object-contain mt-2"
               width={200}
