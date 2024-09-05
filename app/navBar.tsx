@@ -48,8 +48,8 @@ const Header = () => {
         onMenuOpenChange={setIsMenuOpen}
         maxWidth={"full"}
         position="sticky"
-        className="z-0 hidden md:block bg-gradient-to-b from-purple-900 to-blue-900 dark:bg-gradient-to-b dark:from-gray-800 dark:to-black" // Color de fondo del navbar principal
-      >
+        className="z-0 hidden md:block bg-gradient-to-b from-blue-400 to-green-400 dark:bg-gradient-to-b dark:from-blue-900 dark:to-green-900"
+        >
         <Link href="/">
           <Image
             src={imageSrc}
@@ -60,24 +60,25 @@ const Header = () => {
           />
         </Link>
         <NavbarContent justify="center">
-          <NavbarItem>
-            <Link href="/certs" passHref legacyBehavior>
-              <Button className="bg-blue-100 border-blue-200 border text-blackblue hover:scale-105">
-                Ver Certificados
-              </Button>
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Button
-              target="_blank"
-              as={Link}
-              className="bg-blue-100 border-blue-200 border text-blackblue hover:scale-105"
-              href="https://site2.q10.com/login?ReturnUrl=%2F&aplentId=0959465f-37c3-4032-803b-bbfc499af7a3"
-            >
-              Aula Virtual
-            </Button>
-          </NavbarItem>
-        </NavbarContent>
+  <NavbarItem>
+    <Link href="/certs" passHref legacyBehavior>
+      <Button className="bg-transparent border-transparent text-blackblue hover:bg-blue-100 hover:border-blue-200 hover:scale-105">
+        Ver Certificados
+      </Button>
+    </Link>
+  </NavbarItem>
+  <NavbarItem>
+    <Button
+      target="_blank"
+      as={Link}
+      className="bg-transparent border-transparent text-blackblue hover:bg-blue-100 hover:border-blue-200 hover:scale-105"
+      href="https://site2.q10.com/login?ReturnUrl=%2F&aplentId=0959465f-37c3-4032-803b-bbfc499af7a3"
+    >
+      Aula Virtual
+    </Button>
+  </NavbarItem>
+</NavbarContent>
+    
       </Navbar>
       <Navbar
         isMenuOpen={isMenuOpen}
@@ -177,5 +178,8 @@ const Header = () => {
     </>
   );
 };
-
+/* <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse pl-0 ml-0">
+          <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />
+          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+        </Link>*/
 export default Header;
