@@ -11,7 +11,7 @@ export default function Footer() {
     <div className="container mx-auto px-4">
       {/* Redes Sociales */}
       <div className="mr-12 hidden lg:block">
-        <p className="mb-2">Síguenos en nuestras redes sociales:</p>
+        <p className="mb-2">Síguenos en nuestras redes sociales</p>
         <div className="flex justify-end space-x-4">
           <a href="https://web.facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300">
             <FaFacebookF size={24} />
