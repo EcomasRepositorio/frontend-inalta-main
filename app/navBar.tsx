@@ -20,12 +20,12 @@ import { UserCircleIcon } from "@heroicons/react/solid";
 
 const Header = () => {
   const { theme, resolvedTheme } = useTheme();
-  const [imageSrc, setImageSrc] = useState("/image/inalta3.png"); // imagen por defecto
+  const [imageSrc, setImageSrc] = useState("/image/logo_inal_vert.png"); // imagen por defecto
 
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   useEffect(() => {
     // actualiza la imagen cuando el tema cambia
-    setImageSrc(resolvedTheme === "dark" ? "/image/inalta3_white.png" : "/image/inalta3_white.png");
+    setImageSrc(resolvedTheme === "dark" ? "/image/logo_inal_vert.png" : "/image/logo_inal_vert.png");
   }, [resolvedTheme]);
 
   const handleMenuItemClick = () => {
@@ -48,7 +48,7 @@ const Header = () => {
         onMenuOpenChange={setIsMenuOpen}
         maxWidth={"full"}
         position="sticky"
-        className="z-0 hidden md:block bg-gradient-to-b from-blue-400 to-green-400 dark:bg-gradient-to-b dark:from-blue-900 dark:to-green-900"
+        className="z-0 hidden md:block bg-gradient-to-b from-green-400 to-green-300 dark:bg-gradient-to-b dark:from-blue-900 dark:to-green-900"
         >
         <Link href="/">
           <Image
@@ -83,7 +83,7 @@ const Header = () => {
       <Navbar
         isMenuOpen={isMenuOpen}
         onMenuOpenChange={setIsMenuOpen}
-        className="z-20 bg-gradient-to-b from-blue-900 to-white dark:bg-gradient-to-b dark:from-black dark:{#f5f5f5}"
+        className="z-20 bg-gradient-to-b from-green-300 to-blue-400  dark:bg-gradient-to-b dark:from-black dark:{#f5f5f5}"
         // Color de fondo del navbar móvil
         position="sticky"
       >

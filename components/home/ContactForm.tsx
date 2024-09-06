@@ -32,7 +32,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contacto" className="bg-gradient-to-t from-purple-900 p-8 rounded-xl">
+    <section id="contacto" className="bg-gradient-to-t from-blue-400 p-8 rounded-xl">
       <div className="flex flex-col md:flex-row items-center">
         {/* Left Side - Contact Information */}
         <div className="w-full md:w-1/2 p-6 bg-transparent text-white rounded-lg">

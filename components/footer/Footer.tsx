@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer id="footer" className="bg-gradient-to-b from-purple-900 to-blue-900 text-white py-8">
+    <footer id="footer" className="bg-gradient-to-b from-blue-400 to-green-400 text-white py-8">
     <div className="container mx-auto px-4">
       {/* Redes Sociales */}
       <div className="mr-12 hidden lg:block">
