@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -12,21 +12,13 @@ import {
   NavbarItem,
   Button,
 } from "@nextui-org/react";
-import ThemeSwitcher from "../components/ThemeSwitcher";
-import { useTheme } from "next-themes";
 import NavLinks from "./nav-links";
 import Link from "next/link";
 import { UserCircleIcon } from "@heroicons/react/solid";
 
 const Header = () => {
-  const { theme, resolvedTheme } = useTheme();
   const [imageSrc, setImageSrc] = useState("/image/logo_inal_vert.png"); // imagen por defecto
-
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  useEffect(() => {
-    // actualiza la imagen cuando el tema cambia
-    setImageSrc(resolvedTheme === "dark" ? "/image/logo_inal_vert.png" : "/image/logo_inal_vert.png");
-  }, [resolvedTheme]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMenuItemClick = () => {
     // Cierra el menú al hacer clic en un elemento
@@ -48,8 +40,8 @@ const Header = () => {
         onMenuOpenChange={setIsMenuOpen}
         maxWidth={"full"}
         position="sticky"
-        className="z-0 hidden md:block bg-gradient-to-b from-green-400 to-green-300 dark:bg-gradient-to-b dark:from-blue-900 dark:to-green-900"
-        >
+        className="z-0 hidden md:block bg-gradient-to-b from-blue-900 to-blue-600"
+      >
         <Link href="/">
           <Image
             src={imageSrc}
@@ -60,31 +52,29 @@ const Header = () => {
           />
         </Link>
         <NavbarContent justify="center">
-  <NavbarItem>
-    <Link href="/certs" passHref legacyBehavior>
-      <Button className="bg-transparent border-transparent text-blackblue hover:bg-blue-100 hover:border-blue-200 hover:scale-105">
-        Ver Certificados
-      </Button>
-    </Link>
-  </NavbarItem>
-  <NavbarItem>
-    <Button
-      target="_blank"
-      as={Link}
-      className="bg-transparent border-transparent text-blackblue hover:bg-blue-100 hover:border-blue-200 hover:scale-105"
-      href="https://site2.q10.com/login?ReturnUrl=%2F&aplentId=0959465f-37c3-4032-803b-bbfc499af7a3"
-    >
-      Aula Virtual
-    </Button>
-  </NavbarItem>
-</NavbarContent>
-    
+          <NavbarItem>
+            <Link href="/certs" passHref legacyBehavior>
+              <Button className="bg-transparent border-white border-1 text-blackblue hover:bg-blue-800 hover:border-blue-200 hover:scale-105">
+                Ver Certificados
+              </Button>
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Button
+              target="_blank"
+              as={Link}
+              className="bg-transparent border-white border-1 text-blackblue hover:bg-blue-800 hover:border-blue-200 hover:scale-105"
+              href="https://site2.q10.com/login?ReturnUrl=%2F&aplentId=0959465f-37c3-4032-803b-bbfc499af7a3"
+            >
+              Aula Virtual
+            </Button>
+          </NavbarItem>
+        </NavbarContent>
       </Navbar>
       <Navbar
         isMenuOpen={isMenuOpen}
         onMenuOpenChange={setIsMenuOpen}
-        className="z-20 bg-gradient-to-b from-green-300 to-blue-400  dark:bg-gradient-to-b dark:from-black dark:{#f5f5f5}"
-        // Color de fondo del navbar móvil
+        className="z-20 bg-gradient-to-b from-blue-600 to-sky to-dark to-blue-400"
         position="sticky"
       >
         <NavbarContent className="sm:hidden w-full" justify="center">
@@ -104,7 +94,7 @@ const Header = () => {
               </Link>
               <div>
                 <Link href="/certs">
-                  <button className="bg-primaryblue mr-2 text-white py-3 px-1 rounded text-xs">
+                  <button className="bg-transparent border-transparen mr-2 text-white py-3 px-1 rounded text-xs">
                     Certificados
                   </button>
                 </Link>
@@ -112,7 +102,7 @@ const Header = () => {
                   href="https://site2.q10.com/login?ReturnUrl=%2F&aplentId=0959465f-37c3-4032-803b-bbfc499af7a3"
                   target="_blank"
                 >
-                  <button className="bg-primaryblue text-white py-3 px-1 rounded text-xs">
+                  <button className="bg-transparent border-white text-white py-3 px-1 rounded text-xs">
                     Aula Virtual
                   </button>
                 </a>
@@ -129,7 +119,7 @@ const Header = () => {
                 width="30"
                 height="30"
                 viewBox="0 0 512 512"
-                className="w-6 h-6 bg-[#F5F5F5] dark:bg-[#979595]"
+                className="w-6 h-6"
               >
                 <g fill="currentColor">
                   <g>
@@ -147,7 +137,6 @@ const Header = () => {
                 </g>
               </svg>
             </Link>
-            <ThemeSwitcher />
           </NavbarContent>
         </NavbarContent>
         <NavbarMenu>
@@ -159,27 +148,16 @@ const Header = () => {
                 className="text-lg mr-4"
                 onClick={handleMenuItemClick} // Agrega un manejador de clic para cerrar el menú
               >
-                <button className="w-full bg-primaryblue text-white py-2 px-6 rounded">
+                <button className="w-full bg-primaryblue text-black py-2 px-6 rounded">
                   {link.name}
                 </button>
               </Link>
             </NavbarMenuItem>
           ))}
-          <ThemeSwitcher />
-          <Link href="/login" passHref legacyBehavior>
-            <UserCircleIcon
-              width={40}
-              height={40}
-              onClick={handleMenuItemClick}
-            ></UserCircleIcon>
-          </Link>
         </NavbarMenu>
       </Navbar>
     </>
   );
 };
-/* <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse pl-0 ml-0">
-          <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-        </Link>*/
+
 export default Header;

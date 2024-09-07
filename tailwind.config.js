@@ -20,10 +20,10 @@ module.exports = {
         'roboto': ['Roboto', 'system-ui'],
       },
       colors: {
-        'blackblue': '#27272a',
+        'blackblue': '#f0f0f0',
         'gray-light': '#f5f5f5', // Añadir color gris claro
-        'primaryblue': '#3f3f46',
-        'primaryblack': '#3f3f46',
+        'primaryblue': '#f5f5f5',
+        'primaryblack': '#f0f0f0',
         'purple-dark': '#6a0dad', // Morado oscuro
       },
       textColor: {

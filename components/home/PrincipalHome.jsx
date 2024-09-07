@@ -13,17 +13,17 @@ import Link from "next/link";
 
 const images = [
   { src: "/image/image1.png" },
-  { src: "/IMAGEN_2.png" },
+  { src: "/image/image2.png" },
 ];
 
 const texts = [
-  "Tu puerta abierta al conocimiento en vivo, desde donde estés...",
-  "Con nuestros Cursos y Diplomados de especialización...",
+  "Con nuestros programas especializados, adquiere las habilidades que te llevarán más lejos",
+  "Con nuestros programas de especialización, desarrolla las competencias que el mundo necesita",
 ];
 
 const tittles = [
-  { tittle1: "DIPLOMADOS, CURSOS PROMÁS", color1: "from-purple-700 to-pink-500" },
-  { tittle2: "¡CONSTRUYENDO", color2: "text-customPurple", tittle3: "UN MUNDO MEJOR!", color3: "text-customPink"},
+  { tittle1: "Aprende y crece, estés donde estés", color1: "bg-gradient-to-b from-blue-500 to-green-500" },
+  { tittle2: "Formando líderes ", color2: "text-from-black", tittle3: "para construir el futuro que soñamos.", color3: "text-from-dark"},
 ];
 
 const icons = [
@@ -32,8 +32,8 @@ const icons = [
 ];
 
 const buttons = [
-  {text: "Contacto", link: "#contact"},
-  {text:"Informes", link: "#contact"},
+  {text: "Contacto", link: "#contacto"},
+  {text:"Informes", link: "#contacto"},
 ];
 
 const PrincipalHome = () => {
@@ -63,14 +63,33 @@ const PrincipalHome = () => {
   };
 
   return (
-    <div className="bg-blue-400 relative">
+<div className="z-0 block md:flex bg-gradient-to-b from-blue-400">
+
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      className="relative z-10 flex flex-col md:flex-row max-w-screen-xl mx-auto items-center justify-between w-full">
+  
+      {/* Sección de imagen */}
       <motion.div
+        key={index}
         initial="hidden"
         animate="visible"
-        className="relative z-10 flex flex-col-reverse md:flex-row max-w-screen-xl mx-auto items-center justify-between w-full">
-
+        variants={slideInFromRight(1)}
+        className="lg:text-3xl text-black mb-10"  
+      >
+        <Image
+          key={index}
+          src={images[index].src}
+          alt="icons"
+          height={800}
+          width={800}
+          priority={true}
+        />
+      </motion.div>
         {/* Sección de iconos y texto */}
         <div className="mb-10 lg:mb-0 p-2 md:mt-20">
+          {/* Sección de iconos de redes sociales (arriba del texto) */}
           {icons.map((icon, i) => (
             i === index && (
             <motion.div
@@ -79,26 +98,26 @@ const PrincipalHome = () => {
               animate="visible"
               exit="hidden"
               variants={slideInFromTop}
-              className="py-1 lg:text-left text-center px-1 opacity-[0.9]"
+              className="py-1 lg:text-left text-center px-1 "
             >
               <h1 className="text-gray-100 lg:text-2xl text-2xl text-center inline-flex lg:gap-6 gap-3">
                 <Link key={`link-${i}`} href='https://www.facebook.com/people/Corporaci%C3%B3n-Prom%C3%A1s/61552473052389/' target="_blank"
-                  className="border border-[#7042f88b] p-2 rounded-full transition-transform transform hover:scale-150 shadow-xl shadow-[#7042f88b]">
+                  className="border border-gradient-to-r  to-blue-500 p-2 rounded-full transition-transform transform hover:scale-150 shadow-xl ">
                   {icon.img1}
                 </Link>
                 <Link key={`link-${i+1}`} href='https://www.instagram.com/corporacion.promas/' target="_blank"
-                  className="border border-[#7042f88b] p-2 rounded-full transition-transform transform hover:scale-150 shadow-xl shadow-[#7042f88b]">
+                  className="border border-gradient-to-r  to-blue-500 p-2 rounded-full transition-transform transform hover:scale-150 shadow-xl ">
                   {icon.img2}
                 </Link>
                 <Link key={`link-${i+2}`} href='https://www.tiktok.com/@promas.corp' target="_blank"
-                  className="border border-[#7042f88b] p-2 rounded-full transition-transform transform hover:scale-150 shadow-xl shadow-[#7042f88b]">
+                  className="border border-gradient-to-r  to-blue-500 p-2 rounded-full transition-transform transform hover:scale-150 shadow-xl ">
                   {icon.img3}
                 </Link>
                 <Link key={`link-${i+3}`} href='https://wa.me/51984040264?text=Hola,%20deseo%20más%20información%20sobre%20los%20diplomados' target="_blank"
-                  className="border border-[#7042f88b] p-2 rounded-full transition-transform transform hover:scale-150 shadow-xl shadow-[#7042f88b]">
+                  className="border border-gradient-to-r  to-blue-500 p-2 rounded-full transition-transform transform hover:scale-150 shadow-xl ">
                   {icon.img4}
                 </Link>
-                <Link key={`link-${i+4}`} href='https://www.youtube.com/@Corporacion.Promas' target="_blank" className="border border-[#7042f88b] p-2 rounded-full transition-transform transform hover:scale-150 shadow-xl shadow-[#7042f88b]">
+                <Link key={`link-${i+4}`} href='https://www.youtube.com/@Corporacion.Promas' target="_blank" className="border border-gradient-to-r  to-blue-500 p-2 rounded-full transition-transform transform hover:scale-150 shadow-xl ">
                   {icon.img5}
                 </Link>
               </h1>
@@ -106,6 +125,7 @@ const PrincipalHome = () => {
             )
           ))}
 
+          {/* Títulos y textos */}
           {tittles.map((tittle, i) => (
             i === index && (
             <React.Fragment key={`tittles-${i}`}>
@@ -152,6 +172,7 @@ const PrincipalHome = () => {
           )
           ))}
 
+          {/* Textos adicionales */}
           {texts.map((text, i) => (
             i === index && (
               <motion.p
@@ -160,12 +181,13 @@ const PrincipalHome = () => {
                 animate="visible"
                 exit="hidden"
                 variants={slideInFromLeft(1.5)}
-                className="lg:text-3xl text-gray-200 mb-10">
+                className="lg:text-3xl text-black mb-10">
                 {text}
               </motion.p>
             )
           ))}
 
+          {/* Botones */}
           {buttons.map((button, i) => ( i === index && (
           <motion.a
             key={i}
@@ -174,29 +196,11 @@ const PrincipalHome = () => {
             exit="hidden"
             variants={slideInFromLeft(2)}
             href={button.link}
-            className="py-2 lg:text-2xl px-10 font-mono text-center button-primary text-white cursor-pointer rounded-lg">
+            className="py-2 lg:text-2xl px-10 font-mono text-center button-primary text-black cursor-pointer rounded-lg">
             {button.text}
           </motion.a>
           )))}
         </div>
-
-        {/* Sección de imagen */}
-        <motion.div
-          key={index}
-          initial="hidden"
-          animate="visible"
-          variants={slideInFromRight(1)}
-          className="w-full h-full flex justify-center items-center text-center mt-32"
-        >
-          <Image
-            key={index}
-            src={images[index].src}
-            alt="icons"
-            height={800}
-            width={800}
-            priority={true}
-          />
-        </motion.div>
       </motion.div>
 
       {/* Botones de navegación */}
