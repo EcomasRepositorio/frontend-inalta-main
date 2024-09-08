@@ -22,9 +22,14 @@ module.exports = {
       colors: {
         'blackblue': '#f0f0f0',
         'gray-light': '#f5f5f5', // Añadir color gris claro
-        'primaryblue': '#f5f5f5',
+        'primaryblue': '##020617',
         'primaryblack': '#f0f0f0',
-        'purple-dark': '#6a0dad', // Morado oscuro
+        'purple-dark': '#020617', // Morado oscuro 
+        'primaryBlue': '#006174', 
+        'primaryGreen': '#a1d302', 
+
+
+
       },
       textColor: {
         'textrosa': '#ff00d4',

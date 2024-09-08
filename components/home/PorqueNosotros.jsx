@@ -42,15 +42,15 @@ const PorqueNosotros = () => {
     { name: '+1500', description: 'Alumnos beneficiados', icon: UsersIcon },
     { name: '+50', description: 'Diplomados disponibles', icon: AcademicCapIcon },
     { name: '+600', description: 'Cursos disponibles', icon: BookOpenIcon },
-    { name: '+1000', description: 'Cursos impartidas', icon: StarIcon },
+    { name: '+1000', description: 'Cursos impartidos', icon: StarIcon },
   ];
 
   return (
-<div id="porque-nosotros" className="bg-transparent py-16 px-4 sm:px-6 lg:px-8">
-<div className="max-w-7xl mx-auto">
+    <div id="porque-nosotros" className="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <motion.h2
-            className="text-primaryblue dark:text-white text-4xl font-extrabold mb-4"
+            className="text-blue-600 dark:text-white text-4xl font-extrabold mb-4"
             variants={textVariants}
             initial="hidden"
             animate={controls}
@@ -58,7 +58,7 @@ const PorqueNosotros = () => {
             ¿Por qué elegir Inalta?
           </motion.h2>
           <motion.p
-            className="text-gray-400 dark:text-white text-lg sm:text-xl mx-auto max-w-3xl"
+            className="text-gray-700 dark:text-white text-lg sm:text-xl mx-auto max-w-3xl"
             variants={textVariants}
             initial="hidden"
             animate={controls}
@@ -69,14 +69,18 @@ const PorqueNosotros = () => {
             alcanzar tus metas.
           </motion.p>
         </div>
-        <div className="flex justify-around flex-wrap gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <motion.div 
               key={index} 
-              className="text-center bg-white dark:bg-gray-700 shadow-lg rounded-lg p-6 border border-gray-200 dark:border-gray-600"
+              className="text-center bg-gray-200 dark:bg-gray-800 shadow-2xl rounded-lg p-6 border border-gray-300 dark:border-gray-600 transform hover:-translate-y-2 transition-all duration-300 ease-out"
               variants={statsVariants}
+              initial="hidden"
+              animate={controls}
             >
-              <feature.icon className="h-16 w-16 text-primaryblue dark:text-white mb-4 mx-auto" aria-hidden="true" />
+              <div className="flex items-center justify-center mb-6">
+                <feature.icon className="h-16 w-16 text-blue-600 dark:text-white mb-4 mx-auto" aria-hidden="true" />
+              </div>
               <dt className="text-3xl font-extrabold text-gray-800 dark:text-white">{feature.name}</dt>
               <dd className="mt-2 text-sm text-gray-600 dark:text-gray-300">{feature.description}</dd>
             </motion.div>

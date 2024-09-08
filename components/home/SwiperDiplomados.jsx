@@ -2,72 +2,81 @@ import React from "react";
 import ScrollAnimation from "./scrollAnimation";
 import Image from "next/image";
 import Link from "next/link";
-import { GrFormNextLink } from "react-icons/gr";
 
 const NuestrosDiplomados = () => {
   const cursosDestacados = [
     {
       imageUrl: "/image/diplo_tecnifi.jpg",
       title: "Sistemas de Riego Tecnificado",
+      description:
+        "Adquiere conocimientos para mejorar la eficiencia de los sistemas de riego con tecnologías avanzadas. ",
     },
     {
       imageUrl: "/image/diplo_municipal.jpg",
       title: "Gestión Ambiental Municipal y Regional",
+      description:
+        "Aprende a gestionar proyectos ambientales a nivel municipal y regional.",
     },
     {
       imageUrl: "/image/diplo_ssoma.jpg",
       title: "SSOMA",
+      description:
+        "Gestión de seguridad y salud ocupacional, asegurando un entorno laboral seguro y saludable.",
     },
     {
       imageUrl: "/image/diplo_alim.jpg",
       title: "Gestión de la calidad e inocuidad alimentaria",
+      description:
+        "Desarrolla habilidades para asegurar la calidad e inocuidad en los procesos alimentarios.",
     },
     {
       imageUrl: "/image/bim_model.jpg",
       title: "Modelamiento BIM",
+      description:
+        "Técnicas avanzadas en la gestión y modelamiento de la información de construcción con BIM.",
     },
     {
       imageUrl: "/image/vialdiplo.jpg",
       title: "Ingeniería Vial",
+      description: "Estudia la planificación y gestión de proyectos de infraestructura vial.",
     },
-    
   ];
 
   return (
     <ScrollAnimation>
-      <div className="bg-[#F5F5F5] dark:bg-[#979595]">
-        <div className="px-2 p-3 md:p-8 transform rounded-lg mx-auto max-w-screen-xl">
-        
+      <div className="bg-transparent py-6 ">
+        <div className="px-2 p-3 md:p-8 transform rounded-lg mx-auto max-w-screen-xl " >
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {cursosDestacados.map((curso, index) => (
               <div
                 key={index}
-                className="w-full shadow-lg pt-2 hover:opacity-90 rounded-lg bg-[#F5F5F5] dark:bg-[#7a7777]"
+                className="w-full shadow-lg rounded-lg bg-primaryBlue text-white flex flex-col justify-between"
               >
-                <div className="p-2 rounded-lg">
+                {/* Imagen en la parte superior */}
+                <div className="rounded-t-lg overflow-hidden">
                   <Image
                     src={curso.imageUrl}
-                    alt="Imagen banner"
-                    width={450}
-                    height={300}
-                    className="object-cover h-96 rounded-lg w-full"
+                    alt={curso.title}
+                    width={900}
+                    height={100}
+                    className="object-cover w-full h-48"
                   />
                 </div>
-                <Link href="/diplomados" passHref legacyBehavior>
-                  <div className="mx-2 flex items-center justify-between dark:bg-[#2b2727] dark:text-white dark:border-0 bg-[#F5F5F5]0 border-dark-200 border text-bg-[#F5F5F5] rounded-md text-xs font-medium px-4 py-1">
-                    <span>Más información</span>
-                    <span>
-                      <GrFormNextLink className="w-6 h-6" />
-                    </span>
-                  </div>
-                </Link>
-                <div className="flex items-center justify-center px-4 pt-1 mb-12 pb-2 min-h-[4rem]">
-                  <a
-                    href="/"
-                    className="font-normal text-center inline-block hover:text-bg-[#F5F5F5] transition duration-500 ease-in-out"
-                  >
-                    {curso.title}
-                  </a>
+
+                {/* Contenido del curso */}
+                <div className="px-6 py-4">
+                  <span className="text-sm font-bold uppercase text-white">Diplomados</span>
+                  <h3 className="font-bold text-2xl text-white mb-2">{curso.title}</h3>
+                  <p className="text-sm text-white mb-4">{curso.description}</p>
+                </div>
+
+                {/* Botón en la parte inferior */}
+                <div className="px-6 pb-6">
+                  <Link href="/diplomados" passHref>
+                    <div className="bg-transparent border border-white text-white font-semibold text-center py-2 rounded-lg hover:bg-white hover:text-purple-700 transition-colors duration-300 cursor-pointer">
+                      Ver Diplomado
+                    </div>
+                  </Link>
                 </div>
               </div>
             ))}

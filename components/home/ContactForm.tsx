@@ -38,10 +38,10 @@ const ContactForm = () => {
         <div className="w-full md:w-1/2 p-6 bg-transparent text-white rounded-lg">
 F        <div className="flex flex-col items-center">
             <img
-              src="/image/inaltaLogGpt.png"
+              src="/image/inaltcont.png"
               alt="Logo de Inalta"
               className="mb-4"
-              style={{ width: '500px', height: 'auto' }} // Establece un ancho fijo y altura automática para mantener la proporción
+              style={{ width: '300px', height: 'auto' }} // Establece un ancho fijo y altura automática para mantener la proporción
             />
             <h2 className="text-3xl font-bold"></h2>
             <p className="mt-2 text-center">
@@ -82,7 +82,7 @@ F        <div className="flex flex-col items-center">
                 <input
                   {...register('nombres', { required: true })}
                   type="text"
-                  className="w-full px-3 py-2 text-gray-800 bg-white border-2 border-purple-600 rounded-lg focus:outline-none focus:border-purple-400"
+                  className="w-full px-3 py-2 text-gray-800 bg-white border-2 border-blue-500 rounded-lg focus:outline-none focus:border-blue-500"
                   placeholder="Nombres completos"
                 />
               </div>
@@ -91,7 +91,7 @@ F        <div className="flex flex-col items-center">
                 <input
                   {...register('celular', { required: true, pattern: /^\d{9}$/ })}
                   type="text"
-                  className="w-full px-3 py-2 text-gray-800 bg-white border-2 border-purple-600 rounded-lg focus:outline-none focus:border-purple-400"
+                  className="w-full px-3 py-2 text-gray-800 bg-white border-2 border-blue-500 rounded-lg focus:outline-none focus:border-blue-400"
                   placeholder="999 999 999"
                 />
               </div>
@@ -101,7 +101,7 @@ F        <div className="flex flex-col items-center">
               <input
                 {...register('correo', { required: true, pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/ })}
                 type="email"
-                className="w-full px-3 py-2 text-gray-800 bg-white border-2 border-purple-600 rounded-lg focus:outline-none focus:border-purple-400"
+                className="w-full px-3 py-2 text-gray-800 bg-white border-2 border-blue-600 rounded-lg focus:outline-none focus:border-blue-400"
                 placeholder="Ej: ejemplo@gmail.com"
               />
               {errors.correo && <span className="text-red-500 text-sm">Introduce un correo electrónico válido</span>}
@@ -111,7 +111,7 @@ F        <div className="flex flex-col items-center">
               <input
                 {...register('asunto', { required: true })}
                 type="text"
-                className="w-full px-3 py-2 text-gray-800 bg-white border-2 border-purple-600 rounded-lg focus:outline-none focus:border-purple-400"
+                className="w-full px-3 py-2 text-gray-800 bg-white border-2 border-sky-700 rounded-lg focus:outline-none focus:border-blue-400"
                 placeholder="Asunto"
               />
             </div>
@@ -119,13 +119,13 @@ F        <div className="flex flex-col items-center">
               <label className="block text-white font-medium">Mensaje</label>
               <textarea
                 {...register('mensaje')}
-                className="w-full h-32 px-3 py-2 text-gray-800 bg-white border-2 border-purple-600 rounded-lg focus:outline-none focus:border-purple-400"
+                className="w-full h-32 px-3 py-2 text-gray-800 bg-white border-2 border-blue-700 rounded-lg focus:outline-none focus:border-blue-500"
                 placeholder="Escribe tu mensaje aquí..."
               ></textarea>
             </div>
             <Button
               type="submit"
-              className="w-full bg-purple-700 text-white py-2 rounded-lg hover:bg-purple-800"
+              className="w-full bg-blue-800 text-white py-2 rounded-lg hover:bg-blue-500"
             >
               {sending ? 'Enviando...' : 'Enviar mensaje'}
             </Button>

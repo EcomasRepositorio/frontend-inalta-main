@@ -20,27 +20,22 @@ const NuestrosDiplomados = dynamic(
 const ContactForm = dynamic(() => import("@/components/home/ContactForm"));
 const ScrollToBotButton = dynamic(() => import("@/components/home/bounceDown"));
 
-
-
 export default function Main() {
-
-
   return (
     <main className="relative z-0">
       {/* Botón para cambiar de tema */}
-       {/* Botón para cambiar de tema */}
-       <div className="">
+      {/* Botón para cambiar de tema */}
+      <div className="">
         <PrincipalHome />
       </div>
       <div className="mx-auto max-w-screen-xl">
         <NuestrosDiplomados />
       </div>
-      <div className="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial dark:from-teal-950 from-blue-200 to-transparent right-52 top-[25%] hidden md:block"></div>
-      <div className="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial dark:from-cyan-950  from-blue-200 to-transparent right-[5%] top-[1%] block md:hidden"></div>
-      <div className="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial dark:from-cyan-950 from-violet-200 to-transparent left-52 top-[25%] hidden md:block"></div>
-
-      <div className=" rounded-lg  mx-auto max-w-screen-xl ">
-      <SwiperCarrouselDiplomados />
+      <div className="min-h-screen bg-gradient-to-b from-white via-blue-200 to-white">
+  <div className="rounded-lg mx-auto max-w-screen-xl">
+    {/* Aquí puedes agregar tu contenido */}
+  </div>
+        <SwiperCarrouselDiplomados />
       </div>
       <div className=" absolute w-[500px] h-96 blur-2xl -z-10 bg-gradient-radial dark:from-cyan-950 from-blue-100 to-transparent top-[40%] right-24 transform -translate-x-1/2 hidden md:block"></div>
       <div className="absolute w-[500px] h-96 blur-2xl -z-10 bg-gradient-radial dark:from-cyan-950 from-blue-100 to-transparent top-[60%] left-1/2 transform -translate-x-1/2 hidden md:block"></div>

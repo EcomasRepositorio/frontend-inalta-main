@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer id="footer" className="bg-gradient-to-b from-blue-400 to-green-400 text-white py-8">
+    <footer id="footer" className="bg-gradient-to-b from-blue-400 to-blue-700 text-white py-8">
     <div className="container mx-auto px-4">
       {/* Redes Sociales */}
       <div className="mr-12 hidden lg:block">
@@ -35,7 +35,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logotipo y Descripción */}
           <div className="md:col-span-1 flex flex-col items-center md:items-start">
-            <Image src="/image/inaltafoter.png" alt="Binex" width={250} height={200}  className="mt-[-20px]" />
+            <Image src="/image/logo_inal_vert.png" alt="Binex" width={450} height={800}  className="mt-[-20px]" />
             <p className="mt-0 text-sm text-center md:text-left">Proporcionamos cursos y diplomados con aval de la EPG-UNP</p>
             <a href="/book" className="mt-2 text-sm text-white hover:underline flex items-center">
               <span role="img" aria-label="Libro de Reclamaciones" className="mr-2">📋</span> 
