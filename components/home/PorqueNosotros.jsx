@@ -50,7 +50,7 @@ const PorqueNosotros = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <motion.h2
-            className="text-blue-600 dark:text-white text-4xl font-extrabold mb-4"
+            className="text-black dark:text-white text-4xl font-extrabold mb-4"
             variants={textVariants}
             initial="hidden"
             animate={controls}
@@ -79,7 +79,7 @@ const PorqueNosotros = () => {
               animate={controls}
             >
               <div className="flex items-center justify-center mb-6">
-                <feature.icon className="h-16 w-16 text-blue-600 dark:text-white mb-4 mx-auto" aria-hidden="true" />
+                <feature.icon className="h-16 w-16 text-black dark:text-white mb-4 mx-auto" aria-hidden="true" />
               </div>
               <dt className="text-3xl font-extrabold text-gray-800 dark:text-white">{feature.name}</dt>
               <dd className="mt-2 text-sm text-gray-600 dark:text-gray-300">{feature.description}</dd>

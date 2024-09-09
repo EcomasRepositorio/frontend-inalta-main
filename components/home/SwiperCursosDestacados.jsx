@@ -1,85 +1,85 @@
 import React from "react";
-import ScrollAnimation from "./scrollAnimation";
 import Image from "next/image";
 import Link from "next/link";
-import { GrFormNextLink } from "react-icons/gr";
-import { motion, useAnimation } from "framer-motion";
 
-
-const NuestrosDiplomados = () => {
+const Courses = () => {
   const cursosDestacados = [
     {
-      imageUrl: "/image/diplo_tecnifi.jpg",
-      title: "Sistemas de Riego Tecnificado",
+      imageUrl: "/image/ing1.png",
+      title: "Topografía, Diseño Geométrico, Señalización y Seguridad Vial",
+      description:
+        "Curso integral de topografía, diseño geométrico, señalización y seguridad vial que abarca los fundamentos esenciales para la planificación, diseño y mantenimiento eficiente y seguro de infraestructuras viales.",
     },
     {
-      imageUrl: "/image/diplo_municipal.jpg",
-      title: "Gestión Ambiental Municipal y Regional",
+      imageUrl: "/image/ing2.png",
+      title: "Sistemas de Riego Tecnificado por Goteo",
+      description:
+        "Curso sobre implementación y gestión de sistemas agrícolas de riego con enfoque en la técnica de goteo.",
     },
     {
-      imageUrl: "/image/diplo_ssoma.jpg",
-      title: "SSOMA",
+      imageUrl: "/image/ing3.png",
+      title: "Valorización de Residuos Sólidos",
+      description:
+        "Explora estrategias sostenibles para gestionar residuos sólidos, promoviendo reciclaje, reutilización y conversión en recursos.",
     },
     {
-      imageUrl: "/image/diplo_alim.jpg",
-      title: "Gestión de la calidad e inocuidad alimentaria",
+      imageUrl: "/image/ing4.png",
+      title: "Calidad e Inocuidad Alimentaria",
+      description:
+        "Explora los principios y prácticas esenciales para garantizar la seguridad y calidad de los alimentos desde su producción hasta el consumo.",
     },
     {
-      imageUrl: "/image/bim_model.jpg",
-      title: "Modelamiento BIM",
+      imageUrl: "/image/ing1.png",
+      title: "Elaboración de Matriz IPERC - Mapa de Riesgos",
+      description:
+        "Curso de Elaboración de Matriz IPERC y Mapa de Riesgos: Enfocado en capacitar en la identificación, evaluación y gestión de riesgos laborales.",
     },
     {
-      imageUrl: "/image/vialdiplo.jpg",
-      title: "Ingeniería Vial",
+      imageUrl: "/image/ing2.png",
+      title: "Monitoreo de Agentes Ocupacionales",
+      description:
+        "Brinda conocimientos especializados en técnicas y estrategias para llevar a cabo el monitoreo efectivo de agentes ocupacionales.",
     },
   ];
 
   return (
-    <ScrollAnimation>
-      <div className="bg-transparent dark:bg-transparent">
-        <div className="px-2 p-3 md:p-8 transform rounded-lg mx-auto max-w-screen-xl">
-          <h2 className="text-primarywhite dark:text-f6f6f6 text-4xl font-extrabold mb-6 text-center">
-            Cursos Destacados
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {cursosDestacados.map((curso, index) => (
-              <div
-                key={index}
-                className="w-full max-w-sm shadow-lg pt-4 hover:opacity-100 rounded-lg bg-[#F5F5F5] dark:bg-[#7a7777]"
-              >
-                <div className="p-2 rounded-lg">
+    <section className="bg-transparent py-16">
+      <div className="container mx-auto px-5">
+        <h2 className="text-center text-black text-4xl font-extrabold mb-12">
+          Nuestros Cursos
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {cursosDestacados.map((curso, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300"
+            >
+              <div className="relative">
                 <Image
-                     src={curso.imageUrl}
-                     alt="Imagen banner"
-                     width={450}
-                     height={300}
-                     className="object-cover h-96 rounded-lg w-full"
-                  />
-                </div>
-                <div className="px-4 py-4">
-                  <a
-                    href="/"
-                    className="block font-semibold text-md text-whiteBlue dark:text-f5f5f5 mb-2 hover:text-primaryblue dark:hover:text-primaryblue transition-colors duration-300"
-                  >
-                    {curso.title}
-                  </a>
-                  <Link href="/diplomados" passHref>
-                    <div className="flex items-center justify-between bg-transparent dark:bg-transparent text-blackblue dark:text-white border-t border-gray-200 
-                    dark:border-gray-600 p-2 rounded-b-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300 cursor-pointer">
-                      <span>Más información</span>
-                      <span>
-                        <GrFormNextLink className="w-6 h-6" />
-                      </span>
-                    </div>
-                  </Link>
-                </div>
+                  src={curso.imageUrl}
+                  alt={curso.title}
+                  width={500}
+                  height={300}
+                  className="w-full h-auto object-cover"
+                />
               </div>
-            ))}
-          </div>
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-semibold text-blue-900 mb-4">
+                  {curso.title}
+                </h3>
+                <p className="text-gray-600 mb-6">{curso.description}</p>
+                  <Link href="/diplomados" passHref>
+                    <div className="inline-block py-2 px-4 text-base font-medium text-blue-900 border border-blue-900 rounded-full hover:bg-blue-900 hover:text-white transition-colors duration-300">
+                      Mas Información
+                    </div>
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    </ScrollAnimation>
+    </section>
   );
 };
 
-export default NuestrosDiplomados;
+export default Courses;
