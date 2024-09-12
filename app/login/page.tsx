@@ -31,7 +31,7 @@ const Login: React.FC = () => {
   const [form, setForm] = useState<Auth>(dataForm);
   const { theme } = useTheme();
   const imageSrc =
-    theme === "dark" ? "/image/ECOMAS-HORIZONTAL.png" : "/image/ecomas.png";
+    theme === "dark" ? "/image/" : "/image/ecomas.png";
 
   const [isVisible, setIsVisible] = useState(false);
 

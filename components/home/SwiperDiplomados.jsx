@@ -37,7 +37,7 @@ const cursos = [
 
 const ExpandableCard = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-traslate">
+    <div className="flex justify-center items-center min-h-screen bg-transparent">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {cursos.map((curso, index) => (
           <Link href={curso.link} key={index} passHref>
@@ -51,7 +51,7 @@ const ExpandableCard = () => {
                   className="object-cover rounded-lg h-[400px]" // Definir la altura de la imagen
                 />
               </div>
-              <div className="absolute bottom-0 left-0 right-0 bg-blue-600 bg-opacity-90 text-white text-center py-4 opacity-0 transition-opacity group-hover:opacity-100">
+              <div className="absolute bottom-0 left-0 right-0 bg-blue-600 bg-opacity-90 text-white text-center py-4 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
                 <h3 className="text-xl font-bold">{curso.title}</h3> {/* Texto más grande */}
               </div>
             </div>

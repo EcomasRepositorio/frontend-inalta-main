@@ -5,6 +5,7 @@ import Link from "next/link";
 
 
 
+
 export default function Footer() {
   return (
     <footer id="footer" className="bg-gradient-to-b from-blue-400 to-blue-700 text-white py-8">

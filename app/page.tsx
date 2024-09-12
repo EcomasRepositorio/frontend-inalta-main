@@ -32,18 +32,19 @@ export default function Main() {
         <NuestrosDiplomados />
       </div>
       <div className="min-h-screen bg-gradient-to-b from-white via-blue-200 to-white">
-  <div className="rounded-lg mx-auto max-w-screen-xl">
-    {/* Aquí puedes agregar tu contenido */}
-  </div>
+        <div className="rounded-lg mx-auto max-w-screen-xl">
+        </div>
         <SwiperCarrouselDiplomados />
-      </div>
-      <div className=" absolute w-[500px] h-96 blur-2xl -z-10 bg-gradient-radial dark:from-cyan-950 from-blue-100 to-transparent top-[40%] right-24 transform -translate-x-1/2 hidden md:block"></div>
-      <div className="absolute w-[500px] h-96 blur-2xl -z-10 bg-gradient-radial dark:from-cyan-950 from-blue-100 to-transparent top-[60%] left-1/2 transform -translate-x-1/2 hidden md:block"></div>
-      <div className="absolute w-[500px] h-96 blur-2xl -z-10 bg-gradient-radial dark:from-cyan-950 from-violet-100 to-transparent top-[60%] left-[40%] transform -translate-x-1/2 hidden md:block"></div>
-      <div className="px-4 mx-auto rounded-lg p-4 md:p-2 ">
+        </div>
+      <div className="min-h-screen bg-gradient-to-b from-white via-whthe to-white">
+        <div className="rounded-lg mx-auto max-w-screen-xl">
+          {/* Aquí puedes agregar tu contenido */}
+        </div>
         <PorqueNosotros />
-      </div>
-      <div className=" mx-auto max-w-screen-xl ">
+        <div className="bg-transparent mx-auto max-w-screen-xl">
+          {/* Aquí va el contenido */}
+        </div>
+
         <CarouselCursosDestacados />
       </div>
       <div className=" w-full ">

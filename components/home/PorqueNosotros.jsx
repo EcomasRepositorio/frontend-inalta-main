@@ -46,7 +46,7 @@ const PorqueNosotros = () => {
   ];
 
   return (
-    <div id="porque-nosotros" className="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
+    <div id="porque-nosotros" className="bg-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <motion.h2
@@ -73,16 +73,16 @@ const PorqueNosotros = () => {
           {features.map((feature, index) => (
             <motion.div 
               key={index} 
-              className="text-center bg-gray-200 dark:bg-gray-800 shadow-2xl rounded-lg p-6 border border-gray-300 dark:border-gray-600 transform hover:-translate-y-2 transition-all duration-300 ease-out"
+              className="text-center bg-white dark:bg-gray-800 shadow-2xl rounded-lg p-6 border border-white dark:border-gray-600 transform hover:-translate-y-2 transition-all duration-300 ease-out"
               variants={statsVariants}
               initial="hidden"
               animate={controls}
             >
               <div className="flex items-center justify-center mb-6">
-                <feature.icon className="h-16 w-16 text-black dark:text-white mb-4 mx-auto" aria-hidden="true" />
+                {React.createElement(feature.icon, { className: "h-16 w-16 text-black dark:text-white mb-4 mx-auto", "aria-hidden": "true" })}
               </div>
               <dt className="text-3xl font-extrabold text-gray-800 dark:text-white">{feature.name}</dt>
-              <dd className="mt-2 text-sm text-gray-600 dark:text-gray-300">{feature.description}</dd>
+              <dd className="mt-2 text-sm text-gray-600 dark:text-white">{feature.description}</dd>
             </motion.div>
           ))}
         </div>
