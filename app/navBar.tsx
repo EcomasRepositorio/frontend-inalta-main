@@ -56,7 +56,7 @@ const Header = () => {
           <NavbarItem>
             <Link href="/certs" passHref legacyBehavior>
               <Button className="bg-transparent border-white border-1 text-blackblue hover:bg-blue-800 hover:border-blue-200 hover:scale-105">
-                Ver Certificados
+                Ver Certificadoss
               </Button>
             </Link>
           </NavbarItem>
