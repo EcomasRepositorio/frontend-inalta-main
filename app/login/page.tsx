@@ -24,12 +24,12 @@ const Login: React.FC = () => {
   const onSubmit = async () => {
     try {
       const response = await axios.post(
-        "https://backend.ecomas.pe/api/v1/user/login",
+        "http://localhost:8000/api/v1/user/login",
         form
       );
       if (response.data.token) {
         localStorage.setItem("token", response.data.token);
-        window.location.href = "/student";
+        window.location.href = "student";
       }
     } catch (error) {
       setResErrors({ message: "Credenciales incorrectas" });
