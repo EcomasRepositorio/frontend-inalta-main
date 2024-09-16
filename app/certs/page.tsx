@@ -30,7 +30,7 @@ const TestingPage: React.FC<Props> = () => {
       }}
     >
       <div className="py-12 mx-auto max-w-screen-lg px-4">
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 md:p-12 mb-12">
+      <div className="bg-black dark:bg-gray-800 rounded-lg shadow-lg p-8 md:p-12 mb-12">
           {/* Ajustes en el contenedor de logos */}
           <div className="flex flex-col items-center">
   <div className="mb-6 grid grid-cols-2 gap-6 justify-center items-center mx-auto">

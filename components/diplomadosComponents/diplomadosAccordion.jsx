@@ -37,7 +37,7 @@ const Curso = ({ curso }) => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row bg-white dark:bg-gray-900 shadow-md rounded-lg overflow-hidden mb-8">
+    <div className="flex flex-col md:flex-row bg-white shadow-md rounded-lg overflow-hidden mb-8">
       <div className="w-full md:w-1/3 relative">
         <Suspense fallback={<DashboardSkeleton />}>
           <Image
@@ -51,15 +51,13 @@ const Curso = ({ curso }) => {
       </div>
       <div className="w-full md:w-2/3 p-8 flex flex-col justify-between">
         <div>
-          <h2 className="text-sm font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wider mb-2">
+          <h2 className="text-sm font-semibold text-gray-600 uppercase tracking-wider mb-2">
             {curso.area}
           </h2>
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">
             {curso.titulo}
           </h1>
-          <p className="text-gray-700 dark:text-gray-300 mb-4">
-            {curso.descripcion}
-          </p>
+          <p className="text-gray-700 mb-4">{curso.descripcion}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
             <div>
               <p className="font-bold">Fecha de inicio:</p>
@@ -83,12 +81,12 @@ const Curso = ({ curso }) => {
             <AccordionItem
               key="3"
               title={
-                <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+                <h3 className="text-lg font-medium text-gray-900">
                   Módulos del diplomado
                 </h3>
               }
             >
-              <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300">
+              <ul className="list-disc pl-5 text-gray-700">
                 {curso.modulos.map((modulo, moduloIndex) => (
                   <li key={moduloIndex}>
                     <span className="font-bold">

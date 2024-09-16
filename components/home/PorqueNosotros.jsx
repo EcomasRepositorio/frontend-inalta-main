@@ -7,26 +7,26 @@ const PorqueNosotros = () => {
   const controls = useAnimation();
 
   useEffect(() => {
+    const handleScroll = () => {
+      const element = document.getElementById("porque-nosotros");
+      if (element) {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+        if (elementPosition < screenPosition) {
+          setIsVisible(true);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
     if (isVisible) {
       controls.start("visible");
     }
   }, [isVisible, controls]);
-
-  const handleScroll = () => {
-    const element = document.getElementById("porque-nosotros");
-    if (element) {
-      const elementPosition = element.getBoundingClientRect().top;
-      const screenPosition = window.innerHeight / 1.2;
-      if (elementPosition < screenPosition) {
-        setIsVisible(true);
-      }
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const textVariants = {
     hidden: { opacity: 0, y: -50 },
@@ -50,7 +50,7 @@ const PorqueNosotros = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <motion.h2
-            className="text-black dark:text-white text-4xl font-extrabold mb-4"
+            className="text-black text-4xl font-extrabold mb-4"
             variants={textVariants}
             initial="hidden"
             animate={controls}
@@ -58,7 +58,7 @@ const PorqueNosotros = () => {
             ¿Por qué elegir Inalta?
           </motion.h2>
           <motion.p
-            className="text-gray-700 dark:text-white text-lg sm:text-xl mx-auto max-w-3xl"
+            className="text-black text-lg sm:text-xl mx-auto max-w-3xl"
             variants={textVariants}
             initial="hidden"
             animate={controls}
@@ -73,16 +73,16 @@ const PorqueNosotros = () => {
           {features.map((feature, index) => (
             <motion.div 
               key={index} 
-              className="text-center bg-white dark:bg-gray-800 shadow-2xl rounded-lg p-6 border border-white dark:border-gray-600 transform hover:-translate-y-2 transition-all duration-300 ease-out"
+              className="text-center bg-white shadow-lg rounded-lg p-6 border border-gray-200 transform hover:-translate-y-2 transition-transform duration-300 ease-out"
               variants={statsVariants}
               initial="hidden"
               animate={controls}
             >
               <div className="flex items-center justify-center mb-6">
-                {React.createElement(feature.icon, { className: "h-16 w-16 text-black dark:text-white mb-4 mx-auto", "aria-hidden": "true" })}
+                {React.createElement(feature.icon, { className: "h-16 w-16 text-black mb-4 mx-auto", "aria-hidden": "true" })}
               </div>
-              <dt className="text-3xl font-extrabold text-gray-800 dark:text-white">{feature.name}</dt>
-              <dd className="mt-2 text-sm text-gray-600 dark:text-white">{feature.description}</dd>
+              <dt className="text-3xl font-extrabold text-black">{feature.name}</dt>
+              <dd className="mt-2 text-sm text-gray-600">{feature.description}</dd>
             </motion.div>
           ))}
         </div>

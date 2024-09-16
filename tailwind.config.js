@@ -13,14 +13,13 @@ module.exports = {
     extend: {
       backgroundImage: {
         // Definir el degradado de morado a gris
-        'gradient-purple-to-gray': 'linear-gradient(to bottom, #6a0dad, #f5f5f5)',
+        'gradient-purple-to-black': 'linear-gradient(to bottom, #6a0dad, #f5f5f5)',
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
       fontFamily: {
         'roboto': ['Roboto', 'system-ui'],
       },
       colors: {
-        'blackblue': '#020617',
         'gray-light': '#020617', // Añadir color gris claro
         'primaryblue': '#020617',
         'primaryblack': '#f0f0f0',
