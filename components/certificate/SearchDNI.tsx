@@ -204,7 +204,7 @@ const SearchName: React.FC<SearchDNIProps> = ({ onSearchDNI }) => {
                       <div className="flex justify-center items-center mb-4 gap-2">
                         <Image
                           src={"/certificate/UNP.png"}
-                          alt="ecomas"
+                          alt="inalta"
                           className="md:w-20 w-16  object-contain mt-2"
                           width={200}
                           height={200}
@@ -212,15 +212,15 @@ const SearchName: React.FC<SearchDNIProps> = ({ onSearchDNI }) => {
                         />
                         <Image
                           src={"/certificate/LOGO-VERTICAL-COLOR.png"}
-                          alt="ecomas"
+                          alt="inalta"
                           className="block dark:hidden md:w-20  w-16 h-[125px] md:mt-[13px] mt-[11px] object-contain"
                           width={200}
                           height={200}
                           priority={true}
                         />
                         <Image
-                          src={"/image/EcomasVert_dark.png"}
-                          alt="ecomas"
+                          src={"/image/InalatVert_dark.png"}
+                          alt="inalta"
                           className="hidden dark:block md:w-20  w-16 h-[125px] md:mt-[13px] mt-[11px] object-contain"
                           width={200}
                           height={200}
@@ -228,7 +228,7 @@ const SearchName: React.FC<SearchDNIProps> = ({ onSearchDNI }) => {
                         />{" "}
                         <Image
                           src={"/certificate/CAL.png"}
-                          alt="ecomas"
+                          alt="inalta"
                           className="md:w-20  w-16 object-contain mt-2"
                           width={200}
                           height={200}
@@ -236,7 +236,7 @@ const SearchName: React.FC<SearchDNIProps> = ({ onSearchDNI }) => {
                         />
                         <Image
                           src={"/certificate/CIP.png"}
-                          alt="ecomas"
+                          alt="inalta"
                           className="block dark:hidden md:w-20  w-16 object-contain mt-2"
                           width={200}
                           height={200}
@@ -244,7 +244,7 @@ const SearchName: React.FC<SearchDNIProps> = ({ onSearchDNI }) => {
                         />
                         <Image
                           src={"/image/CIP_dark.png"}
-                          alt="ecomas"
+                          alt="inalta"
                           className="hidden dark:block md:w-20  w-16 object-contain mt-2"
                           width={200}
                           height={200}

@@ -1,94 +1,67 @@
-import React, { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { UsersIcon, BookOpenIcon, AcademicCapIcon, StarIcon } from '@heroicons/react/solid';
+"use client";
+import React from "react";
+import { motion } from "framer-motion";
+import dynamic from "next/dynamic"; // Importar dinámicamente el componente Globe
+import { UserIcon, AcademicCapIcon, BookOpenIcon, StarIcon } from '@heroicons/react/solid'; // Iconos
 
-const PorqueNosotros = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const controls = useAnimation();
+// Carga dinámica del componente Globe (sin SSR)
+const Globe = dynamic(() => import("../globe/Globe"), { ssr: false });
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const element = document.getElementById("porque-nosotros");
-      if (element) {
-        const elementPosition = element.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.2;
-        if (elementPosition < screenPosition) {
-          setIsVisible(true);
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    if (isVisible) {
-      controls.start("visible");
-    }
-  }, [isVisible, controls]);
-
-  const textVariants = {
-    hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } }
-  };
-
-  const statsVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 1, ease: "easeOut" } }
-  };
-
-  const features = [
-    { name: '+1500', description: 'Alumnos beneficiados', icon: UsersIcon },
-    { name: '+50', description: 'Diplomados disponibles', icon: AcademicCapIcon },
-    { name: '+600', description: 'Cursos disponibles', icon: BookOpenIcon },
-    { name: '+1000', description: 'Cursos impartidos', icon: StarIcon },
-  ];
-
+const PrincipalHome = () => {
   return (
-    <div id="porque-nosotros" className="bg-white py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <motion.h2
-            className="text-black text-4xl font-extrabold mb-4"
-            variants={textVariants}
-            initial="hidden"
-            animate={controls}
-          >
-            ¿Por qué elegir Inalta?
-          </motion.h2>
-          <motion.p
-            className="text-black text-lg sm:text-xl mx-auto max-w-3xl"
-            variants={textVariants}
-            initial="hidden"
-            animate={controls}
-          >
-            En Inalta, nos especializamos en potenciar las habilidades profesionales de nuestros estudiantes a 
-            través de una oferta educativa diversificada. Con programas enfocados en áreas como la tecnología, 
-            el liderazgo y la gestión, te brindamos las herramientas necesarias para avanzar en tu carrera y 
-            alcanzar tus metas.
-          </motion.p>
+    <section className="relative flex flex-col md:flex-row justify-between items-center h-screen px-8 bg-gradient-to-b from-white via-blue-200 to-white">
+      {/* Contenedor del Globo (Izquierda) */}
+      <motion.div
+        className="md:w-1/3 w-full max-w-lg"
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 2.4 }}
+      >
+        <div className="globe-container">
+          <Globe />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
-            <motion.div 
-              key={index} 
-              className="text-center bg-white shadow-lg rounded-lg p-6 border border-gray-200 transform hover:-translate-y-2 transition-transform duration-300 ease-out"
-              variants={statsVariants}
-              initial="hidden"
-              animate={controls}
-            >
-              <div className="flex items-center justify-center mb-6">
-                {React.createElement(feature.icon, { className: "h-16 w-16 text-black mb-4 mx-auto", "aria-hidden": "true" })}
-              </div>
-              <dt className="text-3xl font-extrabold text-black">{feature.name}</dt>
-              <dd className="mt-2 text-sm text-gray-600">{feature.description}</dd>
-            </motion.div>
-          ))}
+      </motion.div>
+
+      {/* Contenedor del Texto (Derecha) */}
+      <motion.div
+        className="w-full md:w-1/2 text-left mt-4 md:mt-0 ml-4" // Ajustar tamaño del contenedor para reducir el ancho del texto
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 2.5 }}
+      >
+        <h1 className="text-2xl md:text-4xl font-bold mb-4">
+          Conquista el conocimiento sin fronteras. En Inalta, te conectamos con el mundo a través de cursos especializados que te llevarán al siguiente nivel.
+        </h1>
+
+        {/* Nuevo título agregado "¿Por qué Inalta?" */}
+        <h2 className="text-2xl md:text-3xl font-bold mb-8">¿Por qué Inalta?</h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          {/* Las métricas con estilo de cuadro y efecto hover */}
+          <div className="text-center bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <UserIcon className="w-12 h-12 mx-auto mb-2 text-blue-500" />
+            <h2 className="text-xl md:text-3xl font-bold">+1500</h2>
+            <p>Alumnos beneficiados</p>
+          </div>
+          <div className="text-center bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <AcademicCapIcon className="w-12 h-12 mx-auto mb-2 text-blue-500" />
+            <h2 className="text-xl md:text-3xl font-bold">+50</h2>
+            <p>Diplomados disponibles</p>
+          </div>
+          <div className="text-center bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <BookOpenIcon className="w-12 h-12 mx-auto mb-2 text-blue-500" />
+            <h2 className="text-xl md:text-3xl font-bold">+600</h2>
+            <p>Cursos disponibles</p>
+          </div>
+          <div className="text-center bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <StarIcon className="w-12 h-12 mx-auto mb-2 text-blue-500" />
+            <h2 className="text-xl md:text-3xl font-bold">+1000</h2>
+            <p>Cursos impartidos</p>
+          </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </section>
   );
 };
 
-export default PorqueNosotros;
+export default PrincipalHome;

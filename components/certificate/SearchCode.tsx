@@ -20,7 +20,6 @@ const SearchName: React.FC<SearchCodeProps> = ({ onSearchCode }) => {
     setIsActive(!isActive);
   };
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value, "onChange ejecutado");
     setQueryValue(event.target.value);
     setSearchType(event.target.value);
   };
@@ -41,24 +40,20 @@ const SearchName: React.FC<SearchCodeProps> = ({ onSearchCode }) => {
     try {
       const value = queryValue.trim();
       const apiUrl = `${URL()}/student/code/${value}/type/${searchType}`;
-      console.log(apiUrl);
-      const res = await axios.get(
-        `${URL()}/student/code/${value.trim()}/type/${searchType}`
-      );
-      console.log(res);
+      const res = await axios.get(apiUrl);
       setStudentData(res.data);
       onSearchCode(res.data);
       if (queryValue.trim() !== "") {
         setOpen(true);
       }
     } catch (error) {
-      console.error("Error: Codigo invalido", error);
       openErrorModal();
       setOpen(false);
     } finally {
       setLoading(false);
     }
   };
+
   const tableRows = [
     {
       imgSrc: "/icons/organizadopor.svg",
@@ -86,6 +81,7 @@ const SearchName: React.FC<SearchCodeProps> = ({ onSearchCode }) => {
       value: studentData?.date,
     },
   ];
+
   return (
     <div className="">
       <form onSubmit={searchCode} className="w-full ">
@@ -115,51 +111,20 @@ const SearchName: React.FC<SearchCodeProps> = ({ onSearchCode }) => {
       {loading && <Spinner />}
       {studentData && (
         <Modal open={open} onClose={() => setOpen(false)}>
+          {/* Mostrar solo las dos imágenes deseadas */}
           <div className=" flex justify-center mb-4 gap-2">
             <Image
-              src={"/certificate/"}
-              alt="ecomas"
+              src={"/image/inaltlogcert.png"}
+              alt="Inalta Logo"
               className="md:w-20 w-16  object-contain mt-2"
               width={200}
               height={200}
               priority={true}
             />
             <Image
-              src={"/certificate/"}
-              alt="ecomas"
-              className="block dark:hidden md:w-20  w-16 h-[125px] md:mt-[13px] mt-[11px] object-contain"
-              width={200}
-              height={200}
-              priority={true}
-            />
-            <Image
-              src={"/image/"}
-              alt="ecomas"
-              className="hidden dark:block md:w-20  w-16 h-[125px] md:mt-[13px] mt-[11px] object-contain"
-              width={200}
-              height={200}
-              priority={true}
-            />
-            <Image
-              src={"/certificate/"}
-              alt="ecomas"
+              src={"/image/ESCUELA DE POSGRADO DE LA UNP.png"}
+              alt="Escuela de Posgrado"
               className="md:w-20  w-16 object-contain mt-2"
-              width={200}
-              height={200}
-              priority={true}
-            />
-            <Image
-              src={"/certificate/CIP.png"}
-              alt="ecomas"
-              className="block dark:hidden md:w-20  w-16 object-contain mt-2"
-              width={200}
-              height={200}
-              priority={true}
-            />
-            <Image
-              src={"/image/CIP_dark.png"}
-              alt="ecomas"
-              className="hidden dark:block md:w-20  w-16 object-contain mt-2"
               width={200}
               height={200}
               priority={true}
