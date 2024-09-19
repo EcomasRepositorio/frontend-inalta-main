@@ -44,7 +44,7 @@ const ContactForm = () => {
       <div className="max-w-7xl mx-auto space-y-8 px-4 sm:px-0">
         {/* Título */}
         <div className="text-center">
-          <h2 className="text-black dark:text-black text-4xl font-semibold sm:text-5xl pt-10">
+          <h2 className="text-center text-black text-3xl sm:text-4xl font-extrabold uppercase mb-8">
             ¡Contáctanos!
           </h2>
         </div>

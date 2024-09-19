@@ -15,7 +15,7 @@ const NuestrosDiplomados = () => {
         <div className="px-2 py-10 md:py-16 transform rounded-lg mx-auto max-w-screen-xl">
           {/* Animación de desvanecimiento con título en color negro */}
           <motion.h2
-            className="text-3xl font-extrabold mb-1 text-center text-black"
+            className="text-center text-black text-3xl sm:text-4xl font-extrabold uppercase mb-8"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }} // El efecto ocurre una vez cuando el 50% del elemento está visible

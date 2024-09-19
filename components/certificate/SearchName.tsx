@@ -232,21 +232,21 @@ const SearchName: React.FC<SearchNameProps> = ({ onSearchName }) => {
                       open={openModals[index]}
                       onClose={() => closeStudentModal(index)}
                     >
-                      <div className="flex justify-center items-center mb-4 gap-2">
+                      <div className=" flex justify-center mb-10 gap-0.5  ">
                         <Image
-                          src={"/certificate/UNP.png"}
-                          alt="inalta"
-                          className="md:w-20 w-16  object-contain mt-2"
-                          width={200}
-                          height={200}
+                          src={"/image/inaltlogcert.png"}
+                          alt="Inalta Logo"
+                          className="lg:w-1/2 md:w-40 w-16  object-contain mt-2"
+                          width={400}
+                          height={400}
                           priority={true}
                         />
                         <Image
-                          src={"/certificate/UNP.png"}
-                          alt="inalta"
-                          className="md:w-20  w-16 object-contain mt-2"
-                          width={200}
-                          height={200}
+                          src={"/image/ESCUELA DE POSGRADO DE LA UNP.png"}
+                          alt="Escuela de Posgrado"
+                          className="md:w-40  w-16 object-contain mt-2"
+                          width={400}
+                          height={400}
                           priority={true}
                         />
                       </div>
@@ -273,20 +273,16 @@ const SearchName: React.FC<SearchNameProps> = ({ onSearchName }) => {
                                 <span>
                                   {row.value && (
                                     <span>
-                                      {row.value
-                                        .split(" ")
-                                        .map((word, i, arr) => (
-                                          <React.Fragment key={i}>
-                                            {i !== arr.length - 1 ? (
-                                              word + " "
-                                            ) : (
-                                              <>
-                                                <br />
-                                                {word}
-                                              </>
-                                            )}
-                                          </React.Fragment>
-                                        ))}
+                                      {/* Insertar un salto de línea después de un número específico de caracteres */}
+                                      {row.value.length > 45 ? (
+                                        <>
+                                          {row.value.substring(0, 45)}
+                                          <br />
+                                          {row.value.substring(45)}
+                                        </>
+                                      ) : (
+                                        <span>{row.value}</span>
+                                      )}
                                     </span>
                                   )}
                                 </span>

@@ -201,53 +201,21 @@ const SearchName: React.FC<SearchDNIProps> = ({ onSearchDNI }) => {
                       open={openModals[index]}
                       onClose={() => closeStudentModal(index)}
                     >
-                      <div className="flex justify-center items-center mb-4 gap-2">
+                      <div className=" flex justify-center mb-10 gap-0.5  ">
                         <Image
-                          src={"/certificate/UNP.png"}
-                          alt="inalta"
-                          className="md:w-20 w-16  object-contain mt-2"
-                          width={200}
-                          height={200}
+                          src={"/image/inaltlogcert.png"}
+                          alt="Inalta Logo"
+                          className="lg:w-1/2 md:w-40 w-16  object-contain mt-2"
+                          width={600}
+                          height={600}
                           priority={true}
                         />
                         <Image
-                          src={"/certificate/LOGO-VERTICAL-COLOR.png"}
-                          alt="inalta"
-                          className="block dark:hidden md:w-20  w-16 h-[125px] md:mt-[13px] mt-[11px] object-contain"
-                          width={200}
-                          height={200}
-                          priority={true}
-                        />
-                        <Image
-                          src={"/image/InalatVert_dark.png"}
-                          alt="inalta"
-                          className="hidden dark:block md:w-20  w-16 h-[125px] md:mt-[13px] mt-[11px] object-contain"
-                          width={200}
-                          height={200}
-                          priority={true}
-                        />{" "}
-                        <Image
-                          src={"/certificate/CAL.png"}
-                          alt="inalta"
-                          className="md:w-20  w-16 object-contain mt-2"
-                          width={200}
-                          height={200}
-                          priority={true}
-                        />
-                        <Image
-                          src={"/certificate/CIP.png"}
-                          alt="inalta"
-                          className="block dark:hidden md:w-20  w-16 object-contain mt-2"
-                          width={200}
-                          height={200}
-                          priority={true}
-                        />
-                        <Image
-                          src={"/image/CIP_dark.png"}
-                          alt="inalta"
-                          className="hidden dark:block md:w-20  w-16 object-contain mt-2"
-                          width={200}
-                          height={200}
+                          src={"/image/ESCUELA DE POSGRADO DE LA UNP.png"}
+                          alt="Escuela de Posgrado"
+                          className="md:w-40  w-16 object-contain mt-2"
+                          width={400}
+                          height={400}
                           priority={true}
                         />
                       </div>
@@ -274,20 +242,16 @@ const SearchName: React.FC<SearchDNIProps> = ({ onSearchDNI }) => {
                                 <span>
                                   {row.value && (
                                     <span>
-                                      {row.value
-                                        .split(" ")
-                                        .map((word, i, arr) => (
-                                          <React.Fragment key={i}>
-                                            {i !== arr.length - 1 ? (
-                                              word + " "
-                                            ) : (
-                                              <>
-                                                <br />
-                                                {word}
-                                              </>
-                                            )}
-                                          </React.Fragment>
-                                        ))}
+                                      {/* Insertar un salto de línea después de un número específico de caracteres */}
+                                      {row.value.length > 45 ? (
+                                        <>
+                                          {row.value.substring(0, 45)}
+                                          <br />
+                                          {row.value.substring(45)}
+                                        </>
+                                      ) : (
+                                        <span>{row.value}</span>
+                                      )}
                                     </span>
                                   )}
                                 </span>

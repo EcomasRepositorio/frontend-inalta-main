@@ -12,7 +12,6 @@ const CarouselCursosDestacados = dynamic(
   () => import("@/components/home/SwiperCursosDestacados")
 );
 const TestimoniosFb = dynamic(() => import("@/components/home/TestimoniosFb"));
-const QuienesSomos = dynamic(() => import("@/components/home/QuienesSomos"));
 
 const NuestrosDiplomados = dynamic(
   () => import("@/components/home/NuestrosDiplomados")
