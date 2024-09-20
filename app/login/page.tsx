@@ -1,10 +1,6 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { Button } from "@nextui-org/react";
-import { EyeFilledIcon } from "./EyeFilledIcon";
-import { EyeSlashFilledIcon } from "./EyeSlashFilledIcon";
-import Image from "next/image";
 
 const Login: React.FC = () => {
   const [resErrors, setResErrors] = useState<{ message: string } | null>(null);
@@ -29,7 +25,7 @@ const Login: React.FC = () => {
       );
       if (response.data.token) {
         localStorage.setItem("token", response.data.token);
-        window.location.href = "student";
+        window.location.href = "/student"; // Added leading slash for route consistency
       }
     } catch (error) {
       setResErrors({ message: "Credenciales incorrectas" });
@@ -38,71 +34,63 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-400 to-blue-400">
-      <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg overflow-hidden flex">
-        {/* Sección de Sign In */}
-        <div className="w-full md:w-1/2 p-8">
-          {/* Aquí agregamos el logo */}
-          <div className="flex justify-center mb-4">
-            <Image
-              src="/image/loginalblanck.png"  // Cambia este valor por la ruta correcta de tu imagen de logo
-              alt="logo"
-              width={400}   // Ajusta el tamaño de la imagen según necesites
-              height={400}
-            />
-          </div>
-
-          <h2 className="text-2xl font-bold text-gray-800 text-center mt-4">Iniciar sesión</h2>
-          
-          <form
-            className="space-y-4"
-            onSubmit={(e) => {
-              e.preventDefault();
-              onSubmit();
-            }}
-          >
+    <div
+      className="min-h-screen flex items-center justify-center bg-cover bg-center"
+      style={{
+        backgroundImage: "url('/image/fondE.jpeg')" // Asegúrate de que la ruta de la imagen es correcta
+      }}
+    >
+      <form
+        className="form flex flex-col gap-3 bg-gradient-to-t from-black/50 to-blue-700/10 backdrop-blur-md p-6 w-[450px] rounded-2xl shadow-lg transition duration-300 hover:bg-black/15" // Reducido a 10% de opacidad, aumenta en hover a 15%
+        onSubmit={(e) => {
+          e.preventDefault();
+          onSubmit();
+        }}
+      >
+        <div className="flex justify-center mb-2">
+          <img
+            src="/image/inaltcont.png" // Asegúrate de que la ruta del logo es correcta
+            alt="Logo"
+            className="w-32 h-auto"
+          />
+        </div>
+  
+        <div className="flex flex-col mb-2">
+          <label className="font-semibold text-white">Correo electrónico</label>
+          <div className="inputForm flex items-center bg-white/50 border-2 border-gray-300 rounded-full pl-3 transition duration-200 focus-within:border-blue-500">
             <input
               type="email"
               placeholder="Email"
-              className="w-full px-4 py-2 border rounded-full text-gray-700 focus:outline-none focus:ring focus:ring-blue-300"
+              className="input flex-1 bg-transparent border-none focus:outline-none ml-3 text-white"
               value={form.email}
               onChange={(e) => handleFormData(e, "email")}
+              required
             />
-            <div className="relative">
-              <input
-                type={isVisible ? "text" : "password"}
-                placeholder="Password"
-                className="w-full px-4 py-2 border rounded-full text-gray-700 focus:outline-none focus:ring focus:ring-blue-300"
-                value={form.password}
-                onChange={(e) => handleFormData(e, "password")}
-              />
-              <button
-                className="absolute right-0 top-0 mt-2 mr-4 focus:outline-none"
-                type="button"
-                onClick={toggleVisibility}
-              >
-                {isVisible ? <EyeSlashFilledIcon /> : <EyeFilledIcon />}
-              </button>
-            </div>
-
-            {resErrors && <p className="text-blue-500 text-center">{resErrors.message}</p>}
-            <Button
-              className="w-full bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 rounded-full transition duration"
-              type="submit"
-            >
-              Sign In
-            </Button>
-          </form>
-        </div>
-
-        {/* Sección de Overlay (Sign Up) */}
-        <div className="hidden md:flex w-1/2 bg-gradient-to-r from-blue-500 to-blue-400 items-center justify-center text-white p-8">
-          <div className="text-center">
-            <h1 className="text-3xl font-bold mb-4">En Inalta, transformamos tu pasión en habilidades.</h1>
-            <p className="mb-6">Descubre nuestros programas educativos y conviértete en un líder en tu campo. ¡El conocimiento es tu mejor inversión</p>
           </div>
         </div>
-      </div>
+  
+        <div className="flex flex-col mb-4">
+          <label className="font-semibold text-white">Contraseña</label>
+          <div className="inputForm flex items-center bg-white/50 border-2 border-gray-300 rounded-full pl-3 transition duration-200 focus-within:border-blue-500">
+            <input
+              type={isVisible ? "text" : "password"}
+              placeholder="Contraseña"
+              className="input flex-1 bg-transparent border-none focus:outline-none ml-3 text-white"
+              value={form.password}
+              onChange={(e) => handleFormData(e, "password")}
+              required
+            />
+          </div>
+        </div>
+  
+        {resErrors && (
+          <p className="text-red-500 text-center">{resErrors.message}</p>
+        )}
+  
+        <button className="button-submit text-white w-full py-3 rounded-full bg-transparent border-2 border-white transition-all duration-300 ease-in-out hover:bg-blue-600">
+          Sign In
+        </button>
+      </form>
     </div>
   );
 };

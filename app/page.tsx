@@ -43,7 +43,6 @@ export default function Main() {
         <div className="bg-transparent mx-auto max-w-screen-xl">
           {/* Aquí va el contenido */}
         </div>
-
         <CarouselCursosDestacados />
       </div>
       <div className=" w-full ">

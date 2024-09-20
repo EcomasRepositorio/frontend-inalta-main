@@ -55,7 +55,7 @@ const Header = () => {
         <NavbarContent justify="center">
           <NavbarItem>
             <Link href="/certs" passHref legacyBehavior>
-              <Button className="bg-transparent border-white border-1 text-blackblue hover:bg-blue-800 hover:border-blue-200 hover:scale-105">
+              <Button className="bg-transparent border-white border-1 text-white hover:bg-blue-800 hover:border-blue-200 hover:scale-105">
                 Ver Certificados
               </Button>
             </Link>
@@ -64,7 +64,7 @@ const Header = () => {
             <Button
               target="_blank"
               as={Link}
-              className="bg-transparent border-white border-1 text-blackblue hover:bg-blue-800 hover:border-blue-200 hover:scale-105"
+              className="bg-transparent border-white border-1 text-white hover:bg-blue-800 hover:border-blue-200 hover:scale-105"
               href="https://site2.q10.com/login?ReturnUrl=%2F&aplentId=0959465f-37c3-4032-803b-bbfc499af7a3"
             >
               Aula Virtual
