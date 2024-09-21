@@ -56,7 +56,7 @@ const ContactForm = () => {
               <img
                 src="/image/inaltcont.png"
                 alt="Logo de Inalta"
-                className="mb-4 mt-2 w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 object-cover"
+                className="mb-4 mt-2 w-40 h-40 sm:w-48 sm:h-48 lg:w-64 lg:h-64 object-cover"
               />
             </div>
           </div>
