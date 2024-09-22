@@ -34,14 +34,14 @@ const PrincipalHome = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 2.5 }}
       >
-        <h1 className="text-2xl md:text-4xl font-bold mb-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            ¿Por qué elegir Inalta?
-          </h2>
-          Conquista el conocimiento sin fronteras. En Inalta, te conectamos con
-          el mundo a través de cursos especializados que te llevarán al
-          siguiente nivel.
-        </h1>
+        <div className="mb-4">
+  <h1 className=" text-black text-3xl sm:text-4xl font-extrabold uppercase mb-8">¿Por qué elegir Inalta?</h1>
+  <p className="text-xl md:text-2xl">
+    Conquista el conocimiento sin fronteras. En Inalta, te conectamos con
+    el mundo a través de cursos especializados que te llevarán al
+    siguiente nivel.
+  </p>
+</div>
 
         {/* Nuevo título agregado "¿Por qué Inalta?" */}
 
@@ -59,7 +59,7 @@ const PrincipalHome = () => {
           </div>
           <div className="text-center bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
             <BookOpenIcon className="w-12 h-12 mx-auto mb-2 text-blue-500" />
-            <h2 className="text-xl md:text-3xl font-bold">+600</h2>
+            <h2 className="text-xl md:text-3xl font-bold">+400</h2>
             <p>Cursos disponibles</p>
           </div>
           <div className="text-center bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">

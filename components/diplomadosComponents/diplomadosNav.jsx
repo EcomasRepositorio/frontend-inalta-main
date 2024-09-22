@@ -29,20 +29,27 @@ export default function App() {
       <div className="flex w-full flex-col">
         <Tabs
           disabledKeys={["anothers"]}
-          color="secondary" // Changes the color of the selected tab indicator
           aria-label="Options"
           className="w-full md:max-w-max"
-          placement={isMobile ? "top" : "start"} // Switches tab placement for mobile
-          classNames={{
-            tabList: "w-full bg-white", // Tab background in white
-            tab: "py-3 text-lg text-black", // Ensures tabs have black text and increased size
-            tabContent: "group-data-[selected=true]:text-black", // Ensures selected tab text stays black
+          placement={isMobile ? "top" : "start"}
+          // Aplicando directamente className
+          tabListProps={{
+            className: "w-full bg-white",
+          }}
+          tabProps={{
+            className: "py-3 text-lg text-black",
+          }}
+          tabContentProps={{
+            className: "group-data-[selected=true]:text-black",
+          }}
+          indicatorProps={{
+            className: "bg-blue-500", // Aplicando la clase Tailwind CSS directamente
           }}
         >
           {/* Ingeniería Civil Tab */}
           <Tab key="civil" title="Ingeniería Civil">
             <Card className="shadow-lg border border-gray-200">
-              <CardBody className="bg-white text-black"> {/* White background and black text */}
+              <CardBody className="bg-white text-black">
                 <DiploCivil />
               </CardBody>
             </Card>
@@ -51,7 +58,7 @@ export default function App() {
           {/* Ingeniería Ambiental Tab */}
           <Tab key="ambient" title="Ingeniería Ambiental">
             <Card className="shadow-lg border border-gray-200">
-              <CardBody className="bg-white text-black"> {/* White background and black text */}
+              <CardBody className="bg-white text-black">
                 <DiploAmbiental />
               </CardBody>
             </Card>
@@ -60,7 +67,7 @@ export default function App() {
           {/* Ingeniería Agrónoma Tab */}
           <Tab key="agrono" title="Ingeniería Agrónoma">
             <Card className="shadow-lg border border-gray-200">
-              <CardBody className="bg-white text-black"> {/* White background and black text */}
+              <CardBody className="bg-white text-black">
                 <DiploAgronoma />
               </CardBody>
             </Card>
@@ -69,7 +76,7 @@ export default function App() {
           {/* Ingeniería en Alimentos Tab */}
           <Tab key="alimentaria" title="Ingeniería en Alimentos">
             <Card className="shadow-lg border border-gray-200">
-              <CardBody className="bg-white text-black"> {/* White background and black text */}
+              <CardBody className="bg-white text-black">
                 <DiploAlimentarias />
               </CardBody>
             </Card>
@@ -78,7 +85,7 @@ export default function App() {
           {/* Derecho Tab */}
           <Tab key="derecho" title="Derecho">
             <Card className="shadow-lg border border-gray-200">
-              <CardBody className="bg-white text-black"> {/* White background and black text */}
+              <CardBody className="bg-white text-black">
                 <DiploDerecho />
               </CardBody>
             </Card>

@@ -22,7 +22,7 @@ export default function Footer() {
           <p className="mb-2">Síguenos en nuestras redes sociales</p>
           <div className="flex justify-end space-x-4">
             <a
-              href="https://web.facebook.com"
+              href="https://www.facebook.com/profile.php?id=61565984064270&notif_id=1726594601819062&notif_t=page_user_activity&ref=notif"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-gray-300"

@@ -1,5 +1,6 @@
 "use client";
 import Curso from "./diplomadosAccordion";
+import Image from 'next/image';
 
 const DiploAgronoma = () => {
   // Array de objetos que contienen los datos de cada curso

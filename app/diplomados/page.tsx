@@ -10,7 +10,7 @@ const DashboardSkeleton = dynamic(() => import("@/components/home/skeletons"));
 
 export default function Main() {
   return (
-    <div className="bg-gradient-to-b from-blue-400 via-blue-800 to-blue-400  mx-auto max-w-screen-2xl px-4 md:px-8 mb-12">
+    <div className="bg-transparent  mx-auto max-w-screen-2xl px-4 md:px-8 mb-12">
       
       <div className="mb-8">
         <h2 className="mb-4 mt-8 text-center text-2xl font-bold text-primaryblue dark:text-black md:mb-6 lg:text-4xl">

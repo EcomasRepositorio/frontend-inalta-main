@@ -51,7 +51,7 @@ const testimonios = [
 
 const TestimoniosCarrusel = () => {
   return (
-    <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-b from-white via-white to-blue-50 py-16 px-4 sm:px-6 lg:px-8">
       {/* Título para la sección de testimonios */}
       <h2 className="text-center text-black text-3xl sm:text-4xl font-extrabold uppercase mb-8">
         Testimonios

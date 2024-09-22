@@ -1,5 +1,6 @@
 'use client';
 import Curso from "./diplomadosAccordion";
+import Image from 'next/image';
 
 
 const DiploAlimentarias = () => {

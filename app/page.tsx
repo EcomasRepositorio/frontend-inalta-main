@@ -26,11 +26,10 @@ export default function Main() {
       {/* Botón para cambiar de tema */}
       <div className="">
         <PrincipalHome />
-      </div>
-      <div className="mx-auto max-w-screen-xl">
+        
         <NuestrosDiplomados />
       </div>
-      <div className="min-h-screen bg-gradient-to-b from-white via-blue-200 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 via-blue-50 to-white">
         <div className="rounded-lg mx-auto max-w-screen-xl">
         </div>
         <SwiperCarrouselDiplomados />
@@ -48,7 +47,7 @@ export default function Main() {
       <div className=" w-full ">
         <TestimoniosFb />
       </div>
-
+    
       <div className=" ">
         <ContactForm />
       </div>

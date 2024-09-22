@@ -1,13 +1,14 @@
 import React from "react";
 import Image from "next/image";
-import { Suspense } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 
+// Si aún necesitas un componente dinámico, aquí puedes usarlo
 const DashboardSkeleton = dynamic(() => import("@/components/home/skeletons"));
 
 const Curso = ({ curso }) => {
+  // Función para convertir números a números romanos
   function toRoman(num) {
     const romanNumerals = [
       { value: 10, numeral: "X" },
@@ -29,26 +30,27 @@ const Curso = ({ curso }) => {
     return result;
   }
 
-  // Función para generar el enlace a WhatsApp con un mensaje dinámico basado en el curso
-  const generarEnlaceWhatsapp = (cursoTitulo) => {
-    const mensaje = `Hola, buenos días. Estoy interesado en obtener información sobre el curso de "${cursoTitulo}".`;
+  // Función para generar el enlace a WhatsApp con un mensaje dinámico basado en el curso y el módulo
+  const generarEnlaceWhatsapp = (cursoTitulo, modulo) => {
+    const mensaje = `Hola, busco información sobre el módulo "${modulo}" del curso "${cursoTitulo}".`;
     const url = `https://wa.me/51921818181?text=${encodeURIComponent(mensaje)}`;
     return url;
   };
 
   return (
     <div className="flex flex-col md:flex-row bg-white shadow-md rounded-lg overflow-hidden mb-8">
+      {/* Imagen del curso */}
       <div className="w-full md:w-1/3 relative">
-        <Suspense fallback={<DashboardSkeleton />}>
-          <Image
-            src={curso.imagen}
-            alt="Curso"
-            width={600}
-            height={400}
-            className="object-cover w-full h-full"
-          />
-        </Suspense>
+        <Image
+          src={curso.imagen}
+          alt="Curso"
+          width={600}
+          height={400}
+          className="object-cover w-full h-full"
+        />
       </div>
+
+      {/* Contenido del curso */}
       <div className="w-full md:w-2/3 p-8 flex flex-col justify-between">
         <div>
           <h2 className="text-sm font-semibold text-gray-600 uppercase tracking-wider mb-2">
@@ -77,6 +79,7 @@ const Curso = ({ curso }) => {
             </div>
           </div>
 
+          {/* Acordeón de módulos */}
           <Accordion defaultExpandedKeys={["1"]} bordered shadow>
             <AccordionItem
               key="3"
@@ -89,10 +92,17 @@ const Curso = ({ curso }) => {
               <ul className="list-disc pl-5 text-gray-700">
                 {curso.modulos.map((modulo, moduloIndex) => (
                   <li key={moduloIndex}>
-                    <span className="font-bold">
-                      MÓDULO {toRoman(moduloIndex + 1)}:{" "}
-                    </span>
-                    {modulo}
+                    <a
+                      href={generarEnlaceWhatsapp(curso.titulo, modulo)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:underline"
+                    >
+                      <span className="font-bold">
+                        MÓDULO {toRoman(moduloIndex + 1)}:{" "}
+                      </span>
+                      {modulo}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -100,10 +110,11 @@ const Curso = ({ curso }) => {
           </Accordion>
         </div>
 
+        {/* Botones de acción */}
         <div className="flex flex-col space-y-2 mt-6">
           {/* Enlace dinámico a WhatsApp */}
           <a
-            href={generarEnlaceWhatsapp(curso.titulo)}
+            href={generarEnlaceWhatsapp(curso.titulo, "Información general")}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -120,6 +131,7 @@ const Curso = ({ curso }) => {
             </button>
           </a>
 
+          {/* Enlace para el plan de estudios */}
           <a href="/plan-de-estudios.pdf" target="_blank">
             <button className="flex items-center justify-center bg-primaryblue text-white hover:bg-[#0060dd] rounded-lg py-2 px-4 w-full">
               <svg
@@ -134,6 +146,7 @@ const Curso = ({ curso }) => {
             </button>
           </a>
 
+          {/* Enlace para certificación */}
           <Link href="/certs">
             <button className="flex items-center justify-center bg-[#FFD700] text-white hover:bg-[#FFC107] rounded-lg py-2 px-4 w-full">
               <svg

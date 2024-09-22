@@ -1,5 +1,6 @@
 "use client"; // Si estás utilizando Next.js, esta línea se asegura de que este componente se renderice en el cliente.
 import Curso from "./diplomadosAccordion";
+import Image from 'next/image';
 
 const DiploCivil = () => {
   // Array de objetos que contienen los datos de cada curso

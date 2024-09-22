@@ -89,7 +89,7 @@ const PrincipalHome = () => {
   };
 
   return (
-    <div className="z-0 block md:flex bg-gradient-to-b from-blue-400">
+    <div className="z-0 block md:flex bg-gradient-to-b from-blue-400 to to-blue-500-">
       <motion.div
         initial="hidden"
         animate="visible"
@@ -129,7 +129,7 @@ const PrincipalHome = () => {
                   <h1 className="text-gray-100 lg:text-2xl text-2xl text-center inline-flex lg:gap-6 gap-3">
                     <Link
                       key={`link-${i}`}
-                      href="https://www.facebook.com/people/Corporaci%C3%B3n-Prom%C3%A1s/61552473052389/"
+                      href="https://www.facebook.com/profile.php?id=61565984064270&notif_id=1726594601819062&notif_t=page_user_activity&ref=notif"
                       target="_blank"
                       className="p-2 rounded-full transition-transform transform hover:scale-150 shadow-xl "
                     >

@@ -24,14 +24,14 @@ module.exports = {
         'primaryblue': '#020617',
         'primaryblack': '#f0f0f0',
         'purple-dark': '#020617', // Morado oscuro 
-        'primaryBlue': '#006174', 
+        'primaryBlue': '#0060ff', 
         'primaryGreen': '#a1d302', 
 
 
 
       },
       textColor: {
-        'textrosa': '#ff00d4',
+        'textrosa': '#0060ff',
         'textblue': '#0060ff',
       },
       animation: {

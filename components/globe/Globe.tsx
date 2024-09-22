@@ -77,7 +77,7 @@ const Globe = () => {
         margin: "0 auto",
       }}
       camera={{ position: [0, 0, 5], fov: 50 }}
-    >
+    > 
       <OrbitControls enableZoom={false} />
       <Stars radius={300} depth={50} count={5000} factor={7} fade />
       <ambientLight intensity={0.5} />
