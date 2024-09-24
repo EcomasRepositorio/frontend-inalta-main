@@ -36,7 +36,7 @@ export default function Main() {
         </div>
       <div className="min-h-screen bg-gradient-to-b from-white via-whthe to-white">
         <div className="rounded-lg mx-auto max-w-screen-xl">
-          {/* Aquí puedes agregar tu contenido */}
+
         </div>
         <PorqueNosotros />
         <div className="bg-transparent mx-auto max-w-screen-xl">

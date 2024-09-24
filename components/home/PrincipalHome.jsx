@@ -137,7 +137,7 @@ const PrincipalHome = () => {
                     </Link>
                     <Link
                       key={`link-${i + 1}`}
-                      href="https://www.instagram.com/corporacion.promas/"
+                      href="https://www.instagram.com/corporacion.inalta?igsh=aWI2NWh5ajkza2x5"
                       target="_blank"
                       className="p-2 rounded-full transition-transform transform hover:scale-150 shadow-xl "
                     >

@@ -15,77 +15,65 @@ export default function App() {
       setIsMobile(window.innerWidth <= 600);
     };
 
-    handleResize();
+    handleResize(); // Llama a la función una vez al montar el componente para establecer el estado inicial
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize); // Agrega un event listener para detectar cambios en el tamaño de la ventana
 
+    // Limpia el event listener cuando el componente se desmonta
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
 
   return (
     <div className="flex flex-col px-4">
       <div className="flex w-full flex-col">
         <Tabs
           disabledKeys={["anothers"]}
+          color="primary"
           aria-label="Options"
-          className="w-full md:max-w-max"
+          className="w-full md:max-w-max "
           placement={isMobile ? "top" : "start"}
-          // Aplicando directamente className
-          tabListProps={{
-            className: "w-full bg-white",
-          }}
-          tabProps={{
-            className: "py-3 text-lg text-black",
-          }}
-          tabContentProps={{
-            className: "group-data-[selected=true]:text-black",
-          }}
-          indicatorProps={{
-            className: "bg-blue-500", // Aplicando la clase Tailwind CSS directamente
+          classNames={{
+            tabList: " w-full dark:bg-blackblue2 bg-blue-50",
+            cursor: "bg-blue-500",
+            tab: "",
+            tabContent:
+              "group-data-[selected=true]:text-white dark:text-white ",
           }}
         >
-          {/* Ingeniería Civil Tab */}
-          <Tab key="civil" title="Ingeniería Civil">
-            <Card className="shadow-lg border border-gray-200">
-              <CardBody className="bg-white text-black">
+          <Tab key="civil" title="Ing. Civil" className="text-primaryblue">
+            <Card>
+              <CardBody className="dark:bg-blackblue2 bg-blue-50">
                 <DiploCivil />
               </CardBody>
             </Card>
           </Tab>
-
-          {/* Ingeniería Ambiental Tab */}
-          <Tab key="ambient" title="Ingeniería Ambiental">
-            <Card className="shadow-lg border border-gray-200">
-              <CardBody className="bg-white text-black">
+          <Tab key="ambient" title="Ing. Ambiental">
+            <Card>
+              <CardBody className="dark:bg-blackblue2 bg-blue-50">
                 <DiploAmbiental />
               </CardBody>
             </Card>
           </Tab>
-
-          {/* Ingeniería Agrónoma Tab */}
-          <Tab key="agrono" title="Ingeniería Agrónoma">
-            <Card className="shadow-lg border border-gray-200">
-              <CardBody className="bg-white text-black">
+          <Tab key="agrono" title="Ing. Agrónoma">
+            <Card>
+              <CardBody className="dark:bg-blackblue2 bg-blue-50">
                 <DiploAgronoma />
               </CardBody>
             </Card>
           </Tab>
-
-          {/* Ingeniería en Alimentos Tab */}
-          <Tab key="alimentaria" title="Ingeniería en Alimentos">
-            <Card className="shadow-lg border border-gray-200">
-              <CardBody className="bg-white text-black">
+          <Tab key="alimentaria" title="Ingeniería en alimentos">
+            <Card>
+              <CardBody className="dark:bg-blackblue2 bg-blue-50">
                 <DiploAlimentarias />
               </CardBody>
             </Card>
           </Tab>
-
-          {/* Derecho Tab */}
           <Tab key="derecho" title="Derecho">
-            <Card className="shadow-lg border border-gray-200">
-              <CardBody className="bg-white text-black">
+            <Card>
+              <CardBody className="dark:bg-blackblue2 bg-blue-50">
                 <DiploDerecho />
               </CardBody>
             </Card>

@@ -34,11 +34,11 @@ const RotatingGlobeModel = () => {
     }
     // Rotar el modelo en su propio eje
     if (globeRef.current) {
-      globeRef.current.rotation.y += 0.005; 
+      globeRef.current.rotation.y += 0.002; 
     }
   });
 
-  return <primitive ref={globeRef} object={scene} scale={1} />;
+  return <primitive ref={globeRef} object={scene} scale={1.20} />;
 };
 
 // Componente principal del globo
@@ -80,9 +80,9 @@ const Globe = () => {
     > 
       <OrbitControls enableZoom={false} />
       <Stars radius={300} depth={50} count={5000} factor={7} fade />
-      <ambientLight intensity={0.5} />
+      <ambientLight intensity={1.5} />
       <directionalLight position={[2, 5, 2]} intensity={1} />
-      
+    
       {/* Modelo 3D de la Tierra */}
       <RotatingGlobeModel />
     </Canvas>

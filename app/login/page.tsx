@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import axios from "axios";
 
 const Login: React.FC = () => {
@@ -80,6 +81,14 @@ const Login: React.FC = () => {
               onChange={(e) => handleFormData(e, "password")}
               required
             />
+            {/* Agrega el botón con el ícono de ojo */}
+            <button
+              type="button"
+              onClick={toggleVisibility}
+              className="px-3 text-white"
+            >
+              {isVisible ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
+            </button>
           </div>
         </div>
   

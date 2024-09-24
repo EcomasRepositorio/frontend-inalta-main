@@ -30,7 +30,7 @@ export default function Footer() {
               <FaFacebookF size={24} />
             </a>
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/corporacion.inalta?igsh=aWI2NWh5ajkza2x5"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-gray-300"
