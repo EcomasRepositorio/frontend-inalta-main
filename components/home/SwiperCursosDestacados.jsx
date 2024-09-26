@@ -49,7 +49,7 @@ const Courses = () => {
         <h2 className="text-center text-black text-3xl sm:text-4xl font-extrabold uppercase mb-8">
           NUESTROS CURSOS
         </h2>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {cursosDestacados.map((curso, index) => (
             <div
               key={index}

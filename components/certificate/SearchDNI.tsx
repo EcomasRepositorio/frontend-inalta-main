@@ -205,7 +205,7 @@ const SearchName: React.FC<SearchDNIProps> = ({ onSearchDNI }) => {
                         <Image
                           src={"/image/inaltlogcert.png"}
                           alt="Inalta Logo"
-                          className="lg:w-1/2 md:w-40 w-16  object-contain mt-2"
+                          className="lg:w-1/2 md:w-40 w-32  object-contain mt-2"
                           width={600}
                           height={600}
                           priority={true}
@@ -213,7 +213,7 @@ const SearchName: React.FC<SearchDNIProps> = ({ onSearchDNI }) => {
                         <Image
                           src={"/image/ESCUELA DE POSGRADO DE LA UNP.png"}
                           alt="Escuela de Posgrado"
-                          className="md:w-40  w-16 object-contain mt-2"
+                          className="md:w-40 lg:w-40 w-32  object-contain mt-2"
                           width={400}
                           height={400}
                           priority={true}
