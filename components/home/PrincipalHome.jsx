@@ -89,11 +89,12 @@ const PrincipalHome = () => {
   };
 
   return (
-    <div className="z-0 block md:flex bg-gradient-to-b from-blue-400 to to-blue-500-">
+    <div className="z-0 block md:flex bg-gradient-to-b from-blue-400 to-blue-50">
       <motion.div
         initial="hidden"
         animate="visible"
         className="relative z-10 flex flex-col md:flex-row max-w-screen-xl mx-auto items-center justify-between w-full"
+        style={{ minHeight: "800px" }} // Establece la altura mínima fija para que no se mueva el contenido
       >
         {/* Sección de imagen */}
         <motion.div
@@ -244,6 +245,20 @@ const PrincipalHome = () => {
                 </motion.p>
               )
           )}
+          <div className="absolute bottom-4 left-0 right-0 flex justify-center">
+            <button
+              onClick={prevSlide}
+              className="py-2 px-4 mr-2 font-mono text-center text-blue-400 cursor-pointer rounded-lg bg-opacity-20 from-blue-500 border border-blue-400"
+            >
+              {"<"}
+            </button>
+            <button
+              onClick={nextSlide}
+              className="py-2 px-4 font-mono text-center text-blue-400 cursor-pointer rounded-lg bg-opacity-20 border border-blue-400"
+            >
+              {">"}
+            </button>
+          </div>
 
           {/* Botones */}
           <div className="w-full flex justify-center">
@@ -267,20 +282,6 @@ const PrincipalHome = () => {
         </div>
       </motion.div>
     </div>
-    /*
-    <div className="absolute bottom-4 left-0 right-0 flex justify-center">
-    <button
-      onClick={prevSlide}
-      className="py-2 px-4 mr-2 font-mono text-center button-primary text-white cursor-pointer rounded-lg bg-blue-500 hover:bg-blue-700">
-      <BiChevronLeft className="text-xl" />
-    </button>
-    <button
-      onClick={nextSlide}
-      className="py-2 px-4 font-mono text-center button-primary text-white cursor-pointer rounded-lg bg-blue-500 hover:bg-blue-700">
-      <BiChevronRight className="text-xl" />
-    </button>
-  </div>
-</div>*/
   );
 };
 

@@ -81,18 +81,14 @@ export default function Footer() {
               <a
                 href="/book"
                 className="mt-2 text-sm text-white hover:underline flex items-center"
+                aria-label="Libro de Reclamaciones"
               >
-                <span
-                  role="img"
-                  aria-label="Libro de Reclamaciones"
-                  className="mr-2"
-                >
-                  <img
-                    src="/image/lectura.png"
-                    alt="Icono Libro de Reclamaciones"
-                    className="w-6 h-6" // Ajusta el tamaño de la imagen
-                  />
-                </span>
+                {/* Imagen directamente en el enlace */}
+                <img
+                  src="/image/reclamos.png"
+                  alt="Icono Libro de Reclamaciones"
+                  className="w-6 h-6 mr-4" // Ajustar el tamaño del gif y margenes
+                />
                 Libro de Reclamaciones
               </a>
             </div>

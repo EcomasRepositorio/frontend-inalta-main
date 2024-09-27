@@ -95,7 +95,7 @@ const Header = () => {
               </Link>
               <div>
                 <Link href="/certs">
-                  <button className="bg-transparent border-transparen mr-2 text-white py-3 px-1 rounded text-xs">
+                  <button className="bg-transparent border border-white text-white hover:bg-blue-800 hover:border-blue-200 hover:scale-105 md:border-none mx-2 rounded-md">
                     Certificados
                   </button>
                 </Link>
@@ -103,7 +103,7 @@ const Header = () => {
                   href="https://site2.q10.com/login?ReturnUrl=%2F&aplentId=0959465f-37c3-4032-803b-bbfc499af7a3"
                   target="_blank"
                 >
-                  <button className="bg-transparent border-white text-white py-3 px-1 rounded text-xs">
+                  <button className="bg-transparent border border-white text-white hover:bg-blue-800 hover:border-blue-200 hover:scale-105 md:border-none mx-2 rounded-md">
                     Aula Virtual
                   </button>
                 </a>
@@ -116,7 +116,7 @@ const Header = () => {
           <NavbarContent justify="end">
             <Link href="/login">
               <Image
-                src="/image/iconl.png"
+                src="/image/teache.png"
                 alt="Login Icon"
                 width={30} // Ajusta el tamaño según tus necesidades para móviles
                 height={30}

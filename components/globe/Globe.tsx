@@ -79,8 +79,8 @@ const Globe = () => {
       camera={{ position: [0, 0, 5], fov: 50 }}
     > 
       <OrbitControls enableZoom={false} />
-      <Stars radius={300} depth={50} count={5000} factor={7} fade />
-      <ambientLight intensity={1.5} />
+      <Stars radius={100} depth={50} count={5000} factor={7} fade />
+      <ambientLight intensity={2} />
       <directionalLight position={[2, 5, 2]} intensity={1} />
     
       {/* Modelo 3D de la Tierra */}

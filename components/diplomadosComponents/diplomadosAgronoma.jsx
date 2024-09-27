@@ -5,10 +5,11 @@ import Image from 'next/image';
 const DiploAgronoma = () => {
   // Array de objetos que contienen los datos de cada curso
   const cursosData = [
+
     {
       area: "INGENIERÍA AGRÓNOMA",
       titulo: "Sistemas de Riego Tecnificado",
-      imagen: "/image/diplo_tecnifi.jpg",
+      imagen: "/image/diplotest.jpg",
       fechaInicio: "18/08/2024",
       modalidad: "Virtual",
       duracion: "4 meses",
@@ -27,10 +28,11 @@ const DiploAgronoma = () => {
         "Análisis de suelo, agua y foliar.",
       ],
     },
+
     {
       area: "INGENIERÍA AGRÓNOMA",
       titulo: "Riego y Fertirriego",
-      imagen: "/image/fertiriego.jpg",
+      imagen: "/image/diplotest.jpg",
       fechaInicio: "31/08/2024",
       modalidad: "Virtual",
       duracion: "4 meses",
@@ -38,8 +40,6 @@ const DiploAgronoma = () => {
       descripcion:
         "Gerentes de proyectos, residentes y supervisores de obras. Ingenieros agrícolas, agrónomos, civiles, hidráulicos y todos los profesionales que manejen proyectos y ejecución de obras con riego tecnificado. Bachilleres y estudiantes universitarios y técnicos de los últimos ciclos de ingeniería agrícola, agronomía, civil, hidráulica, forestal y carreras afines.",
       modulos: [
-        '-'
-        /*
         "Riego tecnificado por aspersión",
         "Riego tecnificado por goteo",
         "Fertirrigación",
@@ -48,9 +48,11 @@ const DiploAgronoma = () => {
         "Mantenimiento del sistema de riego",
         "Interpretación y análisis de suelos",
         "Calidad de agua para riego",
-        "Nutrición vegetal y principios de fertirriego",*/
+        "Nutrición vegetal y principios de fertirriego",
       ],
     },
+    
+    
     // Puedes agregar más cursos aquí si es necesario
   ];
 

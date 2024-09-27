@@ -5,57 +5,11 @@ import Image from 'next/image';
 const DiploCivil = () => {
   // Array de objetos que contienen los datos de cada curso
   const cursosData = [
-    {
-      area: "INGENIERÍA CIVIL",
-      titulo: "Ingeniería de Puentes",
-      imagen: "/image/ingpuentes.jpg",
-      fechaInicio: "11/08/2024",
-      modalidad: "Virtual",
-      duracion: "4 meses",
-      horas: "420 horas académicas (26 créditos)",
-      descripcion:
-        "Bachilleres, Gerentes y administradores de proyectos y jefes de área. Ingenieros civiles, ingenieros estructurales, arquitectos residentes y supervisores de obras. Profesionales del sector público y privado relacionados con proyectos viales.",
-      modulos: [
-        "Diseño de puentes, pontones",
-        "Estudios de Hidrología e hidráulica en puentes",
-        "Estudios geológicos y geotécnicos en puentes",
-        "Diseño y modelamiento de puentes con SAP 2000",
-        "Diseño y modelamiento de puentes con CSI Bridge",
-        "Modelamiento y análisis estructural de puentes",
-        "Diseño sísmico en puentes AASHTO-LRFD",
-        "Mantenimiento y conservación de puentes",
-        "Inspección, evaluación de puentes bajo la metodología SCAP",
-      ],
-    },
-    {
-      area: "INGENIERÍA CIVIL",
-      titulo: "Asistente Técnico en Obras",
-      imagen: "/image/tecobras.jpg",
-      fechaInicio: "22/09/2024",
-      modalidad: "Virtual",
-      duracion: "4 meses",
-      horas: "420 horas correspondientes a 26 créditos.",
-      descripcion:
-        "Bachilleres, titulados y profesionales de las carreras de ingeniería civil, industriales, sanitarios, arquitectos y ramas afines.",
-      modulos: [
-        "Cuaderno de obra físico y digital",
-        "Costos y Presupuestos con S10",
-        "Valorización de obras",
-        "Liquidación de obras",
-        "Formulación y planificación de proyectos con MS Project",
-        "Análisis y diseño de instituciones educativas",
-        "Seguridad, salud ocupacional y medio ambiente en obras públicas",
-        "Expediente técnico en obras",
-        "Régimen laboral en construcción civil",
-        "Planificación y programación de obras",
-        "Control de obras",
-        "Metrados en edificaciones",
-      ],
-    },
+
     {
       area: "INGENIERÍA CIVIL",
       titulo: "Ingeniería Vial",
-      imagen: "/image/vialdiplo.jpg",
+      imagen: "/image/diplotest.jpg",
       fechaInicio: "18/08/2024",
       modalidad: "Virtual",
       duracion: "4 meses",
@@ -77,10 +31,11 @@ const DiploCivil = () => {
         "Integración de proyectos de infraestructura vial",
       ],
     },
+
     {
       area: "INGENIERÍA CIVIL",
       titulo: "Residencia y supervisión de obras",
-      imagen: "/image/residencia.jpg",
+      imagen: "/image/diplotest.jpg",
       fechaInicio: "18/08/2024",
       modalidad: "Virtual",
       duracion: "4 meses",
@@ -101,6 +56,56 @@ const DiploCivil = () => {
         "Control técnico y calidad en obras",
       ],
     },
+    
+    {
+      area: "INGENIERÍA CIVIL",
+      titulo: "Ingeniería de Puentes",
+      imagen: "/image/diplotest.jpg",
+      fechaInicio: "11/08/2024",
+      modalidad: "Virtual",
+      duracion: "4 meses",
+      horas: "420 horas académicas (26 créditos)",
+      descripcion:
+        "Bachilleres, Gerentes y administradores de proyectos y jefes de área. Ingenieros civiles, ingenieros estructurales, arquitectos residentes y supervisores de obras. Profesionales del sector público y privado relacionados con proyectos viales.",
+      modulos: [
+        "Diseño de puentes, pontones",
+        "Estudios de Hidrología e hidráulica en puentes",
+        "Estudios geológicos y geotécnicos en puentes",
+        "Diseño y modelamiento de puentes con SAP 2000",
+        "Diseño y modelamiento de puentes con CSI Bridge",
+        "Modelamiento y análisis estructural de puentes",
+        "Diseño sísmico en puentes AASHTO-LRFD",
+        "Mantenimiento y conservación de puentes",
+        "Inspección, evaluación de puentes bajo la metodología SCAP",
+      ],
+    },
+
+    {
+      area: "INGENIERÍA CIVIL",
+      titulo: "Asistente Técnico en Obras",
+      imagen: "/image/diplotest.jpg",
+      fechaInicio: "22/09/2024",
+      modalidad: "Virtual",
+      duracion: "4 meses",
+      horas: "420 horas correspondientes a 26 créditos.",
+      descripcion:
+        "Bachilleres, titulados y profesionales de las carreras de ingeniería civil, industriales, sanitarios, arquitectos y ramas afines.",
+      modulos: [
+        "Cuaderno de obra físico y digital",
+        "Costos y Presupuestos con S10",
+        "Valorización de obras",
+        "Liquidación de obras",
+        "Formulación y planificación de proyectos con MS Project",
+        "Análisis y diseño de instituciones educativas",
+        "Seguridad, salud ocupacional y medio ambiente en obras públicas",
+        "Expediente técnico en obras",
+        "Régimen laboral en construcción civil",
+        "Planificación y programación de obras",
+        "Control de obras",
+        "Metrados en edificaciones",
+      ],
+    },
+    
   ];
 
   return (
