@@ -9,7 +9,7 @@ const DiploCivil = () => {
     {
       area: "INGENIERÍA CIVIL",
       titulo: "Ingeniería Vial",
-      imagen: "/image/diplotest.jpg",
+      imagen: "/image/diplotest.webp",
       fechaInicio: "18/08/2024",
       modalidad: "Virtual",
       duracion: "4 meses",
@@ -35,7 +35,7 @@ const DiploCivil = () => {
     {
       area: "INGENIERÍA CIVIL",
       titulo: "Residencia y supervisión de obras",
-      imagen: "/image/diplotest.jpg",
+      imagen: "/image/diplotest.webp",
       fechaInicio: "18/08/2024",
       modalidad: "Virtual",
       duracion: "4 meses",
@@ -60,7 +60,7 @@ const DiploCivil = () => {
     {
       area: "INGENIERÍA CIVIL",
       titulo: "Ingeniería de Puentes",
-      imagen: "/image/diplotest.jpg",
+      imagen: "/image/diplotest.webp",
       fechaInicio: "11/08/2024",
       modalidad: "Virtual",
       duracion: "4 meses",
@@ -83,7 +83,7 @@ const DiploCivil = () => {
     {
       area: "INGENIERÍA CIVIL",
       titulo: "Asistente Técnico en Obras",
-      imagen: "/image/diplotest.jpg",
+      imagen: "/image/diplotest.webp",
       fechaInicio: "22/09/2024",
       modalidad: "Virtual",
       duracion: "4 meses",

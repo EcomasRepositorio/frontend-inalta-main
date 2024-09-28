@@ -114,7 +114,7 @@ const SearchName: React.FC<SearchCodeProps> = ({ onSearchCode }) => {
           {/* Mostrar solo las dos imágenes deseadas */}
           <div className=" flex justify-center mb-10 gap-0.5  ">
             <Image
-              src={"/image/inaltlogcert.png"}
+              src={"/image/inaltlogcert.webp"}
               alt="Inalta Logo"
               className="lg:w-1/2 md:w-40 w-32  object-contain mt-2"
               width={600}

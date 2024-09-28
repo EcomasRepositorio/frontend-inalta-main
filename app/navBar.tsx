@@ -116,7 +116,7 @@ const Header = () => {
           <NavbarContent justify="end">
             <Link href="/login">
               <Image
-                src="/image/teache.png"
+                src="/image/teache.webp"
                 alt="Login Icon"
                 width={30} // Ajusta el tamaño según tus necesidades para móviles
                 height={30}

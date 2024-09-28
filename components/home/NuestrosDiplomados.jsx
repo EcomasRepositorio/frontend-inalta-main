@@ -17,12 +17,12 @@ const cursos = [
     link: '/diplomados',
   },
   {
-    imageUrl: '/image/ingagronomo.jpg',
+    imageUrl: '/image/ingagronomo.webp',
     title: 'Ingeniería Agronómica',
     link: '/diplomados',
   },
   {
-    imageUrl: '/image/ssoma.jpg',
+    imageUrl: '/image/ssoma.webp',
     title: 'SSOMA',
     link: '/diplomados',
   },
@@ -32,7 +32,7 @@ const cursos = [
     link: '/diplomados',
   },
   {
-    imageUrl: '/image/segali.jpg',
+    imageUrl: '/image/segali.webp',
     title: 'Gestión de la calidad e inocuidad alimentaria',
     link: '/diplomados',
   },

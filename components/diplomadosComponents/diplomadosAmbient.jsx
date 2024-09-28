@@ -8,7 +8,7 @@ const DiploAmbient = () => {
     {
       area: "INGENIERÍA AMBIENTAL",
       titulo: "Monitoreo y Evaluación de la Calidad Ambiental",
-      imagen: "/image/diplotest.jpg",
+      imagen: "/image/diplotest.webp",
       fechaInicio: "31/08/2024",
       modalidad: "Virtual",
       duracion: "04 meses",
@@ -32,7 +32,7 @@ const DiploAmbient = () => {
     {
       area: "INGENIERÍA AMBIENTAL",
       titulo: "Gestión y manejo integral de residuos sólidos",
-      imagen: "/image/diplotest.jpg",
+      imagen: "/image/diplotest.webp",
       fechaInicio: "05/10/2024",
       modalidad: "Virtual",
       duracion: "04 meses",
@@ -59,7 +59,7 @@ const DiploAmbient = () => {
     {
       area: "INGENIERÍA AMBIENTAL",
       titulo: "SSOMA (Seguridad y Salud Ocupacional y Medio Ambiente)",
-      imagen: "/image/diplotest.jpg",
+      imagen: "/image/diplotest.webp",
       fechaInicio: "12/10/2024",
       modalidad: "Virtual",
       duracion: "4 meses",
@@ -85,7 +85,7 @@ const DiploAmbient = () => {
     {
       area: "INGENIERÍA AMBIENTAL",
       titulo: "Gestión Ambiental Municipal y Regional",
-      imagen: "/image/diplotest.jpg",
+      imagen: "/image/diplotest.webp",
       fechaInicio: "10/08/2024",
       modalidad: "Virtual",
       duracion: "4 meses",

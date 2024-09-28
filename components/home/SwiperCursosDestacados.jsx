@@ -5,37 +5,37 @@ import Link from "next/link";
 const Courses = () => {
   const cursosDestacados = [
     {
-      imageUrl: "/image/test1.jpg",
+      imageUrl: "/image/test1.webp",
       title: "Topografía, Diseño Geométrico, Señalización y Seguridad Vial",
       description:
         "Curso integral de topografía, diseño geométrico, señalización y seguridad vial que abarca los fundamentos esenciales para la planificación, diseño y mantenimiento eficiente y seguro de infraestructuras viales.",
     },
     {
-      imageUrl: "/image/test1.jpg",
+      imageUrl: "/image/test1.webp",
       title: "Sistemas de Riego Tecnificado por Goteo",
       description:
         "Curso sobre implementación y gestión de sistemas agrícolas de riego con enfoque en la técnica de goteo.",
     },
     {
-      imageUrl: "/image/test1.jpg",
+      imageUrl: "/image/test1.webp",
       title: "Valorización de Residuos Sólidos",
       description:
         "Explora estrategias sostenibles para gestionar residuos sólidos, promoviendo reciclaje, reutilización y conversión en recursos.",
     },
     {
-      imageUrl: "/image/test1.jpg",
+      imageUrl: "/image/test1.webp",
       title: "Calidad e Inocuidad Alimentaria",
       description:
         "Explora los principios y prácticas esenciales para garantizar la seguridad y calidad de los alimentos desde su producción hasta el consumo.",
     },
     {
-      imageUrl: "/image/test1.jpg",
+      imageUrl: "/image/test1.webp",
       title: "Elaboración de Matriz IPERC - Mapa de Riesgos",
       description:
         "Curso de Elaboración de Matriz IPERC y Mapa de Riesgos: Enfocado en capacitar en la identificación, evaluación y gestión de riesgos laborales.",
     },
     {
-      imageUrl: "/image/test1.jpg",
+      imageUrl: "/image/test1.webp",
       title: "Monitoreo de Agentes Ocupacionales",
       description:
         "Brinda conocimientos especializados en técnicas y estrategias para llevar a cabo el monitoreo efectivo de agentes ocupacionales.",

@@ -17,7 +17,7 @@ import {
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import Link from "next/link";
 
-const images = [{ src: "/image/image1.png" }, { src: "/image/image2.png" }];
+const images = [{ src: "/image/image1.webp" }, { src: "/image/image2.webp" }];
 
 const texts = [
   "Con nuestros programas especializados, adquiere las habilidades que te llevarán más lejos",

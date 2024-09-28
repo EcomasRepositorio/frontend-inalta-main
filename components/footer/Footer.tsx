@@ -8,59 +8,53 @@ import {
 } from "react-icons/fa";
 import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
 import Link from "next/link";
-import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
+
+const socialLinks = [
+  { href: "https://www.facebook.com", icon: FaFacebookF },
+  { href: "https://www.instagram.com", icon: FaInstagram },
+  { href: "https://www.tiktok.com", icon: FaTiktok },
+  { href: "https://wa.me/51921818181", icon: FaWhatsapp },
+  { href: "https://www.youtube.com", icon: FaYoutube },
+];
+
+const menuLinks = [
+  { href: "/", label: "Inicio" },
+  { href: "/diplomados", label: "Diplomados" },
+  { href: "/certs", label: "Certificados" },
+  { href: "/aula-virtual", label: "Aula Virtual" },
+];
+
+const diplomaLinks = [
+  "Ingeniería Agronoma",
+  "Ingeniería Civil",
+  "Ingeniería Ambiental",
+  "Ingeniería de Industrias Alimentarias",
+  "Derecho",
+];
 
 export default function Footer() {
   return (
     <footer
       id="footer"
       className="bg-gradient-to-b from-blue-400 to-blue-700 text-white py-8"
+      style={{ minHeight: "400px" }} // Altura mínima para evitar cambios de tamaño en el contenedor del footer
     >
       <div className="container mx-auto px-4">
         {/* Redes Sociales */}
         <div className="mr-12 hidden lg:block">
           <p className="mb-2">Síguenos en nuestras redes sociales</p>
           <div className="flex justify-end space-x-4">
-            <a
-              href="https://www.facebook.com/profile.php?id=61565984064270&notif_id=1726594601819062&notif_t=page_user_activity&ref=notif"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-gray-300"
-            >
-              <FaFacebookF size={24} />
-            </a>
-            <a
-              href="https://www.instagram.com/corporacion.inalta?igsh=aWI2NWh5ajkza2x5"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-gray-300"
-            >
-              <FaInstagram size={24} />
-            </a>
-            <a
-              href="https://www.tiktok.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-gray-300"
-            >
-              <FaTiktok size={24} />
-            </a>
-            <a
-              href="https://wa.me/51921818181"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-gray-300"
-            >
-              <FaWhatsapp size={24} />
-            </a>
-            <a
-              href="https://www.youtube.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-gray-300"
-            >
-              <FaYoutube size={24} />
-            </a>
+            {socialLinks.map(({ href, icon: Icon }, idx) => (
+              <Link
+                key={idx}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-gray-300"
+              >
+                <Icon size={24} />
+              </Link>
+            ))}
           </div>
         </div>
 
@@ -71,120 +65,60 @@ export default function Footer() {
               <Image
                 src="/image/logo_inal_vert.png"
                 alt="Binex"
-                width={450}
-                height={800}
-                className="mt-[-20px]"
+                width={150}
+                height={150}
+                priority // Mantener prioridad de carga solo para esta imagen crítica
               />
-              <p className="mt-0 text-sm text-center md:text-left">
+              <p className="mt-2 text-sm text-center md:text-left">
                 Proporcionamos cursos y diplomados con aval de la EPG-UNP
               </p>
-              <a
-                href="/book"
-                className="mt-2 text-sm text-white hover:underline flex items-center"
-                aria-label="Libro de Reclamaciones"
-              >
-                {/* Imagen directamente en el enlace */}
-                <img
-                  src="/image/reclamos.png"
-                  alt="Icono Libro de Reclamaciones"
-                  className="w-6 h-6 mr-4" // Ajustar el tamaño del gif y margenes
-                />
-                Libro de Reclamaciones
-              </a>
+              <Link href="/book">
+                <div className="mt-2 text-sm text-white hover:underline flex items-center">
+                  <Image
+                    src="/image/reclamos.png"
+                    alt="Icono Libro de Reclamaciones"
+                    width={24}
+                    height={24}
+                    loading="lazy" // Carga diferida para imágenes no críticas
+                    className="mr-2"
+                  />
+                  Libro de Reclamaciones
+                </div>
+              </Link>
             </div>
 
             {/* Nuestra Empresa */}
             <div className="md:col-span-1">
               <h3 className="text-lg font-bold mb-4">NUESTRA EMPRESA:</h3>
               <ul className="space-y-2">
-                <div>
-                  <Link
-                    href="/"
-                    className="text-darkblue dark:text-white dark:hover:text-blue-100 transition duration-100 hover:text-primaryblue active:text-primaryblue"
-                  >
-                    Inicio
-                  </Link>
-                </div>
-
-                <div>
-                  <Link
-                    href="/diplomados"
-                    className="text-darkblue dark:text-white dark:hover:text-blue-100 transition duration-100 hover:text-primaryblue active:text-primaryblue"
-                  >
-                    Diplomados
-                  </Link>
-                </div>
-                <div>
-                  <Link
-                    href="/certs"
-                    className="text-darkblue dark:text-white dark:hover:text-blue-100 transition duration-100 hover:text-primaryblue active:text-primaryblue"
-                  >
-                    Certificados
-                  </Link>
-                </div>
-                <div>
-                  <Link
-                    href="/????"
-                    className="text-darkblue dark:text-white dark:hover:text-blue-100 transition duration-100 hover:text-primaryblue active:text-primaryblue"
-                  >
-                    Aula Virtual
-                  </Link>
-                </div>
-
+                {menuLinks.map(({ href, label }, idx) => (
+                  <li key={idx}>
+                    <Link href={href}>
+                      <span className="text-white hover:text-blue-100 transition duration-100">
+                        {label}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
                 <li>
-                  <a href="#" className="hover:underline">
-                    ¡Inscríbete!
-                  </a>
+                  <span className="hover:underline">¡Inscríbete!</span>
                 </li>
               </ul>
             </div>
 
             {/* Nuestros Diplomados */}
             <div className="md:col-span-1">
-              <h3 className="text-lg font-bold mb-4">
-                NUESTROS DIPLOMADOS EN:
-              </h3>
+              <h3 className="text-lg font-bold mb-4">NUESTROS DIPLOMADOS EN:</h3>
               <ul className="space-y-2">
-                <div>
-                  <Link
-                    href="/diplomados"
-                    className="text-darkblue dark:text-white dark:hover:text-blue-100 transition duration-100 hover:text-primaryblue active:text-primaryblue"
-                  >
-                    Ingeniería Agronoma
-                  </Link>
-                </div>
-                <div>
-                  <Link
-                    href="/diplomados"
-                    className="text-darkblue dark:text-white dark:hover:text-blue-100 transition duration-100 hover:text-primaryblue active:text-primaryblue"
-                  >
-                    Ingeniería Civi
-                  </Link>
-                </div>{" "}
-                <div>
-                  <Link
-                    href="/diplomados"
-                    className="text-darkblue dark:text-white dark:hover:text-blue-100 transition duration-100 hover:text-primaryblue active:text-primaryblue"
-                  >
-                    Ingeniería Ambiental
-                  </Link>
-                </div>{" "}
-                <div>
-                  <Link
-                    href="/diplomados"
-                    className="text-darkblue dark:text-white dark:hover:text-blue-100 transition duration-100 hover:text-primaryblue active:text-primaryblue"
-                  >
-                    Ingeniería de Industrias Alimentarias
-                  </Link>
-                </div>{" "}
-                <div>
-                  <Link
-                    href="/diplomados"
-                    className="text-darkblue dark:text-white dark:hover:text-blue-100 transition duration-100 hover:text-primaryblue active:text-primaryblue"
-                  >
-                    Derecho
-                  </Link>
-                </div>
+                {diplomaLinks.map((diploma, idx) => (
+                  <li key={idx}>
+                    <Link href="/diplomados">
+                      <span className="text-white hover:text-blue-100 transition duration-100">
+                        {diploma}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -194,18 +128,17 @@ export default function Footer() {
               <ul className="space-y-4">
                 <li className="flex items-center">
                   <HiOutlineMail size={20} className="mr-2" />
-                  <a
-                    href="mailto:capacitaciones@inalta.edu.pe"
-                    className="hover:underline"
-                  >
-                    capacitaciones@inalta.edu.pe
-                  </a>
+                  <Link href="mailto:capacitaciones@inalta.edu.pe">
+                    <span className="hover:underline">
+                      capacitaciones@inalta.edu.pe
+                    </span>
+                  </Link>
                 </li>
                 <li className="flex items-center">
                   <HiOutlinePhone size={20} className="mr-2" />
-                  <a href="tel:+51984040264" className="hover:underline">
-                    +51 999 999 999
-                  </a>
+                  <Link href="tel:+51984040264">
+                    <span className="hover:underline">+51 999 999 999</span>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -215,18 +148,7 @@ export default function Footer() {
         {/* Derechos Reservados */}
         <div className="mt-8 text-center text-sm text-gray-400">
           <p>© 2024 Copyright: inalta</p>
-          <span
-            style={{
-              position: "absolute",
-              width: "1px",
-              height: "1px",
-              margin: "-1px",
-              padding: "0",
-              overflow: "hidden",
-              clip: "rect(0, 0, 0, 0)",
-              border: "0",
-            }}
-          >
+          <span className="sr-only">
             esta pagina esta bendecida por el Omnissiah
           </span>
         </div>

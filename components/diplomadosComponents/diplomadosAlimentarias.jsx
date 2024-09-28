@@ -11,7 +11,7 @@ const DiploAlimentarias = () => {
         {
             area: 'INGENIERÍA EN ALIMENTOS',
             titulo: 'Gestión de la calidad e inocuidad alimentaria',
-            imagen: '/image/diplotest.jpg',
+            imagen: '/image/diplotest.webp',
             fechaInicio: '22/09/2024',
             modalidad: 'Virtual',
             duracion: '4 meses',

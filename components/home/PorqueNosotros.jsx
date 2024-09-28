@@ -12,15 +12,14 @@ import {
 // Carga dinámica del componente Globe (sin SSR)
 const Globe = dynamic(() => import("../globe/Globe"), { ssr: false });
 
-// Hook para el contador animado usando requestAnimationFrame
 const useCounter = (endValue, isVisible) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (!isVisible) return; // Solo iniciar el contador si el elemento es visible
+    if (!isVisible) return;
 
     let start = 0;
-    const duration = 2000; // Duración de la animación en milisegundos
+    const duration = 2000;
     const startTime = performance.now();
 
     const animateCount = (currentTime) => {
@@ -42,17 +41,16 @@ const useCounter = (endValue, isVisible) => {
 };
 
 const PrincipalHome = () => {
-  const sectionRef = useRef(null); // Referencia para observar el contenedor de métricas
-  const [isVisible, setIsVisible] = useState(false); // Estado para saber si la sección es visible
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
-  // Hook para observar la visibilidad del contenedor
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
-        setIsVisible(entry.isIntersecting); // Cambia el estado según la visibilidad
+        setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.5 } // 50% del contenedor debe ser visible
+      { threshold: 0.5 }
     );
 
     if (sectionRef.current) {
@@ -111,87 +109,94 @@ const PrincipalHome = () => {
           </p>
         </div>
 
-        {/* Métricas con estilo de cuadro y efecto hover */}
+        {/* Tarjetas con el efecto de llenado desde abajo */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 px-2 md:px-0">
-          {/* Tarjetas (contenedor) */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            className="text-center bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full max-w-[350px] mx-auto"
+            className="relative text-center bg-white p-6 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 w-full max-w-[350px] mx-auto group"
           >
-            {/* Usa una etiqueta img nativa para verificar */}
-            <img
-              src="/gif/pers.gif"
-              alt="Gif Animado"
-              width={50}
-              height={50}
-              className="mx-auto mb-2 transform hover:scale-110 transition-transform duration-300"
-            />
-            <h2 className="text-lg md:text-3xl font-bold">
-              +{impartedCoursesCount}
-            </h2>
-            <p>Alumnos beneficiados</p>
+            <div className="absolute inset-0 bg-blue-400 h-0 group-hover:h-full transition-all duration-500 ease-out 0-z"></div>
+            <div className="relative z-10">
+              <img
+                src="/gif/pers2.gif"
+                alt="Gif Animado"
+                width={50}
+                height={50}
+                className="mx-auto mb-2 transform hover:scale-110 transition-transform duration-300"
+              />
+              <h2 className="text-lg md:text-3xl font-bold text-black">
+                +{impartedCoursesCount}
+              </h2>
+              <p className="text-black">Alumnos beneficiados</p>
+            </div>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            className="text-center bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full max-w-[350px] mx-auto"
+            className="relative text-center bg-white p-6 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 w-full max-w-[350px] mx-auto group"
           >
-            {/* Usa una etiqueta img nativa para verificar */}
-            <img
-              src="/gif/graduate.gif"
-              alt="Gif Animado"
-              width={50}
-              height={50}
-              className="mx-auto mb-2 transform hover:scale-110 transition-transform duration-300"
-            />
-            <h2 className="text-lg md:text-3xl font-bold">
-              +{impartedCoursesCount}
-            </h2>
-            <p>Diplomados Disponibless</p>
+            <div className="absolute inset-0 bg-blue-400 h-0 group-hover:h-full transition-all duration-500 ease-out z-0"></div>
+            <div className="relative z-10">
+              <img
+                src="/gif/graduate2.gif"
+                alt="Gif Animado"
+                width={50}
+                height={50}
+                className="mx-auto mb-2 transform hover:scale-110 transition-transform duration-300"
+              />
+              <h2 className="text-lg md:text-3xl font-bold text-black">
+                +{diplomasCount}
+              </h2>
+              <p className="text-black">Diplomados Disponibles</p>
+            </div>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            className="text-center bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full max-w-[350px] mx-auto"
+            className="relative text-center bg-white p-6 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 w-full max-w-[350px] mx-auto group"
           >
-            {/* Usa una etiqueta img nativa para verificar */}
-            <img
-              src="/gif/doc.gif"
-              alt="Gif Animado"
-              width={50}
-              height={50}
-              className="mx-auto mb-2 transform hover:scale-110 transition-transform duration-300"
-            />
-            <h2 className="text-lg md:text-3xl font-bold">
-              +{impartedCoursesCount}
-            </h2>
-            <p>Cursos iDisponibless</p>
+            <div className="absolute inset-0 bg-blue-400  h-0 group-hover:h-full transition-all duration-500 ease-out z-0"></div>
+            <div className="relative z-10">
+              <img
+                src="/gif/doc1.gif"
+                alt="Gif Animado"
+                width={50}
+                height={50}
+                className="mx-auto mb-2 transform hover:scale-110 transition-transform duration-300"
+              />
+              <h2 className="text-lg md:text-3xl font-bold text-black">
+                +{coursesCount}
+              </h2>
+              <p className="text-black">Cursos Disponibles</p>
+            </div>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            className="text-center bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full max-w-[350px] mx-auto"
+            className="relative text-center bg-white p-6 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 w-full max-w-[350px] mx-auto group"
           >
-            {/* Usa una etiqueta img nativa para verificar */}
-            <img
-              src="/gif/star2.gif"
-              alt="Gif Animado"
-              width={50}
-              height={50}
-              className="mx-auto mb-2 transform hover:scale-110 transition-transform duration-300"
-            />
-            <h2 className="text-lg md:text-3xl font-bold">
-              +{impartedCoursesCount}
-            </h2>
-            <p>Clases virtuales impartidas</p>
+            <div className="absolute inset-0 bg-blue-400  h-0 group-hover:h-full transition-all duration-500 ease-out z-0"></div>
+            <div className="relative z-10">
+              <img
+                src="/gif/star3.gif"
+                alt="Gif Animado"
+                width={50}
+                height={50}
+                className="mx-auto mb-2 transform hover:scale-110 transition-transform duration-300"
+              />
+              <h2 className="text-lg md:text-3xl font-bold text-black">
+                +{impartedCoursesCount}
+              </h2>
+              <p className="text-black">Clases virtuales impartidas</p>
+            </div>
           </motion.div>
         </div>
       </motion.div>

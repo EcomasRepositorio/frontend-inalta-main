@@ -82,7 +82,7 @@ const Curso = ({ curso }) => {
             </div>
           </div>
 
-          {/* Acordeón de módulos */}
+          {/* Acordeón de módulos con estilo personalizado */}
           <Accordion defaultExpandedKeys={["1"]} bordered shadow>
             <AccordionItem
               key="3"
@@ -92,19 +92,23 @@ const Curso = ({ curso }) => {
                 </h3>
               }
             >
-              <ul className="list-disc pl-5 text-gray-700">
+              <ul className="space-y-4">
                 {curso.modulos.map((modulo, moduloIndex) => (
-                  <li key={moduloIndex}>
+                  <li
+                    key={moduloIndex}
+                    className="flex items-center justify-between border-2 border-blue-400 rounded-lg py-2 px-4 text-gray-800 hover:bg-purple-100 hover:text-purple-800 transition-all duration-300"
+                  >
                     <a
                       href={generarEnlaceWhatsapp(curso.titulo, modulo)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 hover:underline"
+                      className="flex items-center space-x-2 w-full"
                     >
-                      <span className="font-bold">
-                        MÓDULO {toRoman(moduloIndex + 1)}:{" "}
+                      <FaWhatsapp className="text-green-500 w-5 h-5" />
+                      <span className="text-lg font-semibold">
+                        MÓDULO {toRoman(moduloIndex + 1)}:
                       </span>
-                      {modulo}
+                      <span className="text-md">{modulo}</span>
                     </a>
                   </li>
                 ))}
