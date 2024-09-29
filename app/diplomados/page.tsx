@@ -30,23 +30,3 @@ export default function Main() {
     </div>
   );
 }
-/*
-<div class="realtive pt-20 lg:pt-40 pb-20 lg:pb-40">
-  <div class="absolute top-0 w-full object-cover">
-    <video class="w-full h-full object-cover" autoPlay 1oop>
-    <source src="/video_ambiental.webm" type="video/webm">
-    <video/>
-    <div class="absolute top-0 left-0 w-full h-full bg-black opacity-60"></div>
-  </div>
-  <div class="realative mx-auto max-w-screen-x1 p-2 text-white">
-    <h1 class="font-extrabold text-4xl lg:text-6xl mt-10">Nuestros diplomados</h1>
-    <p class="font-semibold text-lg mt-2">¡Te ofrecemos un servicio de calidad para segurar el exito de tu profesión!</p>
-    <button class="border px-4 py-1 mt-4 rounded-xl font-semibold">Contacto</button>
-  </div>
-</div>
-*/
-
-
-/*
-git commit -m "/diplomadosAccordion-diplomadosNav-Footer-ContactForm-Index-package-page"
-*/

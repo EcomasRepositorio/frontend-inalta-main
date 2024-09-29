@@ -42,14 +42,20 @@ const Curso = ({ curso }) => {
 
   return (
     <div className="flex flex-col md:flex-row bg-white shadow-md rounded-lg overflow-hidden mb-8">
-      {/* Imagen del curso */}
-      <div className="w-full md:w-1/3 relative">
+      {/* Contenedor de la imagen con tamaño fijo y estilos responsivos */}
+      <div
+        className="relative w-full md:w-1/3"
+        style={{
+          height: "500px", // Altura fija
+          minWidth: "300px", // Ancho mínimo para mantener la proporción
+        }}
+      >
         <Image
           src={curso.imagen}
           alt="Curso"
-          width={600}
-          height={400}
-          className="object-cover w-full h-full"
+          layout="fill" // La imagen ocupará todo el contenedor
+          objectFit="cover" // La imagen mantendrá sus proporciones
+          className="rounded-lg"
         />
       </div>
 

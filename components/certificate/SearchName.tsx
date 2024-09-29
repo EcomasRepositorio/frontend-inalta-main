@@ -234,7 +234,7 @@ const SearchName: React.FC<SearchNameProps> = ({ onSearchName }) => {
                     >
                       <div className=" flex justify-center mb-10 gap-0.5  ">
                         <Image
-                          src={"/image/inaltlogcert.webp"}
+                          src={"/image/inaltlogcert.png"}
                           alt="Inalta Logo"
                           className="lg:w-1/2 md:w-40 w-32  object-contain mt-2"
                           width={600}

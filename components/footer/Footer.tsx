@@ -1,11 +1,6 @@
+import React from "react";
 import Image from "next/image";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaTiktok,
-  FaWhatsapp,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
 import Link from "next/link";
 
@@ -36,21 +31,21 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="bg-gradient-to-b from-blue-400 to-blue-700 text-white py-8"
-      style={{ minHeight: "400px" }} // Altura mínima para evitar cambios de tamaño en el contenedor del footer
+      className="bg-gradient-to-b from-blue-400 to-blue-700 text-white py-12" // Ajustar padding para mejor visualización
+      style={{ minHeight: "300px" }} // Altura mínima ajustada
     >
       <div className="container mx-auto px-4">
         {/* Redes Sociales */}
-        <div className="mr-12 hidden lg:block">
-          <p className="mb-2">Síguenos en nuestras redes sociales</p>
-          <div className="flex justify-end space-x-4">
+        <div className="mr-12 mb-8 lg:mb-0 hidden lg:block">
+          <p className="mb-2 text-center lg:text-left">Síguenos en nuestras redes sociales</p>
+          <div className="flex justify-center lg:justify-end space-x-4">
             {socialLinks.map(({ href, icon: Icon }, idx) => (
               <Link
                 key={idx}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-gray-300"
+                className="text-white hover:text-gray-300 transition duration-200"
               >
                 <Icon size={24} />
               </Link>
@@ -58,16 +53,18 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Contenido Principal */}
         <div className="border-t border-white/40 pt-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Logotipo y Descripción */}
             <div className="md:col-span-1 flex flex-col items-center md:items-start">
               <Image
                 src="/image/logo_inal_vert.png"
-                alt="Binex"
-                width={150}
-                height={150}
-                priority // Mantener prioridad de carga solo para esta imagen crítica
+                alt="Corporación Inalta"
+                width={120}
+                height={120} // Dimensiones ajustadas para evitar cambios de tamaño
+                priority
+                className="mb-4"
               />
               <p className="mt-2 text-sm text-center md:text-left">
                 Proporcionamos cursos y diplomados con aval de la EPG-UNP
@@ -76,10 +73,10 @@ export default function Footer() {
                 <div className="mt-2 text-sm text-white hover:underline flex items-center">
                   <Image
                     src="/image/reclamos.png"
-                    alt="Icono Libro de Reclamaciones"
+                    alt="Libro de Reclamaciones"
                     width={24}
                     height={24}
-                    loading="lazy" // Carga diferida para imágenes no críticas
+                    loading="lazy" // Carga diferida para mejorar el rendimiento
                     className="mr-2"
                   />
                   Libro de Reclamaciones
@@ -94,14 +91,14 @@ export default function Footer() {
                 {menuLinks.map(({ href, label }, idx) => (
                   <li key={idx}>
                     <Link href={href}>
-                      <span className="text-white hover:text-blue-100 transition duration-100">
+                      <span className="text-white hover:text-blue-100 transition duration-150">
                         {label}
                       </span>
                     </Link>
                   </li>
                 ))}
                 <li>
-                  <span className="hover:underline">¡Inscríbete!</span>
+                  <span className="hover:underline cursor-pointer">¡Inscríbete!</span>
                 </li>
               </ul>
             </div>
@@ -113,7 +110,7 @@ export default function Footer() {
                 {diplomaLinks.map((diploma, idx) => (
                   <li key={idx}>
                     <Link href="/diplomados">
-                      <span className="text-white hover:text-blue-100 transition duration-100">
+                      <span className="text-white hover:text-blue-100 transition duration-150">
                         {diploma}
                       </span>
                     </Link>
@@ -146,11 +143,9 @@ export default function Footer() {
         </div>
 
         {/* Derechos Reservados */}
-        <div className="mt-8 text-center text-sm text-gray-400">
-          <p>© 2024 Copyright: inalta</p>
-          <span className="sr-only">
-            esta pagina esta bendecida por el Omnissiah
-          </span>
+        <div className="mt-8 text-center text-sm text-gray-300">
+          <p>© 2024 Copyright: Inalta</p>
+          <span className="sr-only">Página optimizada con amor y precisión.</span>
         </div>
       </div>
     </footer>

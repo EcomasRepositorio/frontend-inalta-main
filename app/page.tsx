@@ -27,7 +27,10 @@ export default function Main() {
       {/* Tercera Sección - PorqueNosotros y Cursos Destacados */}
       <div className="bg-gradient-to-b from-white via-white to-white">
         
+
         <PorqueNosotros />
+
+        
         <CarouselCursosDestacados />
       </div>
 
