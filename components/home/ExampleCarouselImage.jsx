@@ -5,7 +5,7 @@ const ExampleCarouselImage = ({ text }) => {
   return (
     <div>
       <Image
-        src="/image/obras.jpg" // Cambia a la ruta correcta de la imagen
+        src="/" // Cambia a la ruta correcta de la imagen
         alt={text}
         width={800}
         height={400}

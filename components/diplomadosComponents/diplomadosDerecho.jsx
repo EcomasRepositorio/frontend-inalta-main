@@ -9,7 +9,7 @@ const DiploDerecho = () => {
       area: "DERECHO",
       titulo: "PERITO FORENSE Y CRIMINALÍSTICO",
       imagen: "/image/diplotest.webp",
-      fechaInicio: "01/09/2024",
+      fechaInicio: "próximamente",
       modalidad: "Virtual",
       duracion: "4 meses",
       horas: "420 horas correspondientes a 26 créditos.",

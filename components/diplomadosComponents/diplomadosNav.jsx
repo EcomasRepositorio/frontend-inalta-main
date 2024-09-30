@@ -25,7 +25,6 @@ export default function App() {
     };
   }, []);
 
-
   return (
     <div className="flex flex-col px-4">
       <div className="flex w-full flex-col">
@@ -33,47 +32,46 @@ export default function App() {
           disabledKeys={["anothers"]}
           color="primary"
           aria-label="Options"
-          className="w-full md:max-w-max "
+          className="w-full md:max-w-max"
           placement={isMobile ? "top" : "start"}
           classNames={{
-            tabList: " w-full dark:bg-blackblue2 bg-blue-50",
+            tabList: "w-full dark:bg-blackblue2 bg-blue-white",
             cursor: "bg-blue-500",
-            tab: "",
-            tabContent:
-              "group-data-[selected=true]:text-white dark:text-white ",
+            tab: "border-none", // Eliminar borde de las pestañas
+            tabContent: "group-data-[selected=true]:text-white dark:text-white",
           }}
         >
           <Tab key="civil" title="Ing. Civil" className="text-primaryblue">
-            <Card>
-              <CardBody className="dark:bg-blackblue2 bg-blue-50">
+            <Card className="border-none shadow-none">
+              <CardBody className="bg-transparent border-none">
                 <DiploCivil />
               </CardBody>
             </Card>
           </Tab>
           <Tab key="ambient" title="Ing. Ambiental">
-            <Card>
-              <CardBody className="dark:bg-blackblue2 bg-blue-50">
+            <Card className="border-none shadow-none">
+              <CardBody className="dark:bg-blackblue2 bg-white border-none">
                 <DiploAmbiental />
               </CardBody>
             </Card>
           </Tab>
           <Tab key="agrono" title="Ing. Agrónoma">
-            <Card>
-              <CardBody className="dark:bg-blackblue2 bg-blue-50">
+            <Card className="border-none shadow-none">
+              <CardBody className="dark:bg-blackblue2 bg-white border-none">
                 <DiploAgronoma />
               </CardBody>
             </Card>
           </Tab>
           <Tab key="alimentaria" title="Ingeniería en alimentos">
-            <Card>
-              <CardBody className="dark:bg-blackblue2 bg-blue-50">
+            <Card className="border-none shadow-none">
+              <CardBody className="dark:bg-blackblue2 bg-white border-none">
                 <DiploAlimentarias />
               </CardBody>
             </Card>
           </Tab>
           <Tab key="derecho" title="Derecho">
-            <Card>
-              <CardBody className="dark:bg-blackblue2 bg-blue-50">
+            <Card className="border-none shadow-none">
+              <CardBody className="dark:bg-blackblue2 bg-white border-none">
                 <DiploDerecho />
               </CardBody>
             </Card>

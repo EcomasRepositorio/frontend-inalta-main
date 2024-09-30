@@ -62,7 +62,7 @@ const Login: React.FC = () => {
             <input
               type="email"
               placeholder="Email"
-              className="input flex-1 bg-transparent border-none focus:outline-none ml-3 text-white"
+              className="input flex-1 bg-transparent border-transparent focus:outline-none ml-3 text-white"
               value={form.email}
               onChange={(e) => handleFormData(e, "email")}
               required

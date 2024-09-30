@@ -72,7 +72,7 @@ const PrincipalHome = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative flex flex-col md:flex-row justify-between items-center min-h-screen px-4 md:px-12 bg-gradient-to-b from-blue-50 via-blue-200 to-white overflow-hidden"
+      className="relative flex flex-col md:flex-row justify-between items-center min-h-screen px-4 md:px-12 bg-gradient-to-b from-white via-blue-200 to-white overflow-hidden"
     >
       {/* Contenedor del Globo (Izquierda) */}
       <motion.div

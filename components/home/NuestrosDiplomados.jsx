@@ -15,7 +15,7 @@ const cursos = [
 
 const CombinedDiplomados = () => {
   return (
-    <div className="bg-gray-100 mx-auto py-16 px-4 lg:px-8">
+    <div className="bg-white mx-auto py-16 px-4 lg:px-8">
       {/* Título del componente */}
       <h2 className="text-center text-3xl font-bold uppercase mb-10">Nuestros Diplomados</h2>
 

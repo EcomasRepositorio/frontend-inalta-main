@@ -65,9 +65,9 @@ const Book = () => {
         <Image
           src="/image/inaltcont.png"
           alt="logo_rizo"
-          width={400}
-          height={400}
-          className="flex justify-center mx-auto mb-1 pt-28 p-2"
+          width={300}
+          height={300}
+          className="flex justify-center mx-auto mb-1 pt-12 p-2"
           priority={true}
         />
 

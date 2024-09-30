@@ -55,7 +55,7 @@ const PrincipalHome = () => {
   const prevSlide = () => setIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
 
   return (
-    <div className="z-0 block md:flex bg-gradient-to-b from-blue-400 to-blue-50">
+    <div className="z-0 block md:flex bg-gradient-to-b from-blue-400 to-white">
       <motion.div
         initial="hidden"
         animate="visible"

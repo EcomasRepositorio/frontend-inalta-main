@@ -41,13 +41,13 @@ const Curso = ({ curso }) => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row bg-white shadow-md rounded-lg overflow-hidden mb-8">
+    <div className="flex flex-col md:flex-row bg-transparente border-transparent rounded-lg overflow-hidden mb-8">
       {/* Contenedor de la imagen con tamaño fijo y estilos responsivos */}
       <div
         className="relative w-full md:w-1/3"
         style={{
           height: "500px", // Altura fija
-          minWidth: "300px", // Ancho mínimo para mantener la proporción
+          minWidth: "400px", // Ancho mínimo para mantener la proporción
         }}
       >
         <Image
@@ -102,7 +102,7 @@ const Curso = ({ curso }) => {
                 {curso.modulos.map((modulo, moduloIndex) => (
                   <li
                     key={moduloIndex}
-                    className="flex items-center justify-between border-2 border-blue-400 rounded-lg py-2 px-4 text-gray-800 hover:bg-purple-100 hover:text-purple-800 transition-all duration-300"
+                    className="flex items-center justify-between border-2 border-blue-400 rounded-lg py-2 px-4 text-gray-800 hover:bg-blue-600 hover:text-white transition-all duration-300"
                   >
                     <a
                       href={generarEnlaceWhatsapp(curso.titulo, modulo)}
@@ -136,16 +136,15 @@ const Curso = ({ curso }) => {
             MÁS INFORMACIÓN
           </a>
 
-          {/* Botón de Plan de Estudios */}
-          <a
-            href="https://www.facebook.com/"
-            target="_blank"
-            className="flex items-center justify-center border-2 border-red-400 text-red-400 hover:bg-red-400 hover:text-white transition-all duration-300 rounded-full py-2 px-6 w-full lg:w-auto"
-          >
-            <MdOutlinePictureAsPdf className="w-5 h-5 mr-2" />
-            PLAN DE ESTUDIOS
-          </a>
-
+           {/* Botón de Plan de Estudios deshabilitado */}
+           <a
+          href="#"
+          className="flex items-center justify-center border-2 border-red-400 text-red-400 bg-gray-200 rounded-full py-2 px-6 w-full lg:w-auto cursor-not-allowed"
+          style={{ pointerEvents: "" }} // Evitar interacción con el botón
+        >
+          <MdOutlinePictureAsPdf className="w-5 h-5 mr-2" />
+          PLAN DE ESTUDIOS (No disponible)
+        </a>
           {/* Botón de Certificación */}
           <Link href="/certs" className="w-full lg:w-auto">
             <div className="flex items-center justify-center border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white transition-all duration-300 rounded-full py-2 px-6 w-full lg:w-auto">
