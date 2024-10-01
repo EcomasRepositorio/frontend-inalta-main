@@ -3,7 +3,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Accordion, AccordionItem } from "@nextui-org/react";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaChevronDown } from "react-icons/fa";
 import { MdOutlinePictureAsPdf } from "react-icons/md";
 import { IoMdSchool } from "react-icons/io";
 
@@ -41,26 +41,20 @@ const Curso = ({ curso }) => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row bg-transparente border-transparent rounded-lg overflow-hidden mb-8">
-      {/* Contenedor de la imagen con tamaño fijo y estilos responsivos */}
-      <div
-        className="relative w-full md:w-1/3"
-        style={{
-          height: "500px", // Altura fija
-          minWidth: "400px", // Ancho mínimo para mantener la proporción
-        }}
-      >
+    <div className="flex flex-col md:flex-row bg-transparent border-transparent rounded-lg overflow-hidden mb-8">
+      {/* Contenedor de la imagen con estilos responsivos para diferentes dispositivos */}
+      <div className="relative w-full md:w-1/3 lg:w-1/2 xl:w-1/3" style={{ minHeight: "250px", maxHeight: "500px" }}>
         <Image
           src={curso.imagen}
           alt="Curso"
-          layout="fill" // La imagen ocupará todo el contenedor
-          objectFit="cover" // La imagen mantendrá sus proporciones
+          layout="fill"
+          objectFit="cover"
           className="rounded-lg"
         />
       </div>
 
       {/* Contenido del curso */}
-      <div className="w-full md:w-2/3 p-8 flex flex-col justify-between">
+      <div className="w-full md:w-2/3 lg:w-1/2 xl:w-2/3 p-8 flex flex-col justify-between">
         <div>
           <h2 className="text-sm font-semibold text-gray-600 uppercase tracking-wider mb-2">
             {curso.area}
@@ -97,6 +91,8 @@ const Curso = ({ curso }) => {
                   Módulos del diplomado
                 </h3>
               }
+              // Aquí reemplazamos el ícono predeterminado con uno personalizado
+              expandIcon={<FaChevronDown className="text-gray-600 w-6 h-6" />}
             >
               <ul className="space-y-4">
                 {curso.modulos.map((modulo, moduloIndex) => (
@@ -124,7 +120,7 @@ const Curso = ({ curso }) => {
         </div>
 
         {/* Botones de acción en vista móvil */}
-        <div className="flex flex-col md:flex-col lg:flex-row justify-around items-center gap-4 mt-6">
+        <div className="flex flex-col md:flex-row justify-around items-center gap-4 mt-6">
           {/* Botón de Más Información */}
           <a
             href={generarEnlaceWhatsapp(curso.titulo, "Información general")}
@@ -136,22 +132,24 @@ const Curso = ({ curso }) => {
             MÁS INFORMACIÓN
           </a>
 
-           {/* Botón de Plan de Estudios deshabilitado */}
-           <a
-          href="#"
-          className="flex items-center justify-center border-2 border-red-400 text-red-400 bg-gray-200 rounded-full py-2 px-6 w-full lg:w-auto cursor-not-allowed"
-          style={{ pointerEvents: "" }} // Evitar interacción con el botón
-        >
-          <MdOutlinePictureAsPdf className="w-5 h-5 mr-2" />
-          PLAN DE ESTUDIOS (No disponible)
-        </a>
+          {/* Botón de Plan de Estudios */}
+          <a
+            href="#"
+            className="flex items-center justify-center border-2 border-red-400 text-red-400 bg-gray-200 rounded-full py-2 px-6 w-full lg:w-auto cursor-not-allowed"
+            style={{ pointerEvents: "none" }}
+          >
+            <MdOutlinePictureAsPdf className="w-5 h-5 mr-2" />
+            PLAN DE ESTUDIOS
+          </a>
           {/* Botón de Certificación */}
-          <Link href="/certs" className="w-full lg:w-auto">
-            <div className="flex items-center justify-center border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white transition-all duration-300 rounded-full py-2 px-6 w-full lg:w-auto">
-              <IoMdSchool className="w-5 h-5 mr-2" />
-              CERTIFICACIÓN
-            </div>
-          </Link>
+          <a
+            href="#"
+            className="flex items-center justify-center border-2 border-blue-400 text-blue-400 bg-gray-200 rounded-full py-2 px-6 w-full lg:w-auto cursor-not-allowed"
+            style={{ pointerEvents: "none" }}
+          >
+            <MdOutlinePictureAsPdf className="w-5 h-5 mr-2" />
+            CERTIFICACIONES
+          </a>
         </div>
       </div>
     </div>

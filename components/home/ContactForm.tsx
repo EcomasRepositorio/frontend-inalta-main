@@ -39,7 +39,7 @@ const ContactForm = () => {
   return (
     <section
       id="contacto"
-      className="bg-gradient-to-t from-blue-400 p-8 rounded-xl"
+      className="bg-gradient-to-t from-blue-500  to-blue-50 p-8 rounded-xl"
     >
       <div className="max-w-7xl mx-auto space-y-8 px-4 sm:px-0">
         {/* Título */}

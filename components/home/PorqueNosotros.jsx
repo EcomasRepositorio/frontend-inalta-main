@@ -117,7 +117,6 @@ const PrincipalHome = () => {
             transition={{ duration: 1 }}
             className="relative text-center bg-white p-6 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 w-full max-w-[350px] mx-auto group"
           >
-            <div className="absolute inset-0 bg-blue-400 h-0 group-hover:h-full transition-all duration-500 ease-out 0-z"></div>
             <div className="relative z-10">
               <img
                 src="/gif/pers2.gif"
@@ -139,7 +138,6 @@ const PrincipalHome = () => {
             transition={{ duration: 1 }}
             className="relative text-center bg-white p-6 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 w-full max-w-[350px] mx-auto group"
           >
-            <div className="absolute inset-0 bg-blue-400 h-0 group-hover:h-full transition-all duration-500 ease-out z-0"></div>
             <div className="relative z-10">
               <img
                 src="/gif/graduate2.gif"
@@ -161,7 +159,6 @@ const PrincipalHome = () => {
             transition={{ duration: 1 }}
             className="relative text-center bg-white p-6 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 w-full max-w-[350px] mx-auto group"
           >
-            <div className="absolute inset-0 bg-blue-400  h-0 group-hover:h-full transition-all duration-500 ease-out z-0"></div>
             <div className="relative z-10">
               <img
                 src="/gif/doc1.gif"
@@ -183,7 +180,6 @@ const PrincipalHome = () => {
             transition={{ duration: 1 }}
             className="relative text-center bg-white p-6 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 w-full max-w-[350px] mx-auto group"
           >
-            <div className="absolute inset-0 bg-blue-400  h-0 group-hover:h-full transition-all duration-500 ease-out z-0"></div>
             <div className="relative z-10">
               <img
                 src="/gif/star3.gif"

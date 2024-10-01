@@ -31,7 +31,7 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="bg-gradient-to-b from-blue-400 to-blue-700 text-white py-12" // Ajustar padding para mejor visualización
+      className="bg-gradient-to-b from-blue-400 to-blue-700 text-white py-12"
       style={{ minHeight: "300px" }} // Altura mínima ajustada
     >
       <div className="container mx-auto px-4">
