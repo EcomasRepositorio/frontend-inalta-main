@@ -1,10 +1,22 @@
-import React from "react";
+import React, { memo } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
-import Link from "next/link";
 
-const socialLinks = [
+// Tipos para los enlaces y menús
+type SocialLink = {
+  href: string;
+  icon: React.ElementType;
+};
+
+type MenuLink = {
+  href: string;
+  label: string;
+};
+
+// Definición de los enlaces de redes sociales y menús
+const socialLinks: SocialLink[] = [
   { href: "https://www.facebook.com", icon: FaFacebookF },
   { href: "https://www.instagram.com", icon: FaInstagram },
   { href: "https://www.tiktok.com", icon: FaTiktok },
@@ -12,14 +24,14 @@ const socialLinks = [
   { href: "https://www.youtube.com", icon: FaYoutube },
 ];
 
-const menuLinks = [
+const menuLinks: MenuLink[] = [
   { href: "/", label: "Inicio" },
   { href: "/diplomados", label: "Diplomados" },
   { href: "/certs", label: "Certificados" },
   { href: "/aula-virtual", label: "Aula Virtual" },
 ];
 
-const diplomaLinks = [
+const diplomaLinks: string[] = [
   "Ingeniería Agronoma",
   "Ingeniería Civil",
   "Ingeniería Ambiental",
@@ -27,18 +39,17 @@ const diplomaLinks = [
   "Derecho",
 ];
 
-export default function Footer() {
+const Footer: React.FC = () => {
   return (
     <footer
       id="footer"
-      className="bg-blue-500 text-white py-12 sm:py-8 md:py-10 lg:py-12"
-      style={{ minHeight: "300px" }} // Altura mínima ajustada
+      className="bg-blue-500 text-white py-16 px-6 w-full overflow-visible" // Eliminé `h-[350px]` y ajusté `overflow`
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto w-full h-full overflow-visible">
         {/* Redes Sociales */}
-        <div className="mr-12 mb-8 lg:mb-0 hidden lg:block">
-          <p className="mb-2 text-center lg:text-left">Síguenos en nuestras redes sociales</p>
-          <div className="flex justify-center lg:justify-end space-x-4">
+        <div className="flex justify-center lg:justify-between items-center mb-12">
+          <p className="text-center lg:text-left">Síguenos en nuestras redes sociales</p>
+          <div className="flex justify-center lg:justify-end space-x-4 mt-4 lg:mt-0">
             {socialLinks.map(({ href, icon: Icon }, idx) => (
               <Link
                 key={idx}
@@ -55,19 +66,19 @@ export default function Footer() {
 
         {/* Contenido Principal */}
         <div className="border-t border-white/40 pt-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             {/* Logotipo y Descripción */}
             <div className="md:col-span-1 flex flex-col items-center md:items-start">
               <Image
                 src="/image/logo_inal_vert.png"
                 alt="Corporación Inalta"
-                width={120}
-                height={120} // Dimensiones ajustadas para evitar cambios de tamaño
+                width={180}
+                height={60}
                 priority
                 className="mb-4"
               />
               <p className="mt-2 text-sm text-center md:text-left">
-                Proporcionamos cursos y diplomados con aval de la EPG-UNP
+                Proporcionamos cursos y diplomados con aval de la EPG-UNP.
               </p>
               <Link href="/book">
                 <div className="mt-2 text-sm text-white hover:underline flex items-center">
@@ -76,7 +87,6 @@ export default function Footer() {
                     alt="Libro de Reclamaciones"
                     width={24}
                     height={24}
-                    loading="lazy" // Carga diferida para mejorar el rendimiento
                     className="mr-2"
                   />
                   Libro de Reclamaciones
@@ -126,9 +136,7 @@ export default function Footer() {
                 <li className="flex items-center">
                   <HiOutlineMail size={20} className="mr-2" />
                   <Link href="mailto:capacitaciones@inalta.edu.pe">
-                    <span className="hover:underline">
-                      capacitaciones@inalta.edu.pe
-                    </span>
+                    <span className="hover:underline">capacitaciones@inalta.edu.pe</span>
                   </Link>
                 </li>
                 <li className="flex items-center">
@@ -145,9 +153,11 @@ export default function Footer() {
         {/* Derechos Reservados */}
         <div className="mt-8 text-center text-sm text-gray-300">
           <p>© 2024 Copyright: Inalta</p>
-          <span className="sr-only">Página optimizada con amor y precisión.</span>
         </div>
       </div>
     </footer>
   );
-}
+};
+
+// Exportar el componente memoizado para optimizar el renderizado
+export default memo(Footer);

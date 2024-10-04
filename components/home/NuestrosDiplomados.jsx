@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { memo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -31,13 +31,15 @@ const CombinedDiplomados = () => {
                   src={curso.imageUrl}
                   alt={curso.title}
                   fill
-                  style={{ objectFit: "cover" }} // Nuevo estilo para ajustar la imagen
-                  priority={index < 2} // Se priorizan las dos primeras imágenes
+                  style={{ objectFit: "cover" }} // Estilo para ajustar la imagen
+                  priority={index < 2} // Se priorizan las dos primeras imágenes para mejorar LCP (Largest Contentful Paint)
                   sizes="(max-width: 768px) 100vw, (min-width: 768px) 50vw, 33vw" // Ajustar según el tamaño de la pantalla
                   className="rounded-t-lg"
+                  placeholder="blur" // Añadir placeholder para carga de imágenes
+                  blurDataURL={curso.imageUrl} // Usar la misma imagen como blur temporal
                 />
               </div>
-              
+
               {/* Título de la tarjeta con adaptaciones según pantalla */}
               <div className="md:absolute md:bottom-0 md:left-0 md:right-0 md:bg-blue-600 md:bg-opacity-0 md:text-white md:text-center md:opacity-0 md:group-hover:bg-opacity-80 md:group-hover:opacity-100 transition-opacity duration-300">
                 <h3 className="text-xl md:text-xl font-semibold py-2 md:py-3 bg-blue-600 text-white bg-opacity-90 md:bg-opacity-0">
@@ -52,4 +54,5 @@ const CombinedDiplomados = () => {
   );
 };
 
-export default CombinedDiplomados;
+// Exportar el componente como memoizado para evitar re-renderizados innecesarios
+export default (CombinedDiplomados);
