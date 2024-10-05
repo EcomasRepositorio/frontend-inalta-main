@@ -13,46 +13,37 @@ const cursos = [
   { imageUrl: '/image/segali.webp', title: 'Gestión de la calidad e inocuidad alimentaria', link: '/diplomados' },
 ];
 
-const CombinedDiplomados = () => {
-  return (
-    <div className="bg-white mx-auto py-16 px-4 lg:px-8">
-      {/* Título del componente */}
-      <h2 className="text-center text-3xl font-bold uppercase mb-10">Nuestros Diplomados</h2>
-
-      {/* Contenedor de la cuadrícula */}
-      <div className="grid gap-6 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-screen-lg mx-auto">
-        {cursos.map((curso, index) => (
-          <Link href={curso.link} key={index} passHref>
-            {/* Contenedor de las tarjetas con diseño adaptativo */}
-            <div className="relative group cursor-pointer rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105 bg-white">
-              {/* Contenedor de la imagen con las nuevas propiedades de Next.js */}
-              <div className="w-full h-64 relative">
-                <Image
-                  src={curso.imageUrl}
-                  alt={curso.title}
-                  fill
-                  style={{ objectFit: "cover" }} // Estilo para ajustar la imagen
-                  priority={index < 2} // Se priorizan las dos primeras imágenes para mejorar LCP (Largest Contentful Paint)
-                  sizes="(max-width: 768px) 100vw, (min-width: 768px) 50vw, 33vw" // Ajustar según el tamaño de la pantalla
-                  className="rounded-t-lg"
-                  placeholder="blur" // Añadir placeholder para carga de imágenes
-                  blurDataURL={curso.imageUrl} // Usar la misma imagen como blur temporal
-                />
-              </div>
-
-              {/* Título de la tarjeta con adaptaciones según pantalla */}
-              <div className="md:absolute md:bottom-0 md:left-0 md:right-0 md:bg-blue-600 md:bg-opacity-0 md:text-white md:text-center md:opacity-0 md:group-hover:bg-opacity-80 md:group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="text-xl md:text-xl font-semibold py-2 md:py-3 bg-blue-600 text-white bg-opacity-90 md:bg-opacity-0">
-                  {curso.title}
-                </h3>
-              </div>
+const CombinedDiplomados = () => (
+  <div className="bg-white mx-auto py-16 px-4 lg:px-8">
+    <h2 className="text-center text-3xl font-bold uppercase mb-10">Nuestros Diplomados</h2>
+    <div className="grid gap-6 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-screen-lg mx-auto">
+      {cursos.map(({ imageUrl, title, link }, index) => (
+        <Link href={link} key={index} passHref>
+          <div className="relative group cursor-pointer rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105 bg-white">
+            <div className="w-full h-64 relative">
+              <Image
+                src={imageUrl}
+                alt={`Curso de ${title}`}
+                fill
+                style={{ objectFit: "cover" }}
+                priority={index < 2}
+                sizes="(max-width: 768px) 100vw, (min-width: 768px) 50vw, 33vw"
+                className="rounded-t-lg"
+                placeholder="blur"
+                blurDataURL={imageUrl}
+              />
             </div>
-          </Link>
-        ))}
-      </div>
+            <div className="md:absolute md:bottom-0 md:left-0 md:right-0 md:bg-blue-600 md:bg-opacity-0 md:text-white md:text-center md:opacity-0 md:group-hover:bg-opacity-80 md:group-hover:opacity-100 transition-opacity duration-300">
+              <h3 className="text-xl md:text-xl font-semibold py-2 md:py-3 bg-blue-600 text-white bg-opacity-90 md:bg-opacity-0">
+                {title}
+              </h3>
+            </div>
+          </div>
+        </Link>
+      ))}
     </div>
-  );
-};
+  </div>
+);
 
 // Exportar el componente como memoizado para evitar re-renderizados innecesarios
-export default (CombinedDiplomados);
+export default memo(CombinedDiplomados);

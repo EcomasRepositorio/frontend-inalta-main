@@ -39,7 +39,7 @@ const ContactForm = () => {
   return (
     <section
       id="contacto"
-      className="bg-gradient-to-t from-blue-500  to-blue-50 p-8 rounded-xl"
+      className="bg-transparent p-8 rounded-xl"
     >
       <div className="max-w-7xl mx-auto space-y-8 px-4 sm:px-0">
         {/* Título */}
@@ -54,7 +54,7 @@ const ContactForm = () => {
           <div className="w-full lg:w-1/3 p-6 text-white flex justify-center">
             <div className="flex flex-col items-center">
               <img
-                src="/image/inaltcont.png"
+                src="/image/inaltlogcert.png"
                 alt="Logo de Inalta"
                 className="mb-4 mt-2 w-40 h-40 sm:w-48 sm:h-48 lg:w-64 lg:h-64 object-cover"
               />

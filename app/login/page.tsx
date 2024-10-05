@@ -38,7 +38,7 @@ const Login: React.FC = () => {
     <div
       className="min-h-screen flex items-center justify-center bg-cover bg-center"
       style={{
-        backgroundImage: "url('/image/fondE.jpeg')" // Asegúrate de que la ruta de la imagen es correcta
+        backgroundImage: "url('/image/fondE.jpeg')", // Asegúrate de que la ruta de la imagen es correcta
       }}
     >
       <form
@@ -50,33 +50,33 @@ const Login: React.FC = () => {
       >
         <div className="flex justify-center mb-2">
           <img
-            src="/image/inaltcont.png" // Asegúrate de que la ruta del logo es correcta
+            src="/image/inaltlogcert.png" // Asegúrate de que la ruta del logo es correcta
             alt="Logo"
             className="w-32 h-auto"
           />
         </div>
-  
+
         <div className="flex flex-col mb-2">
           <label className="font-semibold text-white">Correo electrónico</label>
           <div className="inputForm flex items-center bg-white/50 border-2 border-gray-300 rounded-full pl-3 transition duration-200 focus-within:border-blue-500">
             <input
               type="email"
               placeholder="Email"
-              className="input flex-1 bg-transparent border-transparent focus:outline-none ml-3 text-white"
+              className="input flex-1 bg-transparent border-transparent focus:outline-none ml-3 placeholder-gray-300"
               value={form.email}
               onChange={(e) => handleFormData(e, "email")}
               required
             />
           </div>
         </div>
-  
+
         <div className="flex flex-col mb-4">
           <label className="font-semibold text-white">Contraseña</label>
           <div className="inputForm flex items-center bg-white/50 border-2 border-gray-300 rounded-full pl-3 transition duration-200 focus-within:border-blue-500">
             <input
               type={isVisible ? "text" : "password"}
               placeholder="Contraseña"
-              className="input flex-1 bg-transparent border-none focus:outline-none ml-3 text-white"
+              className="input flex-1 bg-transparent border-transparent focus:outline-none ml-3 placeholder-gray-300"
               value={form.password}
               onChange={(e) => handleFormData(e, "password")}
               required
@@ -91,13 +91,13 @@ const Login: React.FC = () => {
             </button>
           </div>
         </div>
-  
+
         {resErrors && (
           <p className="text-red-500 text-center">{resErrors.message}</p>
         )}
-  
+
         <button className="button-submit text-white w-full py-3 rounded-full bg-transparent border-2 border-white transition-all duration-300 ease-in-out hover:bg-blue-600">
-        Iniciar Sesión
+          Iniciar Sesión
         </button>
       </form>
     </div>

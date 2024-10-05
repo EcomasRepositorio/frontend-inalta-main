@@ -1,19 +1,28 @@
 "use client";
-import React, { useRef, useState } from 'react'
-import emailjs from '@emailjs/browser'
-import { useForm, SubmitHandler } from 'react-hook-form'
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { useForm, SubmitHandler } from "react-hook-form";
 import { BiWorld } from "react-icons/bi";
 import { HiIdentification } from "react-icons/hi2";
 import { SiHomeassistantcommunitystore } from "react-icons/si";
 import { PiIdentificationBadgeFill } from "react-icons/pi";
 import { FaUserPlus } from "react-icons/fa6";
-import { BsFillHouseUpFill, BsBank2, BsFillEnvelopeAtFill, BsBuildingsFill, BsFillPersonBadgeFill, BsFillTelephoneFill } from "react-icons/bs";
-import Image from 'next/image';
-import Whatsapp from '@/components/whatsapp/Index';
+import {
+  BsFillHouseUpFill,
+  BsBank2,
+  BsFillEnvelopeAtFill,
+  BsBuildingsFill,
+  BsFillPersonBadgeFill,
+  BsFillTelephoneFill,
+} from "react-icons/bs";
+import Image from "next/image";
 
 const Book = () => {
-
-  const { register, formState: { errors }, handleSubmit } = useForm();
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
   const [sending, setSending] = useState(false);
 
   const [reclamoChecked, setReclamoChecked] = useState(false);
@@ -40,14 +49,14 @@ const Book = () => {
     if (refForm.current) {
       try {
         await emailjs.sendForm(serviceID, templateID, refForm.current, apiKey);
-        alert('¡Mensaje Enviado!');
+        alert("¡Mensaje Enviado!");
       } catch (err) {
         alert(JSON.stringify(err));
       } finally {
         setSending(false);
       }
     }
-  }
+  };
 
   const validateCheckbox = () => {
     if (!reclamoChecked && !sugerenciaChecked) {
@@ -63,8 +72,8 @@ const Book = () => {
     >
       <div className="max-w-screen-lg mx-auto">
         <Image
-          src="/image/inaltcont.png"
-          alt="logo_rizo"
+          src="/image/inaltlogcert.png"
+          alt="logo_inalta"
           width={300}
           height={300}
           className="flex justify-center mx-auto mb-1 pt-12 p-2"
@@ -82,10 +91,12 @@ const Book = () => {
             Identificación del consumidor
           </h2>
         </div>
+
+        {/* Formulario con transparencia */}
         <form
           ref={refForm}
           onSubmit={handleSubmit(onSubmit)}
-          className="grid grid-cols-1 md:grid-cols-2 gap-4 p-2"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 p-8 bg-white/30 backdrop-blur-lg rounded-xl shadow-md"
         >
           <div className="text-gray-500 md:mt-4">
             <label className="font-bold absolute text-lg duration-500 scale-75 origin-[0]">
@@ -100,7 +111,7 @@ const Book = () => {
                 {...register("lastName", { required: true })}
                 id="apellidoPaterno"
                 name="lastName"
-                className="bg-gray-100 border-2 mt-6 border-gray-300 text-gray-600 text-sm rounded-lg block w-full ps-8 p-2.5"
+                className="bg-transparent border-2 mt-6 border-gray-300 text-gray-600 text-sm rounded-lg block w-full ps-8 p-2.5"
                 placeholder=""
               />
             </div>
@@ -392,7 +403,6 @@ const Book = () => {
           />
         </form>
       </div>
-      <Whatsapp />
     </section>
   );
 };

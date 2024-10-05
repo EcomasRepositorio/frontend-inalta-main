@@ -29,7 +29,7 @@ const useCounter = (endValue, isVisible) => {
 
 // Memoized component for each card
 const InfoCard = memo(({ img, count, text }) => (
-  <div className="relative text-center bg-white p-6 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 w-full max-w-[350px] mx-auto group">
+  <div className="relative text-center bg-white p-6 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 w-full max-w-[350px] mx-auto">
     <div className="relative z-10">
       <Image
         src={img}
@@ -73,17 +73,17 @@ const PrincipalHome = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative flex flex-col md:flex-row justify-between items-center min-h-screen px-4 md:px-12 bg-gradient-to-b from-white via-blue-200 to-white overflow-hidden"
+      className="flex flex-col md:flex-row items-center justify-center min-h-screen px-4 md:px-12 bg-gradient-to-b from-white via-blue-200 to-white overflow-hidden"
     >
       {/* Contenedor del Globo (Izquierda) */}
-      <div className="w-full md:max-w-[600px] text-left mt-4 md:mt-0 ml-1 z-10 overflow-hidden">
+      <div className="flex items-center justify-center w-full md:max-w-[600px] text-left mt-4 md:mt-0 z-10 overflow-hidden">
         <div className="globe-container">
           <Globe />
         </div>
       </div>
 
       {/* Contenedor del Texto y Métricas (Derecha) */}
-      <div className="w-full md:w-1/2 text-left mt-4 md:mt-0 ml-1 z-10 max-w-screen-lg mx-auto">
+      <div className="w-full md:w-1/2 text-left mt-4 md:mt-0 z-10 max-w-screen-lg mx-auto">
         <div className="mb-4 px-2 md:px-0">
           <h1 className="text-black text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase mb-6 md:mb-8">
             ¿Por qué elegir Inalta?

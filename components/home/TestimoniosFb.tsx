@@ -10,42 +10,42 @@ const testimonios = [
     ocupacion: "Desarrollador Web",
     testimonio:
       "He tenido una experiencia increíble con Inalta. Los cursos son muy completos y los profesores altamente capacitados. Gracias a ellos, he podido avanzar significativamente en mi carrera.",
-    foto: "https://scontent.ftnm1-1.fna.fbcdn.net/v/t39.30808-1/449684480_122104979006383351_3622404759841528249_n.jpg?stp=c0.161.959.959a_dst-jpg_s200x200&_nc_cat=103&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=WNO0OK-urlYQ7kNvgEL-T7z&_nc_ht=scontent.ftnm1-1.fna&_nc_gid=A3rXio5qBlLOWKSzgXQ311J&oh=00_AYDtyCCaSdYzccyf4K4EdMNPpLrO6NjvudbZr-kAmeT5GA&oe=66FCBA49",
+    foto: "/image/testimonios/juan.jpg",
   },
   {
     nombre: "Carlos López",
     ocupacion: "Diseñadora Gráfica",
     testimonio:
       "Inalta ha sido clave en mi desarrollo profesional. Los cursos son muy prácticos y los materiales están siempre actualizados.",
-    foto: "https://scontent.ftnm1-1.fna.fbcdn.net/v/t39.30808-6/367971920_6888415047836477_1623539334847121072_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=ibZ1ui-FpCUQ7kNvgHlsZjP&_nc_ht=scontent.ftnm1-1.fna&_nc_gid=AN6Q_6EVZfuD_KVKyxJa8yr&oh=00_AYBuTitu1yJkPU39iFHsTwz46xzWg4rzkyhx6LzwQnkMrg&oe=66FCB1C0",
+    foto: "/image/testimonios/carlos.jpg",
   },
   {
     nombre: "Ana García",
     ocupacion: "Ingeniero de Software",
     testimonio:
       "Los conocimientos adquiridos en Inalta me han permitido liderar proyectos importantes. Los instructores son muy profesionales y accesibles.",
-    foto: "https://scontent.ftnm1-1.fna.fbcdn.net/v/t39.30808-1/453608894_475048465461709_8336362213989797055_n.jpg?stp=c0.0.900.900a_dst-jpg_s200x200&_nc_cat=108&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=HYUeDWx0YjEQ7kNvgF-UK2q&_nc_ht=scontent.ftnm1-1.fna&_nc_gid=AwihynlpmjDK_wQdH5XjR3T&oh=00_AYAEgxikU31Vfuypctlax40B5UxvXtXZ-ZI8K_OKvoW7Hw&oe=66FCAF29",
+    foto: "/image/testimonios/ana.jpg",
   },
   {
     nombre: "Daniela Pérez",
     ocupacion: "Desarrollador Web",
     testimonio:
       "La plataforma de Inalta me ayudó a desarrollar habilidades que no encontraba en otros cursos. Recomiendo a cualquiera que quiera profundizar en el desarrollo web.",
-    foto: "https://scontent.ftnm1-1.fna.fbcdn.net/v/t39.30808-1/241418214_4279385832137886_1848141268631440439_n.jpg?stp=dst-jpg_s200x200&_nc_cat=106&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=YvhXYGTKWUkQ7kNvgFbwRUy&_nc_ht=scontent.ftnm1-1.fna&_nc_gid=AGX2R-4ZcjhpgeQOH8oWl7E&oh=00_AYBp7YeUtrNfHfpAh_9San6ZLCC0bUgHPWA2hmSGMUc25Q&oe=66FCBA49",
+    foto: "/image/testimonios/dani.jpg",
   },
   {
     nombre: "Oscar Gonzalo",
     ocupacion: "Diseñador Gráfico",
     testimonio:
       "La calidad de los cursos y la atención personalizada me permitieron mejorar mi portafolio y encontrar un mejor empleo. Estoy muy agradecido con Inalta.",
-    foto: "https://scontent.ftnm1-1.fna.fbcdn.net/v/t1.6435-9/46501712_10216428202004948_7014217155314974720_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=XI7KX5sP9kAQ7kNvgGk_nnr&_nc_ht=scontent.ftnm1-1.fna&_nc_gid=AUCRJswJif5RizREPaOZB4Q&oh=00_AYCs5ebY7be4ZkbLvqrfod9rsVl8qzJ-_zWYzZgPfkHRYA&oe=671E4C5F",
+    foto: "/image/testimonios/oscar.jpg",
   },
   {
     nombre: "Miriam Alvarado",
     ocupacion: "Ingeniero de Software",
     testimonio:
       "Gracias a Inalta, he mejorado mis habilidades técnicas y aprendido a liderar equipos de desarrollo con éxito. Sus métodos de enseñanza son efectivos y accesibles.",
-    foto: "https://scontent.ftnm1-1.fna.fbcdn.net/v/t39.30808-6/430235253_122099630510238489_4065895693687426060_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=7_YMz6iPuCEQ7kNvgFprObx&_nc_ht=scontent.ftnm1-1.fna&_nc_gid=AkaYpml9h2_gWg9dUwA9BHc&oh=00_AYCPbQJRbtuDAVpkRUPOTM2mpwL0JSbCkD7tAiJek_vc5A&oe=66FCB9A6",
+    foto: "/image/testimonios/miriam.jpg",
   },
 ];
 

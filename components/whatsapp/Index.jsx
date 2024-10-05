@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import styles from './Style.module.css';
 
 const Whatsapp = () => {
+  const [showMessage, setShowMessage] = useState(false); // Estado para mostrar el mensaje
+
+  const handleMouseEnter = () => {
+    setShowMessage(true); // Mostrar mensaje al pasar el mouse
+  };
+
+  const handleMouseLeave = () => {
+    setShowMessage(false); // Ocultar mensaje al quitar el mouse
+  };
+
   return (
     <div className={styles.container}>
-      <Link href='https://wa.link/tzsz9c' target='_blank'>
+      <Link 
+        href='#' 
+        target='_blank' 
+        className="relative" // Añadido para el posicionamiento del mensaje
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         <svg
           width={50}
           height={50}
@@ -27,6 +43,12 @@ const Whatsapp = () => {
           ></path>
         </svg>
       </Link>
+      {/* Mensaje de indisponibilidad */}
+      {showMessage && (
+        <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-red-500 text-sm">
+          Aún no disponible
+        </div>
+      )}
     </div>
   );
 };

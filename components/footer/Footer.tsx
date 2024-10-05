@@ -1,13 +1,21 @@
-import React, { memo } from "react";
+"use client";
+import React, { memo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp, FaYoutube } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaTiktok,
+  FaWhatsapp,
+  FaYoutube,
+} from "react-icons/fa";
 import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
 
 // Tipos para los enlaces y menús
 type SocialLink = {
   href: string;
   icon: React.ElementType;
+  disabled?: boolean; // Asegúrate de que esta propiedad esté aquí
 };
 
 type MenuLink = {
@@ -19,9 +27,9 @@ type MenuLink = {
 const socialLinks: SocialLink[] = [
   { href: "https://www.facebook.com", icon: FaFacebookF },
   { href: "https://www.instagram.com", icon: FaInstagram },
-  { href: "https://www.tiktok.com", icon: FaTiktok },
-  { href: "https://wa.me/51921818181", icon: FaWhatsapp },
-  { href: "https://www.youtube.com", icon: FaYoutube },
+  { href: "https://web.whatsapp.com", icon: FaWhatsapp, disabled: true }, // Deshabilitado
+  { href: "https://www.tiktok.com", icon: FaTiktok, disabled: true }, // Deshabilitado
+  { href: "https://www.youtube.com", icon: FaYoutube, disabled: true }, // Deshabilitado
 ];
 
 const menuLinks: MenuLink[] = [
@@ -39,27 +47,58 @@ const diplomaLinks: string[] = [
   "Derecho",
 ];
 
+// Componente para manejar enlaces de redes sociales
+const SocialLink: React.FC<{
+  href: string;
+  icon: React.ElementType;
+  disabled?: boolean;
+}> = ({ href, icon: Icon, disabled }) => {
+  const [showMessage, setShowMessage] = useState(false); // Estado para mostrar mensaje
+
+  return (
+    <div className="relative">
+      <Link
+        href={disabled ? "#" : href} // Previene la navegación si está deshabilitado
+        target={disabled ? undefined : "_blank"}
+        className={`p-2 rounded-full transition-transform transform hover:scale-150 shadow-xl ${
+          disabled ? "opacity-50 cursor-not-allowed" : ""
+        }`}
+        onClick={disabled ? (e) => e.preventDefault() : undefined} // Previene la acción si está deshabilitado
+        onMouseEnter={() => disabled && setShowMessage(true)} // Muestra mensaje al pasar el cursor
+        onMouseLeave={() => disabled && setShowMessage(false)} // Oculta mensaje al quitar el cursor
+      >
+        <Icon size={24} />
+      </Link>
+      {/* Mensaje de indisponibilidad */}
+      {disabled && showMessage && (
+        <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-red-500 text-sm">
+          Aún no disponible
+        </div>
+      )}
+    </div>
+  );
+};
+
 const Footer: React.FC = () => {
   return (
     <footer
       id="footer"
-      className="bg-blue-500 text-white py-16 px-6 w-full overflow-visible" // Eliminé `h-[350px]` y ajusté `overflow`
+      className="bg-blue-500 text-white py-16 px-6 w-full overflow-visible"
     >
       <div className="container mx-auto w-full h-full overflow-visible">
         {/* Redes Sociales */}
         <div className="flex justify-center lg:justify-between items-center mb-12">
-          <p className="text-center lg:text-left">Síguenos en nuestras redes sociales</p>
+          <p className="text-center lg:text-left">
+            Síguenos en nuestras redes sociales
+          </p>
           <div className="flex justify-center lg:justify-end space-x-4 mt-4 lg:mt-0">
-            {socialLinks.map(({ href, icon: Icon }, idx) => (
-              <Link
+            {socialLinks.map(({ href, icon, disabled }, idx) => (
+              <SocialLink
                 key={idx}
                 href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-gray-300 transition duration-200"
-              >
-                <Icon size={24} />
-              </Link>
+                icon={icon}
+                disabled={disabled}
+              />
             ))}
           </div>
         </div>
@@ -108,14 +147,18 @@ const Footer: React.FC = () => {
                   </li>
                 ))}
                 <li>
-                  <span className="hover:underline cursor-pointer">¡Inscríbete!</span>
+                  <span className="hover:underline cursor-pointer">
+                    ¡Inscríbete!
+                  </span>
                 </li>
               </ul>
             </div>
 
             {/* Nuestros Diplomados */}
             <div className="md:col-span-1">
-              <h3 className="text-lg font-bold mb-4">NUESTROS DIPLOMADOS EN:</h3>
+              <h3 className="text-lg font-bold mb-4">
+                NUESTROS DIPLOMADOS EN:
+              </h3>
               <ul className="space-y-2">
                 {diplomaLinks.map((diploma, idx) => (
                   <li key={idx}>
@@ -136,13 +179,15 @@ const Footer: React.FC = () => {
                 <li className="flex items-center">
                   <HiOutlineMail size={20} className="mr-2" />
                   <Link href="mailto:capacitaciones@inalta.edu.pe">
-                    <span className="hover:underline">capacitaciones@inalta.edu.pe</span>
+                    <span className="hover:underline">
+                      capacitaciones@inalta.edu.pe
+                    </span>
                   </Link>
                 </li>
                 <li className="flex items-center">
                   <HiOutlinePhone size={20} className="mr-2" />
                   <Link href="tel:+51984040264">
-                    <span className="hover:underline">+51 999 999 999</span>
+                    <span className="hover:underline">+51 ### ### ###</span>
                   </Link>
                 </li>
               </ul>
@@ -151,9 +196,14 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Derechos Reservados */}
-        <div className="mt-8 text-center text-sm text-gray-300">
-          <p>© 2024 Copyright: Inalta</p>
-        </div>
+        {/* Derechos Reservados */}
+        {/* Derechos Reservados */}
+<div className="relative mt-8 text-center text-sm text-gray-300">
+  <p>© 2024 Copyright: Inalta</p>
+  {/* Texto oculto a la misma altura que el copyright */}
+  <p className="opacity-0 text-gray-300">pagina protegido por el omnissiah</p>
+</div>
+
       </div>
     </footer>
   );

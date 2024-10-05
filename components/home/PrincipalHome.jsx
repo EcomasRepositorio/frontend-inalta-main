@@ -5,7 +5,7 @@ import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
 
-// Variables de datos (sin anotaciones de tipos)
+// Variables de datos
 const images = ["/image/image1pres.webp", "/image/image2.webp"];
 const texts = [
   "Con nuestros programas especializados, adquiere las habilidades que te llevarán más lejos",
@@ -14,21 +14,21 @@ const texts = [
 
 const tittles = [
   {
-    tittle1: "Aprende y crece, estés donde estés",
-    color1: "bg-gradient-to-b from-blue-500 to-green-500",
+    title: "Aprende y crece, estés donde estés",
+    color: "bg-gradient-to-b from-blue-500 to-green-500",
   },
   {
-    tittle2: "Formando líderes que transforman el mañana",
-    color3: "text-from-dark",
+    title: "Formando líderes que transforman el mañana",
+    color: "text-from-dark",
   },
 ];
 
 const socialLinks = [
   { href: "https://www.facebook.com/profile.php?id=61565984064270", icon: FaFacebookF },
   { href: "https://www.instagram.com/corporacion.inalta", icon: FaInstagram },
-  { href: "https://www.tiktok.com/@promas.corp", icon: FaTiktok },
-  { href: "https://wa.me/51984040264?text=Hola,%20deseo%20más%20información%20sobre%20los%20diplomados", icon: FaWhatsapp },
-  { href: "https://www.youtube.com/@Corporacion.Promas", icon: FaYoutube },
+  { href: "#", icon: FaTiktok, disabled: true }, 
+  { href: "#", icon: FaWhatsapp, disabled: true }, // Deshabilitado
+  { href: "#", icon: FaYoutube, disabled: true },
 ];
 
 const buttons = [
@@ -37,31 +37,44 @@ const buttons = [
 ];
 
 // Componente memoizado para los íconos de redes sociales
-const SocialLinks = memo(() => (
-  <div className="text-gray-100 lg:text-2xl text-xl inline-flex lg:gap-6 gap-4">
-    {socialLinks.map(({ href, icon: Icon }, idx) => (
-      <Link
-        key={idx}
-        href={href}
-        target="_blank"
-        className="p-2 rounded-full transition-transform transform hover:scale-150 shadow-xl"
-      >
-        <Icon />
-      </Link>
-    ))}
-  </div>
-));
+const SocialLinks = memo(() => {
+  const [showMessage, setShowMessage] = useState(false); // Estado para mostrar mensaje
 
-// Componente principal usando `.jsx` sin anotaciones de tipo
+  return (
+    <div className="text-gray-100 lg:text-2xl text-xl inline-flex lg:gap-6 gap-4">
+      {socialLinks.map(({ href, icon: Icon, disabled }, idx) => (
+        <div key={idx} className="relative">
+          <Link
+            href={disabled ? "#" : href} // Previene la navegación si está deshabilitado
+            target={disabled ? undefined : "_blank"}
+            className={`p-2 rounded-full transition-transform transform hover:scale-150 shadow-xl ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+            onClick={disabled ? (e) => e.preventDefault() : undefined} // Previene la acción si está deshabilitado
+            onMouseEnter={() => disabled && setShowMessage(true)} // Muestra mensaje al pasar el cursor
+            onMouseLeave={() => disabled && setShowMessage(false)} // Oculta mensaje al quitar el cursor
+          >
+            <Icon />
+          </Link>
+          {/* Mensaje de indisponibilidad */}
+          {disabled && showMessage && (
+            <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 text-red-500 text-sm">
+              Aún no disponible
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+});
+
+// Componente principal
 function PrincipalHome() {
-  const [index, setIndex] = useState(0); // Eliminé la anotación de tipo
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!document.hidden) {
-        setIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
-      }
+      setIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
     }, 10000);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -84,7 +97,7 @@ function PrincipalHome() {
               alt="slider-image"
               fill
               sizes="(max-width: 768px) 100vw, (min-width: 768px) 50vw, 33vw"
-              priority={index === 0} // Priorizar solo la primera imagen del slider
+              priority={index === 0}
               className="object-contain md:object-cover rounded-lg"
             />
           </div>
@@ -100,9 +113,9 @@ function PrincipalHome() {
           <div className="lg:leading-tight leading-tight min-h-[120px] md:min-h-[160px] flex items-center justify-center">
             {tittles[index] && (
               <h1
-                className={`mt-6 lg:text-[40px] text-[24px] font-extrabold bg-clip-text min-w-[320px] ${tittles[index][`color${Object.keys(tittles[index])[0].slice(-1)}`]}`}
+                className={`mt-6 lg:text-[40px] text-[24px] font-extrabold bg-clip-text min-w-[320px] ${tittles[index].color}`}
               >
-                {Object.values(tittles[index])[0]}
+                {tittles[index].title}
               </h1>
             )}
           </div>
@@ -112,12 +125,12 @@ function PrincipalHome() {
 
           {/* Botón de acción */}
           <div className="w-full flex justify-center md:justify-start mt-6">
-            <a
+            <Link
               href={buttons[index].link}
               className="inline-block text-center py-2 px-8 border-2 border-blue-500 text-blue-500 rounded-lg hover:bg-blue-500 hover:text-white transition-colors duration-300"
             >
               {buttons[index].text}
-            </a>
+            </Link>
           </div>
 
           {/* Botones de navegación */}
