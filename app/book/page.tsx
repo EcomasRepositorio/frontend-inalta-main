@@ -68,7 +68,7 @@ const Book = () => {
   return (
     <section
       id="contacto"
-      className="bg-gradient-to-b from-blue-400 via-white to-blue-400 p-8 rounded-xl min-h-screen"
+      className="bg-transparent p-8 rounded-xl min-h-screen"
     >
       <div className="max-w-screen-lg mx-auto">
         <Image
