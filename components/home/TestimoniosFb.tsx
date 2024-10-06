@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 
+// Datos de testimonios
 const testimonios = [
   {
     nombre: "Juan Pérez",
@@ -49,60 +50,46 @@ const testimonios = [
   },
 ];
 
-
-const TestimoniosCarrusel = () => {
-  return (
-    <div className="bg-gradient-to-b from-white via-white to-blue-50 py-16 px-4 sm:px-6 lg:px-8">
-      {/* Título para la sección de testimonios */}
-      <h2 className="text-center text-black text-3xl sm:text-4xl font-extrabold uppercase mb-8">
-        Testimonios
-      </h2>
-
-      <div className="max-w-4xl mx-auto">
-        <Swiper
-          spaceBetween={30}
-          pagination={{ clickable: true }}
-          modules={[Pagination]}
-          className="mySwiper"
-          breakpoints={{
-            640: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-          }}
-        >
-          {testimonios.map((testimonio, index) => (
-            <SwiperSlide key={index}>
-              {/* Contenedor optimizado con fondo blanco y letras en negro */}
-              <div className="flex h-[500px] justify-center flex-col items-center p-4 bg-white rounded-lg shadow-lg border border-gray-200">
-                <img
-                  src={testimonio.foto}
-                  alt={testimonio.nombre}
-                  className="w-24 h-24 rounded-full object-cover border-2 border-gray-300 mb-6"
-                />
-                <blockquote className="flex flex-col justify-between flex-grow text-center">
-                  <p className="text-lg text-gray-900 mb-4">
-                    "{testimonio.testimonio}"
-                  </p>
-                  <footer className="text-gray-600">
-                    <cite className="block font-semibold">
-                      {testimonio.nombre}
-                    </cite>
-                    <p>{testimonio.ocupacion}</p>
-                  </footer>
-                </blockquote>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </div>
-  );
+// Configuración del carrusel
+const carouselConfig = {
+  spaceBetween: 30,
+  pagination: { clickable: true },
+  modules: [Pagination],
+  breakpoints: {
+    640: { slidesPerView: 1 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 },
+  },
 };
+
+const TestimoniosCarrusel = () => (
+  <div className="bg-gradient-to-b from-white via-white to-blue-50 py-16 px-4 sm:px-6 lg:px-8">
+    <h2 className="text-center text-black text-3xl sm:text-4xl font-extrabold uppercase mb-8">
+      Testimonios
+    </h2>
+    <div className="max-w-4xl mx-auto">
+      <Swiper {...carouselConfig} className="mySwiper">
+        {testimonios.map(({ nombre, ocupacion, testimonio, foto }, index) => (
+          <SwiperSlide key={index}>
+            <div className="flex h-[500px] justify-center flex-col items-center p-4 bg-white rounded-lg shadow-lg border border-gray-200">
+              <img
+                src={foto}
+                alt={nombre}
+                className="w-24 h-24 rounded-full object-cover border-2 border-gray-300 mb-6"
+              />
+              <blockquote className="flex flex-col justify-between flex-grow text-center">
+                <p className="text-lg text-gray-900 mb-4">"{testimonio}"</p>
+                <footer className="text-gray-600">
+                  <cite className="block font-semibold">{nombre}</cite>
+                  <p>{ocupacion}</p>
+                </footer>
+              </blockquote>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  </div>
+);
 
 export default TestimoniosCarrusel;

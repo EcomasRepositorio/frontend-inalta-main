@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
-
+<meta name="google-site-verification" content="gWp_V51Uc4LFr_A2VcZfvnjLJRiOJ-uZZdbqM6BWUAQ" />
 // Variables de datos
 const images = ["/image/image1pres.webp", "/image/image2.webp"];
 const texts = [
