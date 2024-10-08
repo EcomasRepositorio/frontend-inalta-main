@@ -49,23 +49,23 @@ const cursosDestacados = [
 
 // Componente para la tarjeta de curso con margen lateral para espacio en el carrusel
 const CourseCard = ({ imageUrl, title, description }) => (
-  <div className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300 flex flex-col justify-between h-[600px] mx-2">
-    <div className="relative w-full h-96">
+  <div className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300 flex flex-col justify-between min-h-[600px] mx-2">
+    <div className="relative w-full h-96 flex items-center justify-center">
       <Image
         src={imageUrl}
         alt={title}
         fill
-        className="rounded-t-lg object-cover"
+        className="rounded-t-lg object-cover ml-auto"
         placeholder="blur"
         blurDataURL={imageUrl}
       />
     </div>
-    <div className="p-4 flex-grow max-h-32 overflow-hidden">
+    <div className="p-4 flex-grow overflow-hidden">
       <h3 className="text-lg font-semibold text-blue-900 mb-2">{title}</h3>
-      <p className="text-gray-600 mb-4 text-sm">{description}</p>
+      <p className="text-gray-600 mb-4 text-xs">{description}</p>
     </div>
     <Link href="/diplomados" passHref>
-      <div className="inline-block mb-4 py-2 px-4 text-sm font-medium text-blue-900 border border-blue-900 rounded-full hover:bg-blue-900 hover:text-white transition-colors duration-300">
+      <div className="flex justify-center mt-auto mb-2 py-2 px-4 text-xs font-medium text-blue-900 border border-blue-900 rounded-full hover:bg-blue-900 hover:text-white transition-colors duration-300">
         Más Información
       </div>
     </Link>
@@ -84,11 +84,16 @@ const Courses = () => (
         <Swiper
           spaceBetween={16}
           slidesPerView={1}
-          loop
-          autoplay={{ delay: 3000 }}
-          pagination={{ clickable: true }}
-          navigation
-          touchStartPreventDefault={false} // Habilita el scroll vertical en móviles
+          loop={true}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={false}
+          touchStartPreventDefault={false}
           className="space-x-4"
         >
           {cursosDestacados.map((curso, index) => (
