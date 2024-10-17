@@ -11,7 +11,7 @@ const DiploAlimentarias = () => {
         {
             area: 'INGENIERÍA EN ALIMENTOS',
             titulo: 'Gestión de la calidad e inocuidad alimentaria',
-            imagen: '/image/diplomados/Gestión de la calidad e inocuidad alimentaria.png',
+            imagen: '/image/diplomados/inocuidad.png',
             fechaInicio: 'proximamente',
             modalidad: 'Virtual',
             duracion: '4 meses',

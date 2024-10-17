@@ -10,37 +10,37 @@ import "swiper/css"; // Estilo adicional de Swiper
 // Datos de cursos destacados
 const cursosDestacados = [
   {
-    imageUrl: "/image/CURSOS/Topografía, Diseño Geométrico, Señalización y Seguridad Vial.png",
+    imageUrl: "/image/CURSOS/disenio.png",
     title: "Topografía, Diseño Geométrico, Señalización y Seguridad Vial",
     description:
       "Curso integral de topografía, diseño geométrico, señalización y seguridad vial que abarca los fundamentos esenciales para la planificación, diseño y mantenimiento eficiente y seguro de infraestructuras viales.",
   },
   {
-    imageUrl: "/image/CURSOS/Sistemas de Riego Tecnificado por Goteo.png",
+    imageUrl: "/image/CURSOS/goteo.png",
     title: "Sistemas de Riego Tecnificado por Goteo",
     description:
       "Curso sobre implementación y gestión de sistemas agrícolas de riego con enfoque en la técnica de goteo.",
   },
   {
-    imageUrl: "/image/CURSOS/Valorización de Residuos Sólidos.png",
+    imageUrl: "/image/CURSOS/solidos.png",
     title: "Valorización de Residuos Sólidos",
     description:
       "Explora estrategias sostenibles para gestionar residuos sólidos, promoviendo reciclaje, reutilización y conversión en recursos.",
   },
   {
-    imageUrl: "/image/CURSOS/Calidad e Inocuidad Alimentaria.png",
+    imageUrl: "/image/CURSOS/inocuidad.png",
     title: "Calidad e Inocuidad Alimentaria",
     description:
       "Explora los principios y prácticas esenciales para garantizar la seguridad y calidad de los alimentos desde su producción hasta el consumo.",
   },
   {
-    imageUrl: "/image/CURSOS/Elaboración de Matriz IPERC - Mapa de Riesgos.png",
+    imageUrl: "/image/CURSOS/elaboracion.png",
     title: "Elaboración de Matriz IPERC - Mapa de Riesgos",
     description:
       "Curso de Elaboración de Matriz IPERC y Mapa de Riesgos: Enfocado en capacitar en la identificación, evaluación y gestión de riesgos laborales.",
   },
   {
-    imageUrl: "/image/CURSOS/Monitoreo de Agentes Ocupacionales.png",
+    imageUrl: "/image/CURSOS/monitoreo.png",
     title: "Monitoreo de Agentes Ocupacionales",
     description:
       "Brinda conocimientos especializados en técnicas y estrategias para llevar a cabo el monitoreo efectivo de agentes ocupacionales.",
