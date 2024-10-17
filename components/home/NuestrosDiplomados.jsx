@@ -9,7 +9,7 @@ import 'swiper/swiper-bundle.css';
 
 // Lista de cursos con datos de ejemplo
 const cursos = [
-  { imageUrl: '/image/diplomados/ingeniería CIVIL.png', title: 'Ingeniería Civil', link: '/diplomados' },
+  { imageUrl: '/image/diplomados/ingeniería CIVIL.webp', title: 'Ingeniería Civil', link: '/diplomados' },
   { imageUrl: '/image/diplomados/Ingeniería Ambiental.png', title: 'Ingeniería Ambiental', link: '/diplomados' },
   { imageUrl: '/image/diplomados/Ingeniería Agronoma.png', title: 'Ingeniería Agronómica', link: '/diplomados' },
   { imageUrl: '/image/diplomados/SSOMA.png', title: 'SSOMA', link: '/diplomados' },
