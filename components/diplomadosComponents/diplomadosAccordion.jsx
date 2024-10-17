@@ -12,7 +12,7 @@ const DashboardSkeleton = dynamic(() => import("@/components/home/skeletons"));
 
 const Curso = ({ curso }) => {
   // Estado para habilitar/deshabilitar botones
-  const [isDisabled, setIsDisabled] = useState(true); // Cambiar a false cuando tengas el número
+  const [isDisabled, setIsDisabled] = useState(true);
 
   // Función para convertir números a números romanos
   function toRoman(num) {
@@ -39,13 +39,13 @@ const Curso = ({ curso }) => {
   // Función para generar el enlace a WhatsApp
   const generarEnlaceWhatsapp = (cursoTitulo, modulo) => {
     const mensaje = `Hola, busco información sobre el módulo "${modulo}" del curso "${cursoTitulo}".`;
-    const url = `51921818181?text=${encodeURIComponent(mensaje)}`;
+    const url = `https://api.whatsapp.com/send?phone=51921818181&text=${encodeURIComponent(mensaje)}&app_absent=0`;
     return url;
   };
 
   return (
     <div className="flex flex-col md:flex-row bg-transparent border-transparent rounded-lg overflow-hidden mb-8">
-      {/* Contenedor de la imagen con estilos responsivos para diferentes dispositivos */}
+      {/* Contenedor de la imagen con estilos responsivos */}
       <div className="relative w-full md:w-1/3 lg:w-1/2 xl:w-1/3" style={{ minHeight: "250px", maxHeight: "500px" }}>
         <Image
           src={curso.imagen}
@@ -85,7 +85,7 @@ const Curso = ({ curso }) => {
             </div>
           </div>
 
-          {/* Acordeón de módulos con estilo personalizado */}
+          {/* Acordeón de módulos */}
           <Accordion defaultExpandedKeys={["1"]} bordered shadow>
             <AccordionItem
               key="3"
@@ -94,7 +94,6 @@ const Curso = ({ curso }) => {
                   Módulos del diplomado
                 </h3>
               }
-              // Aquí reemplazamos el ícono predeterminado con uno personalizado
               expandIcon={<FaChevronDown className="text-gray-600 w-6 h-6" />}
             >
               <ul className="space-y-4">
@@ -104,7 +103,7 @@ const Curso = ({ curso }) => {
                     className={`flex items-center justify-between border-2 border-blue-400 rounded-lg py-2 px-4 text-gray-800 ${isDisabled ? 'cursor-not-allowed opacity-50' : ''}`}
                   >
                     <Link
-                      href={isDisabled ? "#" : generarEnlaceWhatsapp(curso.titulo, modulo)} // Previene la navegación si está deshabilitado
+                      href={isDisabled ? "#" : generarEnlaceWhatsapp(curso.titulo, modulo)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`flex items-center space-x-2 w-full ${isDisabled ? 'pointer-events-none' : ''}`}
@@ -122,11 +121,10 @@ const Curso = ({ curso }) => {
           </Accordion>
         </div>
 
-        {/* Botones de acción en vista móvil */}
+        {/* Botones de acción */}
         <div className="flex flex-col md:flex-row justify-around items-center gap-4 mt-6">
-          {/* Botón de Más Información */}
           <Link
-            href={isDisabled ? "#" : generarEnlaceWhatsapp(curso.titulo, "Información general")} // Previene la navegación si está deshabilitado
+            href={isDisabled ? "#" : generarEnlaceWhatsapp(curso.titulo, "Información general")}
             target="_blank"
             rel="noopener noreferrer"
             className={`flex items-center justify-center border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white transition-all duration-300 rounded-full py-2 px-6 w-full lg:w-auto ${isDisabled ? 'pointer-events-none' : ''}`}
@@ -134,22 +132,18 @@ const Curso = ({ curso }) => {
             <FaWhatsapp className="w-5 h-5 mr-2" />
             MÁS INFORMACIÓN
           </Link>
-
-          {/* Botón de Plan de Estudios */}
           <a
             href="#"
             className="flex items-center justify-center border-2 border-red-400 text-red-400 bg-gray-200 rounded-full py-2 px-6 w-full lg:w-auto cursor-not-allowed"
-            style={{ pointerEvents: "none" }} // Bloquea el evento del mouse
+            style={{ pointerEvents: "none" }}
           >
             <MdOutlinePictureAsPdf className="w-5 h-5 mr-2" />
             PLAN DE ESTUDIOS
           </a>
-
-          {/* Botón de Certificación */}
           <a
             href="#"
             className="flex items-center justify-center border-2 border-blue-400 text-blue-400 bg-gray-200 rounded-full py-2 px-6 w-full lg:w-auto cursor-not-allowed"
-            style={{ pointerEvents: "none" }} // Bloquea el evento del mouse
+            style={{ pointerEvents: "none" }}
           >
             <MdOutlinePictureAsPdf className="w-5 h-5 mr-2" />
             CERTIFICACIONES

@@ -8,7 +8,7 @@ const DiploDerecho = () => {
     {
       area: "DERECHO",
       titulo: "PERITO FORENSE Y CRIMINALÍSTICO",
-      imagen: "/image/diplotest.webp",
+      imagen: "/image/diplomados/dip/perito-forense.jpg",
       fechaInicio: "próximamente",
       modalidad: "Virtual",
       duracion: "4 meses",

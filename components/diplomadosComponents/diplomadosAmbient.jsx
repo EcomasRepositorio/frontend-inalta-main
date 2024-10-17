@@ -8,7 +8,7 @@ const DiploAmbient = () => {
     {
       area: "INGENIERÍA AMBIENTAL",
       titulo: "Monitoreo y Evaluación de la Calidad Ambiental",
-      imagen: "/image/diplotest.webp",
+      imagen: "/image/diplomados/dip/MECA.jpg",
       fechaInicio: "próximamente",
       modalidad: "Virtual",
       duracion: "04 meses",
@@ -32,7 +32,7 @@ const DiploAmbient = () => {
     {
       area: "INGENIERÍA AMBIENTAL",
       titulo: "Gestión y manejo integral de residuos sólidos",
-      imagen: "/image/diplotest.webp",
+      imagen: "/image/diplomados/dip/GMIRS.jpg",
       fechaInicio: "próximamente",
       modalidad: "Virtual",
       duracion: "04 meses",
@@ -59,7 +59,7 @@ const DiploAmbient = () => {
     {
       area: "INGENIERÍA AMBIENTAL",
       titulo: "SSOMA (Seguridad y Salud Ocupacional y Medio Ambiente)",
-      imagen: "/image/diplotest.webp",
+      imagen: "/image/diplomados/dip/SSOMA.jpg",
       fechaInicio: "próximamente",
       modalidad: "Virtual",
       duracion: "4 meses",
@@ -85,7 +85,7 @@ const DiploAmbient = () => {
     {
       area: "INGENIERÍA AMBIENTAL",
       titulo: "Gestión Ambiental Municipal y Regional",
-      imagen: "/image/diplotest.webp",
+      imagen: "/image/diplomados/dip/GAMR.jpg",
       fechaInicio: "próximamente",
       modalidad: "Virtual",
       duracion: "4 meses",

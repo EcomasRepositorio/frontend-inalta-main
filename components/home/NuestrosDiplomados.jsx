@@ -6,14 +6,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import 'swiper/swiper-bundle.css';
 
+
 // Lista de cursos con datos de ejemplo
 const cursos = [
-  { imageUrl: '/image/ingcivil.jpg', title: 'Ingeniería Civil', link: '/diplomados' },
-  { imageUrl: '/image/ingambiental.jpg', title: 'Ingeniería Ambiental', link: '/diplomados' },
-  { imageUrl: '/image/ingagronomo.webp', title: 'Ingeniería Agronómica', link: '/diplomados' },
-  { imageUrl: '/image/ssoma.webp', title: 'SSOMA', link: '/diplomados' },
-  { imageUrl: '/image/ingvial.jpg', title: 'Ingeniería Vial', link: '/diplomados' },
-  { imageUrl: '/image/segali.webp', title: 'Gestión de la calidad e inocuidad alimentaria', link: '/diplomados' },
+  { imageUrl: '/image/diplomados/ingeniería CIVIL.png', title: 'Ingeniería Civil', link: '/diplomados' },
+  { imageUrl: '/image/diplomados/Ingeniería Ambiental.png', title: 'Ingeniería Ambiental', link: '/diplomados' },
+  { imageUrl: '/image/diplomados/Ingeniería Agronoma.png', title: 'Ingeniería Agronómica', link: '/diplomados' },
+  { imageUrl: '/image/diplomados/SSOMA.png', title: 'SSOMA', link: '/diplomados' },
+  { imageUrl: '/image/diplomados/Ingeniería Vial.png', title: 'Ingeniería Vial', link: '/diplomados' },
+  { imageUrl: '/image/diplomados/Gestión de la calidad e inocuidad alimentaria.png', title: 'Gestión de la calidad e inocuidad alimentaria', link: '/diplomados' },
 ];
 
 // Componente de tarjeta para cada curso
