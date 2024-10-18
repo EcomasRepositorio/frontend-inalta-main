@@ -27,7 +27,7 @@ const socialLinks = [
   { href: "https://www.facebook.com/profile.php?id=61565984064270", icon: FaFacebookF },
   { href: "https://www.instagram.com/corporacion.inalta", icon: FaInstagram },
   { href: "#", icon: FaTiktok, disabled: true }, 
-  { href: "#", icon: FaWhatsapp, disabled: true }, // Deshabilitado
+  { href: "https://wa.me/51942051076", icon: FaWhatsapp, disabled: false }, // Deshabilitado
   { href: "#", icon: FaYoutube, disabled: true },
 ];
 

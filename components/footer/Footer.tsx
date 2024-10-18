@@ -27,7 +27,7 @@ type MenuLink = {
 const socialLinks: SocialLink[] = [
   { href: "https://www.facebook.com", icon: FaFacebookF },
   { href: "https://www.instagram.com", icon: FaInstagram },
-  { href: "https://web.whatsapp.com", icon: FaWhatsapp, disabled: true }, // Deshabilitado
+  { href: "https://wa.me/51942051076", icon: FaWhatsapp, disabled: false }, // Deshabilitado
   { href: "https://www.tiktok.com", icon: FaTiktok, disabled: true }, // Deshabilitado
   { href: "https://www.youtube.com", icon: FaYoutube, disabled: true }, // Deshabilitado
 ];
@@ -187,7 +187,7 @@ const Footer: React.FC = () => {
                 <li className="flex items-center">
                   <HiOutlinePhone size={20} className="mr-2" />
                   <Link href="tel:+51984040264">
-                    <span className="hover:underline">+51 ### ### ###</span>
+                    <span className="hover:underline">+51 942 051 076</span>
                   </Link>
                 </li>
               </ul>

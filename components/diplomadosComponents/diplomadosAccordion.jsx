@@ -12,7 +12,7 @@ const DashboardSkeleton = dynamic(() => import("@/components/home/skeletons"));
 
 const Curso = ({ curso }) => {
   // Estado para habilitar/deshabilitar botones
-  const [isDisabled, setIsDisabled] = useState(true);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   // Función para convertir números a números romanos
   function toRoman(num) {
@@ -39,7 +39,7 @@ const Curso = ({ curso }) => {
   // Función para generar el enlace a WhatsApp
   const generarEnlaceWhatsapp = (cursoTitulo, modulo) => {
     const mensaje = `Hola, busco información sobre el módulo "${modulo}" del curso "${cursoTitulo}".`;
-    const url = `https://api.whatsapp.com/send?phone=51921818181&text=${encodeURIComponent(mensaje)}&app_absent=0`;
+    const url = `https://api.whatsapp.com/send?phone=51942051076&text=${encodeURIComponent(mensaje)}&app_absent=0`;
     return url;
   };
 

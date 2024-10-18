@@ -9,12 +9,12 @@ import 'swiper/swiper-bundle.css';
 
 // Lista de cursos con datos de ejemplo
 const cursos = [
-  { imageUrl: '/image/diplomados/ing_civil.png', title: 'Ingeniería Civil', link: '/diplomados' },
-  { imageUrl: '/image/diplomados/ing_ambiental.png', title: 'Ingeniería Ambiental', link: '/diplomados' },
-  { imageUrl: '/image/diplomados/ing_agronoma.png', title: 'Ingeniería Agronómica', link: '/diplomados' },
-  { imageUrl: '/image/diplomados/SSOMA.png', title: 'SSOMA', link: '/diplomados' },
-  { imageUrl: '/image/diplomados/ing_vial.png', title: 'Ingeniería Vial', link: '/diplomados' },
-  { imageUrl: '/image/diplomados/inocuidad.png', title: 'Gestión de la calidad e inocuidad alimentaria', link: '/diplomados' },
+  { imageUrl: '/image/diplomados/ing_civil.webp', title: 'Ingeniería Civil', link: '/diplomados' },
+  { imageUrl: '/image/diplomados/ing_ambiental.webp', title: 'Ingeniería Ambiental', link: '/diplomados' },
+  { imageUrl: '/image/diplomados/ing_agronoma.webp', title: 'Ingeniería Agronómica', link: '/diplomados' },
+  { imageUrl: '/image/diplomados/SSOMA.webp', title: 'SSOMA', link: '/diplomados' },
+  { imageUrl: '/image/diplomados/ing_vial.webp', title: 'Ingeniería Vial', link: '/diplomados' },
+  { imageUrl: '/image/diplomados/inocuidad.webp', title: 'Gestión de la calidad e inocuidad alimentaria', link: '/diplomados' },
 ];
 
 // Componente de tarjeta para cada curso

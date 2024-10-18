@@ -9,7 +9,7 @@ const DiploAgronoma = () => {
     {
       area: "INGENIERÍA AGRÓNOMA",
       titulo: "Sistemas de Riego Tecnificado",
-      imagen: "/image/diplomados/dip/SRT.jpg",
+      imagen: "/image/diplomados/dip/SRT.webp",
       fechaInicio: "próximamente",
       modalidad: "Virtual",
       duracion: "4 meses",
@@ -32,7 +32,7 @@ const DiploAgronoma = () => {
     {
       area: "INGENIERÍA AGRÓNOMA",
       titulo: "Riego y Fertirriego",
-      imagen: "/image/diplomados/Ingeniería Agronoma.png",
+      imagen: "/image/diplomados/ing_agronoma.webp",
       fechaInicio: "próximamente",
       modalidad: "Virtual",
       duracion: "4 meses",
