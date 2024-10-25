@@ -54,7 +54,7 @@ const StudentDelete: React.FC<DeleteStudentProps> = ({ id, onDeleteSuccess }) =>
       {confirmationModalOpen && (
         <Modal open={confirmationModalOpen} onClose={closeModal}>
         <div className='border p-5 rounded-lg'>
-          <p className='flex justify-center whitespace-pre-wrap text-center'>¿Estás seguro de que deseas eliminar a este estudiante?</p>
+          <p className='flex justify-center text-white whitespace-pre-wrap text-center'>¿Estás seguro de que deseas eliminar a este estudiante?</p>
           <div className="flex justify-center mt-4">
             <button
               onClick={handleDelete}
@@ -64,7 +64,7 @@ const StudentDelete: React.FC<DeleteStudentProps> = ({ id, onDeleteSuccess }) =>
             </button>
             <button
               onClick={closeModal}
-              className="bg-gray-300 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-400"
+              className="bg-gray-300 text-black px-4 py-2 rounded-md hover:bg-gray-400"
             >
               Cancelar
             </button>
@@ -74,7 +74,7 @@ const StudentDelete: React.FC<DeleteStudentProps> = ({ id, onDeleteSuccess }) =>
       )}
       {successModalOpen && (
         <Modal open={successModalOpen} onClose={closeModal}>
-        <div className='border p-6 rounded-lg'>
+        <div className='border p-6 rounded-lg text-white'>
           Estudiante eliminado.
         </div>
         </Modal>
