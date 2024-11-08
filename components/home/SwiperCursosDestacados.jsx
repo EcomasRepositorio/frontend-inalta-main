@@ -3,14 +3,13 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react"; // Importación de Swiper y SwiperSlide
-import "swiper/swiper-bundle.css"; // Estilos de Swiper
-import "swiper/css"; // Estilo adicional de Swiper
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/swiper-bundle.css";
 
-// Datos de cursos destacados
 const cursosDestacados = [
   {
-    imageUrl: "/image/CURSOS/disenio.webp",
+    imageUrl: "/image/test1.webp",
     title: "Topografía, Diseño Geométrico, Señalización y Seguridad Vial",
     description:
       "Curso integral de topografía, diseño geométrico, señalización y seguridad vial que abarca los fundamentos esenciales para la planificación, diseño y mantenimiento eficiente y seguro de infraestructuras viales.",
@@ -47,9 +46,8 @@ const cursosDestacados = [
   },
 ];
 
-// Componente para la tarjeta de curso con margen lateral para espacio en el carrusel
 const CourseCard = ({ imageUrl, title, description }) => (
-  <div className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300 flex flex-col justify-between min-h-[600px] mx-2">
+  <div className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300 flex flex-col justify-between min-h-[600px] mx-2 ml-10 mt-10">
     <div className="relative w-full h-96 flex items-center justify-center">
       <Image
         src={imageUrl}
@@ -79,46 +77,35 @@ const Courses = () => (
         NUESTROS CURSOS
       </h2>
 
-      {/* Carrusel para Móviles con Swiper */}
-      <div className="block md:hidden">
-        <Swiper
-          spaceBetween={16}
-          slidesPerView={1}
-          loop={true}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={false}
-          touchStartPreventDefault={false}
-          className="space-x-4"
-        >
-          {cursosDestacados.map((curso, index) => (
-            <SwiperSlide key={index}>
-              <CourseCard
-                imageUrl={curso.imageUrl}
-                title={curso.title}
-                description={curso.description}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-
-      {/* Grilla para Escritorio */}
-      <div className="hidden md:grid max-w-5xl mx-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      {/* Carrusel con Swiper para todos los tamaños de pantalla */}
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={20}
+        slidesPerView={1}
+        loop={true}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        pagination={{ clickable: true }}
+        navigation
+        breakpoints={{
+          640: { slidesPerView: 1, spaceBetween: 20 },
+          768: { slidesPerView: 2, spaceBetween: 30 },
+          1024: { slidesPerView: 3, spaceBetween: 40 },
+        }}
+        className="w-full max-w-5xl mx-auto"
+      >
         {cursosDestacados.map((curso, index) => (
-          <CourseCard
-            key={index}
-            imageUrl={curso.imageUrl}
-            title={curso.title}
-            description={curso.description}
-          />
+          <SwiperSlide key={index}>
+            <CourseCard
+              imageUrl={curso.imageUrl}
+              title={curso.title}
+              description={curso.description}
+            />
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </div>
   </section>
 );

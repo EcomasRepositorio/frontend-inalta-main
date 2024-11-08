@@ -9,7 +9,7 @@ const DiploCivil = () => {
     {
       area: "INGENIERÍA CIVIL",
       titulo: "Ingeniería Vial",
-      imagen: "/image/diplomados/dip/Ingeniería-Vial-2.0.webp",
+      imagen: "/image/test1.webp",
       fechaInicio: "próximamente",
       modalidad: "Virtual",
       duracion: "4 meses",

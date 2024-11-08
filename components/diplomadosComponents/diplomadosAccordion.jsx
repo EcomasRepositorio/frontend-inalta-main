@@ -39,22 +39,28 @@ const Curso = ({ curso }) => {
   // Función para generar el enlace a WhatsApp
   const generarEnlaceWhatsapp = (cursoTitulo, modulo) => {
     const mensaje = `Hola, busco información sobre el módulo "${modulo}" del curso "${cursoTitulo}".`;
-    const url = `https://api.whatsapp.com/send?phone=51942051076&text=${encodeURIComponent(mensaje)}&app_absent=0`;
+    const url = `https://api.whatsapp.com/send?phone=51942051076&text=${encodeURIComponent(
+      mensaje
+    )}&app_absent=0`;
     return url;
   };
 
   return (
-    <div className="flex flex-col md:flex-row bg-transparent border-transparent rounded-lg overflow-hidden mb-8">
+    <div className="flex flex-col md:flex-row bg-transparent border-transparent rounded-lg overflow-hidden mb-8 mt-20 ml-36">
       {/* Contenedor de la imagen con estilos responsivos */}
-      <div className="relative w-full md:w-1/3 lg:w-1/2 xl:w-1/3" style={{ minHeight: "250px", maxHeight: "500px" }}>
-        <Image
-          src={curso.imagen}
-          alt="Curso"
-          layout="fill"
-          objectFit="cover"
-          className="rounded-lg"
-        />
-      </div>
+      <div
+  className="relative w-full md:w-1/3 lg:w-1/2 xl:w-1/3"
+  style={{ height: "600px" }} // Establecer una altura fija
+>
+  <Image
+    src={curso.imagen}
+    alt="Curso"
+    layout="fill"
+    objectFit="cover"
+    className="rounded-lg"
+  />
+</div>
+
 
       {/* Contenido del curso */}
       <div className="w-full md:w-2/3 lg:w-1/2 xl:w-2/3 p-8 flex flex-col justify-between">
@@ -90,23 +96,31 @@ const Curso = ({ curso }) => {
             <AccordionItem
               key="3"
               title={
-                <h3 className="text-lg font-medium text-gray-900">
+                <h3 className="text-lg font-medium text-gray-900 ">
                   Módulos del diplomado
                 </h3>
               }
               expandIcon={<FaChevronDown className="text-gray-600 w-6 h-6" />}
             >
-              <ul className="space-y-4">
+              <ul className="list-disc pl-5 text-gray-800 dark:text-white">
                 {curso.modulos.map((modulo, moduloIndex) => (
                   <li
                     key={moduloIndex}
-                    className={`flex items-center justify-between border-2 border-blue-400 rounded-lg py-2 px-4 text-gray-800 ${isDisabled ? 'cursor-not-allowed opacity-50' : ''}`}
+                    className={`flex items-center bg-blue-50 justify-between border-2 border-blue-400 rounded-lg py-2 px-4 text-gray-800 ${
+                      isDisabled ? "cursor-not-allowed opacity-50" : ""
+                    }`}
                   >
                     <Link
-                      href={isDisabled ? "#" : generarEnlaceWhatsapp(curso.titulo, modulo)}
+                      href={
+                        isDisabled
+                          ? "#"
+                          : generarEnlaceWhatsapp(curso.titulo, modulo)
+                      }
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`flex items-center space-x-2 w-full ${isDisabled ? 'pointer-events-none' : ''}`}
+                      className={`flex items-center space-x-2 w-full ${
+                        isDisabled ? "pointer-events-none" : ""
+                      }`}
                     >
                       <FaWhatsapp className="text-green-500 w-5 h-5" />
                       <span className="text-lg font-semibold">
@@ -124,10 +138,16 @@ const Curso = ({ curso }) => {
         {/* Botones de acción */}
         <div className="flex flex-col md:flex-row justify-around items-center gap-4 mt-6">
           <Link
-            href={isDisabled ? "#" : generarEnlaceWhatsapp(curso.titulo, "Información general")}
+            href={
+              isDisabled
+                ? "#"
+                : generarEnlaceWhatsapp(curso.titulo, "Información general")
+            }
             target="_blank"
             rel="noopener noreferrer"
-            className={`flex items-center justify-center border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white transition-all duration-300 rounded-full py-2 px-6 w-full lg:w-auto ${isDisabled ? 'pointer-events-none' : ''}`}
+            className={`flex items-center justify-center border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white transition-all duration-300 rounded-full py-2 px-6 w-full lg:w-auto ${
+              isDisabled ? "pointer-events-none" : ""
+            }`}
           >
             <FaWhatsapp className="w-5 h-5 mr-2" />
             MÁS INFORMACIÓN
