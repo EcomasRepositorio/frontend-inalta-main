@@ -25,7 +25,7 @@ const ImageCarrousel = () => {
       transition: {
         x: {
           repeat: Infinity,
-          repeatType: "loop",
+          repeatType: "loop", 
           duration: 6, // Ajusta la duración según la velocidad que desees
           ease: "linear",
         },
